@@ -1,0 +1,60 @@
+@charset "UTF-8";
+
+/* Font style setting */
+$notoSans:"Noto Sans KR", "Apple SD Gothic Neo", Arial, Apple SD Gothic Neo, sans-serif;
+$manrope:"Manrope", "Apple SD Gothic Neo", Arial, Apple SD Gothic Neo, sans-serif;
+$manrope_mix:"Manrope", $notoSans;
+
+/* Point color setting */
+$black:#000;
+$white:#fff;
+
+$red:#fc0000;
+
+$gray1:#121314;
+$gray2:#262728;
+$gray3:#333;
+$gray4:#535455;
+$gray5:#666;
+$gray6:#919497;
+$gray7:#f5f5f5;
+$gray8:#eaeaea;
+
+/* Background - color setting */
+$bg-black:$black;
+$bg-gray2:$gray2;
+$bg-gray6:$gray7;
+
+/* Border - color setting */
+$bd-black:$black;
+$bd-gray2:$gray2;
+
+/* Font - color setting */
+$txt-black:$black;
+$txt-gray1:$gray1;
+$txt-gray2:$gray2;
+$txt-gray3:$gray3;
+$txt-gray4:$gray4;
+$txt-gray5:$gray5;
+
+/* Input - color setting */
+$inp-bd-base:$gray1;
+
+/* Button - color setting */
+$btn-black:$black;
+
+/**
+ * BASE SETTING
+ */
+$base-font:"Noto Sans KR", "Apple SD Gothic Neo", AppleGothic, Arial, Helvetica, sans-serif;
+$base-font-size:20px;
+$base-font-color:$black;
+
+$letter-spacing:0;
+
+$light:300;
+$regular:400;
+$medium:500;
+$semi-bold:600;
+$bold:700;
+$extra-bold:900;
