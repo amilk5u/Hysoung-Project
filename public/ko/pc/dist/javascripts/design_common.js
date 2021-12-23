@@ -31,10 +31,46 @@ $window.load(function () {
     });
     layout();
     main();
+    about();
+    carts();
+    design_order();
+    explore();
+    member();
+    my_menu();
+    resources();
+    search();
+    support();
 });
+function about() {
+
+}
+function carts() {
+
+}
+function design_order() {
+
+}
+function explore() {
+
+}
 function layout() {
 
 }
 function main() {
+
+}
+function member() {
+
+}
+function my_menu() {
+
+}
+function resources() {
+
+}
+function search() {
+
+}
+function support() {
 
 }

@@ -31,4 +31,13 @@ $window.load(function () {
     });
     layout();
     main();
+    about();
+    carts();
+    design_order();
+    explore();
+    member();
+    my_menu();
+    resources();
+    search();
+    support();
 });
