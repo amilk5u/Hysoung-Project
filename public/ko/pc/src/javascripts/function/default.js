@@ -13,8 +13,20 @@ var controller = null;
 var $gnb = $("#gnb"),
     $lnb = $("#lnb"),
     $navBtn = $lnb.find(".btn_nav"),
-    $closeBtn = $(".btn_close"),
-    $menu = $("#menu");
+    $searchBtn = $(".btn_search"),
+    $search = $("#search"),
+    $searchCloseBtn = $(".btn_close_search");
+    // $closeBtn = $(".btn_close")
+    // $menu = $("#menu");
+
+var $tabMenu = $(".tab_menu"),
+    $tabList = $tabMenu.find("li"),
+    $tabConts = $(".tab_contents");
+
+var $popupBtn = $(".btn_popup"),
+    $popupBox = $(".popup"),
+    $popupBg = $(".dimmed"),
+    $closePopupBtn = $(".btn_popup_close");
 
 $window.load(function () {
     var _this =  $(this);

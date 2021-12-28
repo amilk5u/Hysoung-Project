@@ -1,41 +1,37 @@
 @charset "UTF-8";
 
 /* Font style setting */
-$notoSans:"Noto Sans KR", "Apple SD Gothic Neo", Arial, Apple SD Gothic Neo, sans-serif;
-$manrope:"Manrope", "Apple SD Gothic Neo", Arial, Apple SD Gothic Neo, sans-serif;
-$manrope_mix:"Manrope", $notoSans;
+$roboto:"Roboto", "Apple SD Gothic Neo", Arial, Apple SD Gothic Neo, sans-serif;
+$bebasNeue:"Bebas Neue", "Apple SD Gothic Neo", Arial, Apple SD Gothic Neo, sans-serif;
 
 /* Point color setting */
 $black:#000;
 $white:#fff;
 
-$red:#fc0000;
+$red:#ea4335;
+$blue:#4285f4;
 
-$gray1:#121314;
-$gray2:#262728;
-$gray3:#333;
-$gray4:#535455;
-$gray5:#666;
-$gray6:#919497;
-$gray7:#f5f5f5;
-$gray8:#eaeaea;
+$blue1:#edf5ff;
+$blue2:#dcebff;
+$blue3:#c6defe;
+$blue4:#b0cff9;
+$blue5:#1778fb;
+$blue6:#3b56f2;
+$blue7:#000080;
 
-/* Background - color setting */
-$bg-black:$black;
-$bg-gray2:$gray2;
-$bg-gray6:$gray7;
+$gold1:#bb945b;
+$gold2:#ac864e;
 
-/* Border - color setting */
-$bd-black:$black;
-$bd-gray2:$gray2;
+$green1:#7bad3c;
+$green2:#0a8325;
 
-/* Font - color setting */
-$txt-black:$black;
-$txt-gray1:$gray1;
-$txt-gray2:$gray2;
-$txt-gray3:$gray3;
-$txt-gray4:$gray4;
-$txt-gray5:$gray5;
+$gray1:#f5f5f5;
+$gray2:#e3e3e3;
+$gray3:#c5c5c6;
+$gray4:#a5a5a5;
+$gray5:#707070;
+$gray6:#4d4e4f;
+$gray7:#121314;
 
 /* Input - color setting */
 $inp-bd-base:$gray1;
@@ -46,7 +42,7 @@ $btn-black:$black;
 /**
  * BASE SETTING
  */
-$base-font:"Noto Sans KR", "Apple SD Gothic Neo", AppleGothic, Arial, Helvetica, sans-serif;
+$base-font:"Roboto", "Apple SD Gothic Neo", AppleGothic, Arial, Helvetica, sans-serif;
 $base-font-size:20px;
 $base-font-color:$black;
 

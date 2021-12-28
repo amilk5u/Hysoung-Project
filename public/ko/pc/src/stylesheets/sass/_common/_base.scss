@@ -8,7 +8,7 @@ figcaption, figure, main {display:block;}
 figure {margin:1em 40px;}
 hr {box-sizing:content-box; height:0; overflow:visible;}
 pre {font-family:monospace, monospace; font-size:1em;}
-a {background-color:transparent; -webkit-text-decoration-skip:objects; outline:none;}
+a {background-color:transparent; -webkit-text-decoration-skip:objects; /*outline:none;*/}
 abbr[title] {border-bottom:none; text-decoration:underline; text-decoration:underline dotted;}
 b, strong {font-weight:inherit;}
 b, strong {font-weight:bolder;}
@@ -55,7 +55,7 @@ table {width:100%; text-align:left; border-collapse:collapse; border-spacing:0;}
 @import "./mixin";
 @import "lib/animate";
 
-input[type="button"], input[type="submit"], input[type="reset"], input[type="file"]::-webkit-file-upload-button, button { padding:0; font-family:$base-font; outline:none;}
+input[type="button"], input[type="submit"], input[type="reset"], input[type="file"]::-webkit-file-upload-button, button { padding:0; font-family:$base-font; /*outline:none;*/}
 a { text-decoration:none; cursor:pointer; color:$base-font-color;
    &:link,
    &:visited,

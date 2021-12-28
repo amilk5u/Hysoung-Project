@@ -258,6 +258,13 @@ $desktop-s-width	: 1280px;
 $tablet-width		: 1024px;
 $mob-width		: 1024px;
 
+// PC guide
+@mixin pc-guide {
+	@media screen and (max-width: #{1300px}) {
+		@content;
+	}
+}
+
 // PC large
 @mixin pc-small {
 	@media screen and (max-width: #{$desktop-s-width}) {
