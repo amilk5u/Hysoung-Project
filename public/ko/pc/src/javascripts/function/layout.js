@@ -1,6 +1,6 @@
 function layout() {
     //form script
-    $(".form_type01 input").on({
+    $(".form_text_type01 input").on({
         focus : function(){
             $(this).addClass('validField');
         },
@@ -23,10 +23,44 @@ function layout() {
             TweenMax.to(_this.siblings(".question_detail"), .3, {display:"none", opacity:0});
         }
     });
-    /*$(".question_detail").on("focusout", function(){
-        console.log("A");
-        $(this).hide();
-    });*/
+
+    var $formSelectType01 = $(".form_select_type01"),
+        $formSelectInput = $formSelectType01.find("input"),
+        $formSelectBtn = $formSelectType01.find("button");
+
+    $formSelectInput.on({
+        click : function (){
+            var _this = $(this);
+            console.log(_this);
+
+            $formSelectType01.css({"z-index":-1});
+            if (_this.val().trim() === ""){
+                _this.parent("div").toggleClass("validField");
+                if(_this.parent("div").hasClass("validField")){
+                    _this.parent().parent().css({"z-index":0})
+                }else {
+                    $formSelectType01.attr("style","");
+                }
+            } else {
+                _this.siblings("label").addClass("select");
+                _this.parent("div").toggleClass("validField");
+                if(_this.parent("div").hasClass("validField")){
+                    _this.parent().parent().css({"z-index":0})
+                }else {
+                    $formSelectType01.attr("style","");
+                }
+            }
+        }
+    });
+    $formSelectBtn.click(function(){
+        var _selectTxt = $(this).text();
+        var $selectInput = $(this).parent("li").parent("ul").siblings("input");
+        var $selectLabel = $(this).parent("li").parent("ul").siblings("label");
+        $selectInput.val(_selectTxt);
+        $selectInput.parent("div").removeClass("validField");
+        $selectLabel.addClass("select");
+        $formSelectType01.attr("style","");
+    });
 
     // GNB
     $gnb.find(".menu").dbNaviTwoDepthSwap({
@@ -46,6 +80,42 @@ function layout() {
     $searchCloseBtn.on("focusout", function(){
         $search.fadeOut();
         $searchBtn.focus();
+    });
+
+    // dropMenu
+    $(".snb_s > a").on('click',function(e){
+        $(".snb_s > a").removeClass('on');
+        $(".snb_s > ul").slideUp();
+        $(this).removeClass('on');
+        var menuList = $(this).next('ul');
+        var link = $(this).attr('href');
+        if(!menuList.is(':visible') ){
+            if(link == '#'){
+                $(this).addClass('on');
+                menuList.slideDown();
+            }else{
+                window.location.href = link;
+            }
+        }
+        e.preventDefault();
+    });
+
+    // Filters
+    var $filters = $("#filters"),
+        $filterBtn = $(".btn_filter")
+        $filterBtn.click(function(){
+        $filters.toggleClass("fold_aside");
+    });
+
+    $(".filter_type02 > ul li").click(function(e){
+        $(".filter_type02 > ul li").removeClass("active");
+        $(".filter_type02 .product_cont").hide();
+
+        var _this = $(this),
+            _idx = _this.index();
+        $(this).addClass("active");
+        $(".filter_type02 .product_cont").eq(_idx).show();
+        e.preventDefault();
     });
 
     var _seletePopup;

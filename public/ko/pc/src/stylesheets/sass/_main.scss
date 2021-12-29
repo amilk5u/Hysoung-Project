@@ -2,7 +2,6 @@
 
 /* 비회원 및 Retail */
 .main_container {
-  margin:80px 0 0;
   #mainVisual {
     //min-width:1300px;
     h2 {text-indent:-9999px; opacity:0; height:0;}
@@ -324,9 +323,69 @@
 
 /* financial */
 .financial_container {
-  margin:80px 0 0;
   .dashboard {
     padding:50px 0; background-color:$gray7;
+    h2 {font-size:40px; margin:0 0 30px; font-weight:$regular; color:$gold2; font-family:$bebasNeue;}
+    .title {
+      margin:0 0 30px; line-height:28px;
+      @extend %clearfix;
+      h3 {font-size:28px; font-weight:$medium; color:$white; float:left;}
+      span {font-size:14px; color:$gray3; float:right; display:block;}
+      .btn_refresh {
+        margin:0 0 0 8px; vertical-align:middle; background-image:url(../../images/common/reset_icon.png);
+        @include backgroundSoltC();
+        @include textBackground(20px, 20px);
+      }
+    }
+    .conts {
+      a {
+        font-size:20px; padding:0 20px 0 0; margin:0 0 20px; font-weight:$medium; display:inline-block; color:$gray7; position:relative;
+        &:hover, &:focus {color:$blue5;}
+        @include transition();
+        &:after {
+          width:18px; height:18px; position:absolute; top:1px; right:0; background-image:url(../../images/common/icon_arrow_tit.png); content:"";
+          @include backgroundSoltC();
+        }
+      }
+      .cont01 {
+        display:flex; justify-content:space-between;
+        > div {padding:30px; background-color:$white; border-radius:10px; box-sizing:border-box;}
+        .chart_wrap {flex-basis:274px;}
+        .status_wrap {
+          width:calc(100% - 568px);
+          > a {margin:0 0 10px;}
+          ul {width:calc(100% + 4px); display:flex; flex-wrap:wrap; text-align:center; justify-content:center;}
+          li {
+            width:111px; margin:0 4px 0 0;
+            em {
+              font-size:12px; line-height:26px; margin:30px 0 15px; border-radius:5px; font-weight:$medium; display:block;
+              &.status_type01 {color:$gray5; background-color:#ebebeb;}
+              &.status_type02 {color:$green1; background-color:#eff5e7;}
+              &.status_type03 {color:$green; background-color:#eaf6ed;}
+              &.status_type04 {color:$blue; background-color:#ecf3fe;}
+              &.status_type05 {color:$red; background-color:#feecea;}
+            }
+            strong {font-size:23px; font-weight:$bold; color:$gray7; display:block;}
+          }
+        }
+      }
+      .cont02 {
+        margin:10px 0 0; padding:30px; background-color:$white; border-radius:10px; box-sizing:border-box;
+        .table_wrap {
+          table {width:100%;}
+          thead th {font-size:13px; text-align:left; color:$gray5; padding:12px 0;}
+          tbody td {
+            font-size:14px; padding:7px 0; height:25px; color:$gray7; border-bottom:1px solid $gray1;
+            span {
+              min-width:50px; padding:0 5px; font-size:12px; line-height:23px; text-align:center; border-radius:5px; display:inline-block; border:1px solid $gray2;
+              &.due_type01 {color:$blue5; font-weight:$bold;}
+              &.due_type02 {color:$gray5; font-weight:$medium;}
+            }
+          }
+          thead th:first-child, tbody td:first-child {padding:0 0 0 30px;}
+        }
+      }
+    }
   }
   #contents {
     .title_wrap {
@@ -335,7 +394,65 @@
     }
     .shortcut_section {
       max-width:1200px; margin:0 auto; padding:80px 0;
-      ul {display:flex; flex-wrap:wrap;}
+      ul {
+        width:100%; display:flex;
+        li {
+          width:14.28%; border:1px solid $gray2; box-sizing:border-box; display:flex; margin:0 0 0 -1px;
+          &:first-child {margin:0;}
+          &.menu_icon01 a {
+            &:after {background-image:url(../../images/common/shortcut_icon01.png)}
+            &:hover:after, &:focus:after {background-image:url(../../images/common/shortcut_icon01_on.png)}
+          }
+          &.menu_icon02 a {
+            &:after {background-image:url(../../images/common/shortcut_icon02.png)}
+            &:hover:after, &:focus:after {background-image:url(../../images/common/shortcut_icon02_on.png)}
+          }
+          &.menu_icon03 a {
+            &:after {background-image:url(../../images/common/shortcut_icon03.png)}
+            &:hover:after, &:focus:after {background-image:url(../../images/common/shortcut_icon03_on.png)}
+          }
+          &.menu_icon04 a {
+            &:after {background-image:url(../../images/common/shortcut_icon04.png)}
+            &:hover:after, &:focus:after {background-image:url(../../images/common/shortcut_icon04_on.png)}
+          }
+          &.menu_icon05 a {
+            &:after {background-image:url(../../images/common/shortcut_icon05.png)}
+            &:hover:after, &:focus:after {background-image:url(../../images/common/shortcut_icon05_on.png)}
+          }
+          &.menu_icon06 a {
+            &:after {background-image:url(../../images/common/shortcut_icon06.png)}
+            &:hover:after, &:focus:after {background-image:url(../../images/common/shortcut_icon06_on.png)}
+          }
+          &.menu_icon07 a {
+            &:after {background-image:url(../../images/common/shortcut_icon07.png)}
+            &:hover:after, &:focus:after {background-image:url(../../images/common/shortcut_icon07_on.png)}
+          }
+        }
+        a {
+          width:100%; min-height:169px; padding:30px 25px 30px 30px; box-sizing:border-box; display:block; position:relative;
+          @include transition();
+          &:after {
+            width:68px; height:68px; position:absolute; bottom:25px; right:25px; content:"";
+            @include backgroundSolt();
+          }
+          strong {
+            font-size:16px; line-height:20px; padding:0 0 5px; position:relative; font-weight:$medium; color:$gray7; display:block;
+            @include transition();
+            &:after {
+              width:16px; height:16px; position:absolute; bottom:-18px; left:0; background-image:url(../../images/main/icon_arrow_s.png); content:"";
+              @include backgroundSoltC();
+              @include transition();
+            }
+          }
+          &:hover, &:focus {
+            background-color:$blue5; border-radius:20px;
+            strong {
+              color:$white;
+              &:after {background-image:url(../../images/main/icon_arrow_s_on.png)}
+            }
+          }
+        }
+      }
     }
     .ordered_section {
       padding:80px 0; background-color:$gray1; overflow-x:hidden;
@@ -344,11 +461,89 @@
         &:first-child {margin:0}
       }
       .slide_wrap {max-width:1200px; margin:0 auto; overflow:visible; box-sizing:border-box;}
-      .order_slide01, .order_slide03 {
+      .order_slide_type01 {
         .swiper-slide {max-width:410px; margin:0 20px 0 0;}
+        .item {
+          padding:40px; background-color:$white; border-radius:20px; border:1px solid $gray2; box-sizing:border-box;
+          //@include boxShadow(0px 10px 35px rgba(18, 19, 20, 0.1));
+          .info {
+            position:relative;
+            > strong {font-size:30px; color:$gray7; font-weight:$medium;}
+            div {
+              padding:25px 0;
+              dl {
+                font-size:17px; margin:10px 0 0; padding:0 0 0 90px; position:relative;
+                &:first-child {margin:0;}
+                dt {position:absolute; top:0; left:0; color:$gray5;}
+                dd {color:$gray7;}
+                strong {font-weight:$medium}
+                em {
+                  font-weight:$medium;
+                  &.state_type01 {color:$green;}
+                  &.state_type02 {color:$red;}
+                }
+              }
+            }
+            .btn_detail {
+              font-size:15px; line-height:36px; width:123px; border-radius:30px; text-align:center; border:1px solid $gray2; color:$gray6; position:absolute; top:0; right:0;
+              @include transition();
+              &:hover, &:focus {color:$white; border-color:$blue5; background-color:$blue5}
+            }
+          }
+          .details {
+            padding:30px; border-top:1px solid $gray2; position:relative;
+            img {width:100%;}
+            .options {
+              position:absolute; top:30px; left:0; width:100%; height:calc(100% - 60px); background-color:$white;
+              div {
+                margin:25px 0 0;
+                &:first-child {margin:0;}
+                strong {font-size:15px; font-weight:$medium; color:$gray5;}
+                ul {margin:20px 0 0;}
+                li {
+                  font-size:15px; line-height:20px; margin:7px 0 0; padding:0 0 0 20px; color:$gray7; position:relative;
+                  &:first-child {margin:0;}
+                  &:before {width:3px; height:3px; background-color:$gray7; content:""; border-radius:100%; position:absolute; top:9px; left:6px;}
+                }
+              }
+            }
+          }
+          .btn_reorder {
+            font-size:16px; line-height:46px; border-radius:10px; display:block; text-align:center; font-weight:$bold; display:block; color:$blue5; background-color:$blue1;
+            @include transition();
+            &:hover, &:focus {background-color:$blue5; color:$white;}
+          }
+        }
       }
-      .order_slide02, .order_slide04 {
+      .order_slide_type02 {
         .swiper-slide {max-width:298px; margin:0 16px 0 0;}
+        .item {
+          padding:30px; background-color:$white; border-radius:20px; border:1px solid $gray2; box-sizing:border-box;
+          .info {
+            > strong {font-size:23px; color:$gray7; font-weight:$medium;}
+            div {
+              padding:25px 0 20px;
+              dl {
+                font-size:17px; margin:10px 0 0; padding:0 0 0 90px; position:relative;
+                &:first-child {margin:0;}
+                dt {position:absolute; top:0; left:0; color:$gray5;}
+                dd {color:$gray7;}
+                strong {font-weight:$medium}
+                em {
+                  font-weight:$medium;
+                  &.state_type01 {color:$green;}
+                  &.state_type02 {color:$red;}
+                }
+              }
+            }
+            img {width:100%}
+            .btn_reorder {
+              font-size:16px; line-height:46px; border-radius:10px; margin:25px 0 0; text-align:center; font-weight:$bold; display:block; color:$blue5; background-color:$blue1;
+              @include transition();
+              &:hover, &:focus {background-color:$blue5; color:$white;}
+            }
+          }
+        }
       }
     }
   }

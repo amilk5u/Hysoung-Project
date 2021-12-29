@@ -139,4 +139,32 @@ function main() {
             }
         }
     });
+
+    var $detailBtn = $(".btn_detail");
+    $detailBtn.click(function () {
+        var _this = $(this);
+        if(!_this.hasClass("hide_option")){
+            _this.addClass("hide_option");
+            TweenMax.to(_this.parent().next(".details").find(".options"), .3, {opacity:0});
+            _this.text("Show Option");
+            _this.siblings(".options").css({display:"block"}).focus();
+        } else {
+            _this.removeClass("hide_option");
+            _this.text("Show image");
+            TweenMax.to(_this.parent().next(".details").find(".options"), .3, {opacity:1});
+        }
+    });
+
+    /*
+    $detailBtn.click(function(){
+        var _detail = $(this).parent().next(".details");
+        $(this).toggleClass("options");
+        if($(this).hasClass("options")){
+            $(this).text("Show Option");
+            _detail.find(".options").fadeOut();
+        }else{
+            $(this).text("Show image");
+            _detail.find(".options").fadeIn();
+        }
+    });*/
 }

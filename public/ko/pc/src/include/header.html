@@ -92,16 +92,50 @@
                 </nav>
 
                 <div id="lnb">
-                    <!-- 로그인 전 -->
+                    <!-- 로그인 전 start -->
                     <button type="button" class="btn_search">Search</button>
                     <a href="#" class="btn_login">Login</a>
+                    <!-- 로그인 전 end -->
 
-                    <!-- 로그인 후 -->
-                    <!--<button type="button" class="btn_search">Search</button>
+                    <!-- 로그인 후 start -->
+                    <!--<button type="button" class="btn_search">Search</button>-->
+                    <!-- 장바구니 없음 (기본) start -->
+                    <!--<button type="button" class="btn_cart">Cart</button>-->
+                    <!-- 장바구니 없음 (기본) end -->
+                    <!-- 상품이 1개 이상 start -->
+                    <!--<button type="button" class="btn_cart cart_in">Cart</button>-->
+                    <!-- 상품이 1개 이상 end -->
+                    <!--<button type="button" class="btn_myMenu">My menu</button>-->
+                    <!-- 로그인 후 end -->
 
-                    // Cart에 제품이 담겼을경우, cart_in Class 삽입
-                    <button type="button" class="btn_cart cart_in">Cart</button>
-                    <button type="button" class="btn_myMenu">My menu</button>-->
+                    <div class="my_menu_list">
+                        <!-- 로그인_Retail myMenu start -->
+                        <ul>
+                            <li class="menu_icon01"><a href="#">My Page</a></li>
+                            <li class="menu_icon01"><a href="#">My Profile</a></li>
+                            <li class="menu_icon01"><a href="#">My Favorites</a></li>
+                            <li class="menu_icon01"><a href="#">My Order</a></li>
+                            <li class="menu_icon01"><a href="#">Warranty</a></li>
+                            <li class="menu_icon01"><a href="#">My RMA</a></li>
+                            <li class="menu_icon01"><a href="#">Item list</a></li>
+                            <li class="menu_icon01"><a href="#">My Price quote</a></li>
+                            <li class="menu_icon01"><a href="#">Setting</a></li>
+                        </ul>
+                        <!-- 로그인_Retail myMenu end -->
+                        <!-- 로그인_Financial myMenu start -->
+                        <!--<ul>
+                            <li class="menu_icon01"><a href="#">My Profile</a></li>
+                            <li class="menu_icon01"><a href="#">My Favorites</a></li>
+                            <li class="menu_icon01"><a href="#">My Order</a></li>
+                            <li class="menu_icon01"><a href="#">Warranty</a></li>
+                            <li class="menu_icon01"><a href="#">Dashboard and Report</a></li>
+                            <li class="menu_icon01"><a href="#">My RMA</a></li>
+                            <li class="menu_icon01"><a href="#">Item list</a></li>
+                            <li class="menu_icon01"><a href="#">My Price quote</a></li>
+                            <li class="menu_icon01"><a href="#">Setting</a></li>
+                        </ul>-->
+                        <!-- 로그인_Financial myMenu end -->
+                    </div>
                 </div>
             </div>
         </header>
@@ -124,35 +158,40 @@
                 </div>
 
                 <div class="search_info">
-                    <!-- 검색 이력이 없을경우, 추천 키워드가 노출됩니다 -->
-                    <!--<div class="search_history">
-                        <strong>Suggested Searches</strong>
-                        <ul>
-                            <li><button type="button" class="btn_keyword">MX8800</button></li>
-                            <li><button type="button" class="btn_keyword">MX8800</button></li>
-                            <li><button type="button" class="btn_keyword">MX8800</button></li>
-                            <li><button type="button" class="btn_keyword">MX8800</button></li>
-                        </ul>
-                    </div>-->
-
-                    <!-- 검색 이력이 있을경우, 노출됩니다. -->
-                    <div class="search_history">
-                        <strong>Recent Searches</strong>
-                        <ul>
-                            <li><button type="button" class="btn_keyword">MX8800</button><button type="button" class="btn_delete">delete keyword</button></li>
-                            <li><button type="button" class="btn_keyword">MX8800</button><button type="button" class="btn_delete">delete keyword</button></li>
-                            <li><button type="button" class="btn_keyword">MX8800</button><button type="button" class="btn_delete">delete keyword</button></li>
-                            <li><button type="button" class="btn_keyword">MX8800</button><button type="button" class="btn_delete">delete keyword</button></li>
-                            <li><button type="button" class="btn_keyword">MX8800</button><button type="button" class="btn_delete">delete keyword</button></li>
-                            <li><button type="button" class="btn_keyword">MX8800</button><button type="button" class="btn_delete">delete keyword</button></li>
-                        </ul>
-                        <div class="history_btn_wrap">
-                            <button type="button" class="btn_history">Delete History</button>
+                    <!-- 검색 이력이 없을경우 (추천검색어) start -->
+                    <!--<div class="search_recommend">
+                        <div>
+                            <strong>Suggested Searches</strong>
+                            <ul>
+                                <li><p><a href="#" class="btn_keyword">MX8800</a></p></li>
+                                <li><p><a href="#" class="btn_keyword">MX8800</a></p></li>
+                                <li><p><a href="#" class="btn_keyword">MX8800</a></p></li>
+                                <li><p><a href="#" class="btn_keyword">MX8800</a></p></li>
+                            </ul>
                         </div>
+                    </div>-->
+                    <!-- 검색 이력이 없을경우 (추천검색어) end -->
+
+                    <!-- 검색 이력이 있을경우 (최근검색어) start -->
+                    <div class="search_history">
+                        <div>
+                            <strong>Recent Searches</strong>
+                            <ul>
+                                <li><p><a href="#" class="btn_keyword">MX8800</a><button type="button" class="btn_delete">delete keyword</button></p></li>
+                                <li><p><a href="#" class="btn_keyword">MX8800</a><button type="button" class="btn_delete">delete keyword</button></p></li>
+                                <li><p><a href="#" class="btn_keyword">MX8800</a><button type="button" class="btn_delete">delete keyword</button></p></li>
+                                <li><p><a href="#" class="btn_keyword">MX8800</a><button type="button" class="btn_delete">delete keyword</button></p></li>
+                                <li><p><a href="#" class="btn_keyword">MX8800</a><button type="button" class="btn_delete">delete keyword</button></p></li>
+                                <li><p><a href="#" class="btn_keyword">MX8800</a><button type="button" class="btn_delete">delete keyword</button></p></li>
+                            </ul>
+                        </div>
+                        <p class="history_btn_wrap">
+                            <button type="button" class="btn_history">Delete History</button>
+                        </p>
                     </div>
+                    <!-- 검색 이력이 있을경우 (최근검색어) end -->
+
                     <button type="button" class="btn_close_search">close search popup</button>
                 </div>
-
-
             </div>
         </div>
