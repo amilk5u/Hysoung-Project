@@ -903,6 +903,10 @@ footer .footer_wrap li:first-child:before { display: none; }
 
 .item_list_type04 .basket_form_elem .cart_btn { background: url(./../../images/common/cart_icon.png) 50% 50% no-repeat; }
 
+.no_results_found_cont { height: calc(100vh - 363px); display: flex; align-items: center; justify-content: center; }
+
+.no_results_found_cont .no_results_txt { font-size: 14px; color: #707070; font-weight: 400; }
+
 .item_list_type01 .kind { font-size: 12px; display: block; padding: 5px 12px; margin: 0 0 0 3px; font-weight: 500; -webkit-border-radius: 10px; -moz-border-radius: 10px; border-radius: 10px; }
 
 .item_list_type01 .kind:first-of-type { margin: 0; }
