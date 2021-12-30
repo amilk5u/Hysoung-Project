@@ -851,6 +851,32 @@ footer .footer_wrap li:first-child:before { display: none; }
 
 .financial_container #contents .ordered_section .order_slide_type02 .item .info .btn_reorder:hover, .financial_container #contents .ordered_section .order_slide_type02 .item .info .btn_reorder:focus { background-color: #1778fb; color: #fff; }
 
+.default_list_type01 .kind { width: fit-content; font-size: 12px; display: block; padding: 5px 12px; margin: 0 0 0 3px; font-weight: 500; -webkit-border-radius: 10px; -moz-border-radius: 10px; border-radius: 10px; }
+
+.default_list_type01 .kind:first-of-type { margin: 0; }
+
+.default_list_type01 .kind.variety_1 { color: #3b56f2; background-color: #e2e6fd; }
+
+.default_list_type01 .kind.variety_2 { color: #000080; background-color: #d9d9ec; }
+
+.default_list_type01 .kind.variety_3 { color: #1778fb; background-color: #c6defe; }
+
+.default_list_type01 .title_txt { width: fit-content; margin: 0 auto; }
+
+.default_list_type01 .title_txt strong { font-size: 30px; font-weight: 500; color: #121314; }
+
+.default_list_type01 .title_txt ul { display: flex; justify-content: space-between; padding: 40px 0; width: 60%; margin: 0 auto; }
+
+.default_list_type01 .title_txt li { display: flex; align-items: center; }
+
+.default_list_type01 .title_txt li p { font-size: 14px; color: #707070; font-weight: 400; padding: 0 0 0 10px; }
+
+.default_list_type01 .view_img_wrap { padding: 40px 0 0; border-top: 1px solid #e5e5e5; }
+
+.default_list_type01 .view_img_wrap img { width: 100%; }
+
+.default_list_type01 .desc { padding: 40px 0 0; font-size: 16px; color: #4d4e4f; line-height: 24px; font-weight: 400; }
+
 .item_list_type03 article.financial_type { padding: 70px 0 0; }
 
 .item_list_type03 article h3 { font-size: 30px; font-family: "Bebas Neue", "Apple SD Gothic Neo", Arial, Apple SD Gothic Neo, sans-serif; font-weight: 400; padding: 0 0 20px; }
@@ -1162,6 +1188,16 @@ footer .footer_wrap li:first-child:before { display: none; }
 .item_list_type05 .row_list .more_btn:hover:after, .item_list_type05 .row_list .more_btn:focus:after { -webkit-transform: translate(-50%, -50%) rotate(90deg); -moz-transform: translate(-50%, -50%) rotate(90deg); -ms-transform: translate(-50%, -50%) rotate(90deg); -o-transform: translate(-50%, -50%) rotate(90deg); transform: translate(-50%, -50%) rotate(90deg); }
 
 .item_list_type05 .row_list .more_btn:after { width: 10px; height: 10px; content: ""; display: block; position: absolute; top: 50%; left: 50%; background: url(../../images/common/plus_icon.png) 50% 50% no-repeat; background-size: cover; -webkit-transition: all 0.2s ease; -moz-transition: all 0.2s ease; -o-transition: all 0.2s ease; -ms-transition: all 0.2s ease; -webkit-transform: translate(-50%, -50%); -moz-transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%); -o-transform: translate(-50%, -50%); transform: translate(-50%, -50%); }
+
+.faq_list_type01 { height: 100px; background-color: #ccc; }
+
+.faq_list_type01 .faq_list_wrap { padding: 30px 35px; }
+
+.faq_list_type01 .row_list { display: flex; }
+
+.faq_list_type01 .row_list .num_txt { width: 100px; }
+
+.faq_list_type01 .row_list .tit_txt { font-size: 14px; }
 
 /* common css */
 ::selection { background: #fff; color: #000; text-shadow: none; }
