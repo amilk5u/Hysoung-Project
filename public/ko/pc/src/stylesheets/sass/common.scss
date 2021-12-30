@@ -315,6 +315,43 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 .sub_title_wrap {
 	width:100%; position:fixed; top:80px; left:0; z-index:3; text-align:center; background-color:$gray1;
 	h2 {font-size:36px; padding:32px 0; font-weight:$regular; color:$gray7; font-family:$bebasNeue;}
+	.stepBystep {
+		background-color:$gray7;
+		ol {
+			font-size:0; text-align:center; padding:28px 0;
+			li {
+				display:inline-block; padding:0 35px; margin:0 22px; position:relative;
+				&:after {
+					width:7px; height:8px; position:absolute; top:50%; right:-22px; background-image:url(../../images/common/step_arr.png); content:"";
+					@include backgroundSoltC();
+					@include translate(0, -50%);
+				}
+				&:last-child {
+					margin:0;
+					&:after {display:none;}
+				}
+				strong {font-size:18px; line-height:24px; color:#787879; font-weight:$regular; display:inline-block;}
+				&.ok {
+					strong {
+						color:$gray2; position:relative; padding:0 0 0 30px;
+						&:before {
+							width:24px; height:24px; border:2px solid $gray2; border-radius:100%; box-sizing:border-box; position:absolute; top:0; left:0; background-image:url(../../images/common/step_icon.png); content:"";
+							@include backgroundSoltC();
+						}
+					}
+				}
+				&.ing {
+					&:after {
+						background-image:url(../../images/common/step_arr_on.png);
+					}
+					strong {
+						color:$white; font-weight:$bold; position:relative; padding:0 3px;
+						&:after {width:100%; height:3px; position:absolute; bottom:-5px; left:0; background-color:$blue5; content:""}
+					}
+				}
+			}
+		}
+	}
 }
 
 // DropDown
@@ -404,6 +441,10 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 					}
 				}
 			}
+			> strong {
+				font-size:14px; padding:4px 0; margin:5px 0 15px; color:$gray7; font-weight:$medium; display:block;
+			}
+			.product {border-top:4px solid $gray2;}
 			.products {
 				.product_cont {display:none;}
 				.product_cont:first-child {display:block;}
@@ -538,4 +579,7 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 
 .default_contents {
 	max-width:1200px; margin:180px auto 0; padding:60px 0;
+}
+.stepBystep_contents {
+	max-width:1200px; margin:180px auto 0; padding:160px 0 60px;
 }

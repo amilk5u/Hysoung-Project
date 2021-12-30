@@ -150,5 +150,25 @@
 					</div>
 				</div>
 			</div>
+			<script>
+				var $filters = $("#filters"),
+						  $filterBtnClear = $(".btn_clearFilters");
+
+				$filterBtnClear.click(function(){
+					if($filters.find("button").hasClass("on")){
+						$filters.find("button").removeClass("on");
+					}
+					if($filters.find(".form_check_radio_default input[type=checkbox]").is(":checked")){
+						$filters.find(".form_check_radio_default input[type=checkbox]").prop('checked', false);
+					}
+					if($(".filter_type02 a").hasClass("on")){
+						$(".filter_type02 a").removeClass("on");
+					}
+					if($(".snb_s > ul").is(':visible') ){
+						$(".snb_s > a").removeClass('on');
+						$(".snb_s > ul").slideUp();
+					}
+				});
+			</script>
 			<!-- //container -->
 @@include("../../include/footer.html")
