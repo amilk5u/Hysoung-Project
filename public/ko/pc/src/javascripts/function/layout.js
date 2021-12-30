@@ -65,7 +65,7 @@ function layout() {
     // GNB
     $gnb.find(".menu").dbNaviTwoDepthSwap({
         motionSpeed:500,
-        motionType:'slide'
+        motionType:'none'
     });
 
     // search
@@ -81,7 +81,7 @@ function layout() {
         $search.fadeOut();
         $searchBtn.focus();
     });
-
+    
     // dropMenu
     $(".snb_s > a").on('click',function(e){
         $(".snb_s > a").removeClass('on');
@@ -103,7 +103,7 @@ function layout() {
     // Filters
     var $filters = $("#filters"),
         $filterBtn = $(".btn_filter")
-        $filterBtn.click(function(){
+    $filterBtn.click(function(){
         $filters.toggleClass("fold_aside");
     });
 

@@ -4,9 +4,14 @@
 "checkTypeFinancial": "display:none;"
 })
 <!-- container -->
+
+<style>
+	/* 예시용 css 입니다. */
+	.compare_popup {display:flex;}
+</style>
+
 <div id="container" class="filter_container">
-	<!-- 아래 팝업 style 의 display:flex 는 none 으로 변경 -->
-	<div class="popup compare_popup" tabindex="0" style="display:flex;">
+	<div class="popup compare_popup" tabindex="0">
 		<div class="popup_wrap">
 			<div class="popup_content">
 				<div class="product_title_txt">
@@ -60,7 +65,7 @@
 								<li>Microsoft® Windows 10®<br>platform 8GB RAM</li>
 							</ul>
 						</div>
-						<div class="desc_cont operation_item">
+						<div class="desc_cont operation_item"> <!-- 비교된 데이터 항목이 다르게 나오는 경우 "operation_item" 클래스 넣어주세요 -->
 							<span class="description">Security</span>
 							<ul>
 								<li>

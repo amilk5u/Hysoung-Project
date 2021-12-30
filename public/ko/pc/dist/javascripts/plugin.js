@@ -1,10 +1,3 @@
-/*
- * 플러그인 : jquery.dbNaviTwoDepthSwap.js (ver 1.0)
- * 제작자 : Copyright ⓒ 2012 by 디자인블랙(http://designblack.com)
- * 라이센스 : 도메인라이센스
- * 기타 : 기술문서, 사용법 및 라이센스는 홈페이지를 참고하세요
- * 문서정보는 수정하거나 삭제 할 수 없습니다
-*/
 ;(function ($) {
     $.fn.dbNaviTwoDepthSwap = function (options) {
         var opt = {pageNum: null, subNum: null, motionType: 'none', motionSpeed: 300, delayTime: 0}
@@ -29,10 +22,11 @@
             function setMouseEvent() {
                 $this.bind('mouseenter', function () {
                     clearTimeout(timerId);
+                    TweenMax.to($(".header_bg"), .3, {display:"block", opacity:1});
                 });
                 $this.bind('mouseleave', function () {
                     timerId = setTimeout(setAnimation, opt.delayTime);
-                    $(".header_bg").stop().fadeOut();
+                    TweenMax.to($(".header_bg"), .3, {display:"none", opacity:0});
                 });
                 $menuList.bind('mouseenter keyup', function () {
                     currentMenu = $(this).index();
@@ -40,13 +34,14 @@
                         currentSub = null;
                     }
                     setAnimation();
-                    $(".header_bg").stop().fadeIn();
+                    // $(".header_bg").stop().fadeIn(500);
                 });
                 $menuList.bind('mouseleave', function () {
                     if (currentMenu != fixMenu) {
                         currentSub = fixSub;
                     }
                     currentMenu = fixMenu;
+                    // $(".header_bg").stop().fadeOut(500);
                 });
                 $subList.bind('mouseenter keyup', function () {
                     currentSub = $(this).index();

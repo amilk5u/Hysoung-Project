@@ -60,7 +60,19 @@ function carts() {
 
 }
 function design_order() {
-
+    var swiper = new Swiper(".product_slide_contain", {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+    });
 }
 function explore() {
 
@@ -132,7 +144,7 @@ function layout() {
     // GNB
     $gnb.find(".menu").dbNaviTwoDepthSwap({
         motionSpeed:500,
-        motionType:'slide'
+        motionType:'none'
     });
 
     // search
@@ -148,7 +160,7 @@ function layout() {
         $search.fadeOut();
         $searchBtn.focus();
     });
-
+    
     // dropMenu
     $(".snb_s > a").on('click',function(e){
         $(".snb_s > a").removeClass('on');
@@ -170,7 +182,7 @@ function layout() {
     // Filters
     var $filters = $("#filters"),
         $filterBtn = $(".btn_filter")
-        $filterBtn.click(function(){
+    $filterBtn.click(function(){
         $filters.toggleClass("fold_aside");
     });
 

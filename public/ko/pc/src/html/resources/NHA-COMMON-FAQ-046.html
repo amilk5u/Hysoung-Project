@@ -5,8 +5,8 @@
 })
 			<!-- container -->
 			<div id="container">
-				<!--<section class="sub_title_wrap">
-					<h2>ALL HYOSUNG ATMS</h2>
+				<section class="sub_title_wrap">
+					<h2>SUB TITLE NAME</h2>
 				</section>
 				<aside id="filters">
 					<div class="filter_title">
@@ -16,130 +16,21 @@
 						</div>
 					</div>
 					<div class="filter_cont scroll_bar_custom">
-						<div class="filter_type filter_type01">
-							<strong>Filter Title 1</strong>
-							<ul>
-								<li>
-									<div class="form_check_radio_default">
-										<input type="checkbox" id="input_type_check01" checked>
-										<label for="input_type_check01">Filter Category 1</label>
-									</div>
-								</li>
-								<li>
-									<div class="form_check_radio_default">
-										<input type="checkbox" id="input_type_check01-2">
-										<label for="input_type_check01-2">Filter Category 2</label>
-									</div>
-								</li>
-							</ul>
-						</div>
-						<div class="filter_type filter_type01">
-							<strong>Filter Title 2</strong>
-							<ul>
-								<li>
-									<div class="form_check_radio_default">
-										<input type="checkbox" id="input_type_check02">
-										<label for="input_type_check02">Filter Category 1</label>
-									</div>
-								</li>
-								<li>
-									<div class="form_check_radio_default">
-										<input type="checkbox" id="input_type_check02-1">
-										<label for="input_type_check02-1">Filter Category 2</label>
-									</div>
-								</li>
-							</ul>
-						</div>
-						<div class="filter_type filter_type01">
-							<strong>Filter Title 3</strong>
-							<ul>
-								<li>
-									<div class="form_check_radio_default">
-										<input type="checkbox" id="input_type_check03">
-										<label for="input_type_check03">Filter Category 1</label>
-									</div>
-								</li>
-								<li>
-									<div class="form_check_radio_default">
-										<input type="checkbox" id="input_type_check03-1">
-										<label for="input_type_check03-1">Filter Category 2</label>
-									</div>
-								</li>
-								<li>
-									<div class="form_check_radio_default">
-										<input type="checkbox" id="input_type_check03-2">
-										<label for="input_type_check03-2">Filter Category 3</label>
-									</div>
-								</li>
-								<li>
-									<div class="form_check_radio_default">
-										<input type="checkbox" id="input_type_check03-3">
-										<label for="input_type_check03-3">Filter Category 4</label>
-									</div>
-								</li>
-							</ul>
-						</div>
-
-						<div class="filter_type filter_type01">
-							<strong>Filter Title 4</strong>
-							<ul>
-								<li>
-									<div class="form_check_radio_default">
-										<input type="checkbox" id="input_type_check04">
-										<label for="input_type_check04">Filter Category 1</label>
-									</div>
-								</li>
-								<li>
-									<div class="form_check_radio_default">
-										<input type="checkbox" id="input_type_check04-1">
-										<label for="input_type_check04-1">Filter Category 2</label>
-									</div>
-								</li>
-							</ul>
-						</div>
-						<div class="filter_type filter_type01">
-							<strong>Filter Title 5</strong>
-							<ul>
-								<li>
-									<div class="form_check_radio_default">
-										<input type="checkbox" id="input_type_check05" checked>
-										<label for="input_type_check05">Filter Category 1</label>
-									</div>
-								</li>
-								<li>
-									<div class="form_check_radio_default">
-										<input type="checkbox" id="input_type_check05-1">
-										<label for="input_type_check05-1">Filter Category 2</label>
-									</div>
-								</li>
-								<li>
-									<div class="form_check_radio_default">
-										<input type="checkbox" id="input_type_check05-2">
-										<label for="input_type_check05-2">Filter Category 3</label>
-									</div>
-								</li>
-								<li>
-									<div class="form_check_radio_default">
-										<input type="checkbox" id="input_type_check05-3">
-										<label for="input_type_check05-3">Filter Category 4</label>
-									</div>
-								</li>
-								<li>
-									<div class="form_check_radio_default">
-										<input type="checkbox" id="input_type_check05-4">
-										<label for="input_type_check05-4">Filter Category 5</label>
-									</div>
-								</li>
-							</ul>
+						<div class="filter_type filter_type03">
+							<strong>Title</strong>
+							<div>
+								<input type="text" placeholder="Title">
+								<input type="submit" value="search">
+							</div>
 						</div>
 					</div>
 					<button type="button" class="btn_filter">filter Menu</button>
-				</aside>-->
+				</aside>
 				<div id="contents" class="filter_contents">
-					<!--<div class="cont_title">
+					<div class="cont_title">
 						<div class="title_wrap">
 							<div class="title_box">
-								<p class="title_type01"><em>24</em> Results</p>
+								<p class="title_type03">2 FAQ</p>
 							</div>
 							<div class="control_wrap">
 								<select name="" id="">
@@ -149,43 +40,202 @@
 								</select>
 							</div>
 						</div>
-					</div>-->
+					</div>
 					<div class="content">
 						<div class="faq_list_type01">
-							<ol class="faq_list_wrap">
-								<li class="row_list">
+							<!-- 아래 list 클릭시 active 활성화 예시-->
+							<style>
+								.faq_list_wrap:first-of-type .snb_s .hidden_elm { display:block; }
+							</style>
+							<!-- // 아래 list 클릭시 active 활성화 예시-->
+							<div class="faq_list_wrap active">
+								<div class="row_list">
 									<div class="num_txt">
 										<span class="tit_txt">No.</span>
-										<p>01</p>
+										<p class="desc">01</p>
 									</div>
 									<div class="snb_s">
-										<a href="#">
-											<span>Title</span>
-											<p>Product 1</p>
+										<a href="#" class="on">
+											<span class="tit_txt">Title</span>
+											<p class="question_txt">
+												Questions November Parts Promo starts today?
+											</p>
+											<span class="toggle_icon"></span>
 										</a>
-										<ul>
+										<ul class="hidden_elm">
 											<li>
-												<p>Answer, Parts Promo starts today :)</p>
+												<p class="answer_txt">
+													<em>A</em>
+													Answer, Parts Promo starts today :)
+													Answer, Parts Promo starts today :)
+													Answer, Parts Promo starts today :)
+												</p>
 											</li>
 										</ul>
 									</div>
-								</li>
-								<li>
+								</div>
+							</div>
+							<div class="faq_list_wrap">
+								<div class="row_list">
+									<div class="num_txt">
+										<span class="tit_txt">No.</span>
+										<p class="desc">02</p>
+									</div>
 									<div class="snb_s">
-										<a href="#">Product 1</a>
-										<ul>
-											<li><a href="#" class="on"><span>Accessory</span><em>(1)</em></a></li> <!-- filter Selected -->
+										<a href="#">
+											<span class="tit_txt">Title</span>
+											<p class="question_txt">
+												Questions November Parts?
+											</p>
+											<span class="toggle_icon"></span>
+										</a>
+										<ul class="hidden_elm">
+											<li>
+												<p class="answer_txt">
+													<em>A</em> Answer, Parts Promo starts today :) Answer, Parts Promo starts today :) Answer, Parts Promo starts today :) Answer, Parts Promo starts today :) Answer, Parts Promo starts today :) Answer, Parts Promo starts today :)
+												</p>
+											</li>
 										</ul>
 									</div>
-								</li>
-							</ol>
+								</div>
+							</div>
+							<div class="faq_list_wrap">
+								<div class="row_list">
+									<div class="num_txt">
+										<span class="tit_txt">No.</span>
+										<p class="desc">03</p>
+									</div>
+									<div class="snb_s">
+										<a href="#">
+											<span class="tit_txt">Title</span>
+											<p class="question_txt">
+												Questions November Parts Promo starts today?
+											</p>
+											<span class="toggle_icon"></span>
+										</a>
+										<ul class="hidden_elm">
+											<li>
+												<p class="answer_txt">
+													<em>A</em>
+													Answer, Parts Promo starts today :)
+												</p>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="faq_list_wrap">
+								<div class="row_list">
+									<div class="num_txt">
+										<span class="tit_txt">No.</span>
+										<p class="desc">04</p>
+									</div>
+									<div class="snb_s">
+										<a href="#">
+											<span class="tit_txt">Title</span>
+											<p class="question_txt">
+												Questions November Parts?
+											</p>
+											<span class="toggle_icon"></span>
+										</a>
+										<ul class="hidden_elm">
+											<li>
+												<p class="answer_txt">
+													<em>A</em>
+													Answer, Parts Promo starts today :)
+												</p>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="faq_list_wrap">
+								<div class="row_list">
+									<div class="num_txt">
+										<span class="tit_txt">No.</span>
+										<p class="desc">05</p>
+									</div>
+									<div class="snb_s">
+										<a href="#">
+											<span class="tit_txt">Title</span>
+											<p class="question_txt">
+												Questions November Parts?
+											</p>
+											<span class="toggle_icon"></span>
+										</a>
+										<ul class="hidden_elm">
+											<li>
+												<p class="answer_txt">
+													<em>A</em>
+													Answer, Parts Promo starts today :)
+													Answer, Parts Promo starts today :)
+												</p>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="faq_list_wrap">
+								<div class="row_list">
+									<div class="num_txt">
+										<span class="tit_txt">No.</span>
+										<p class="desc">06</p>
+									</div>
+									<div class="snb_s">
+										<a href="#">
+											<span class="tit_txt">Title</span>
+											<p class="question_txt">
+												Questions November Parts?
+											</p>
+											<span class="toggle_icon"></span>
+										</a>
+										<ul class="hidden_elm">
+											<li>
+												<p class="answer_txt">
+													<em>A</em>
+													Answer, Parts Promo starts today
+													Answer, Parts Promo starts today
+													Answer, Parts Promo starts today
+												</p>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="faq_list_wrap">
+								<div class="row_list">
+									<div class="num_txt">
+										<span class="tit_txt">No.</span>
+										<p class="desc">07</p>
+									</div>
+									<div class="snb_s">
+										<a href="#">
+											<span class="tit_txt">Title</span>
+											<p class="question_txt">
+												Questions November Parts Promo starts today?
+											</p>
+											<span class="toggle_icon"></span>
+										</a>
+										<ul class="hidden_elm">
+											<li>
+												<p class="answer_txt">
+													<em>A</em>
+													Answer, Parts Promo starts today
+													Answer, Parts Promo starts today
+													Answer, Parts Promo starts today
+												</p>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 			<script>
 				var $filters = $("#filters"),
-						  $filterBtnClear = $(".btn_clearFilters");
+					  $filterBtnClear = $(".btn_clearFilters");
 
 				$filterBtnClear.click(function(){
 					if($filters.find("button").hasClass("on")){

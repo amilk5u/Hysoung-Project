@@ -253,7 +253,7 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 		@extend %clearfix;
 		strong {float:left; font-size:20px; font-weight:$medium; color:$gray7;}
 		.question_wrap {
-			float:left; margin:3px 0 0 8px; position:relative; z-index:10;
+			float:left; margin:3px 0 0 8px; position:relative; z-index:1;
 			button {
 				width:17px; height:17px; text-indent:-9999px; background-color:#cecece; background-image:url(../../images/common/question_icon.png);
 				@include borderRadius(100%);
