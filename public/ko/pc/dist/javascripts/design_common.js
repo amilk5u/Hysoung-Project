@@ -61,21 +61,77 @@ function carts() {
 }
 function design_order() {
     var swiper = new Swiper(".product_slide_contain", {
-        slidesPerView: 1,
-        spaceBetween: 30,
-        loop: true,
         pagination: {
-            el: ".swiper-pagination",
+            el: ".detail_img .indicator",
             clickable: true,
         },
         navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
+            nextEl: ".product_slide_contain .next_btn",
+            prevEl: ".product_slide_contain .prev_btn",
         },
     });
+
+
+
+    // 제품 상세 페이지
+    const $productDetailType = $(".product_detail_type"),
+          $viewDetail = $productDetailType.find(".view_detail"),
+          $productTopMenu = $productDetailType.find(".product_top_menu"),
+          $substanceCont = $productDetailType.find(".substance_cont"),
+          $optionBar = $productDetailType.find("#optionBar");
+
+    let _substanceContH =  $substanceCont.outerHeight();
+    /*let dddd =  $("header").outerHeight() + $productTopMenu.outerHeight() +
+        $(".product_step_bar").outerHeight() + $("#ProductPriceBar").outerHeight() + $(".option_title").outerHeight();*/
+
+    $optionBar.css("height",_substanceContH);
+    // $(".option_cont ").css("height",winH - dddd);
+
+    function productViewFix () {
+        let _viewTopMenuFix = $viewDetail.outerHeight() - $productTopMenu.outerHeight();
+        let _priceFooterFix = ($html.outerHeight() - $("footer").outerHeight()) - winH;
+
+        // view fixed
+        if ( winSc > _viewTopMenuFix ) {
+            $productDetailType.addClass("view_active");
+            $productDetailType.addClass("option_active");
+        } else {
+            $productDetailType.removeClass("view_active");
+            $productDetailType.removeClass("option_active");
+        }
+        // price fixed
+        if ( winSc > _priceFooterFix ) {
+            $productDetailType.addClass("price_active");
+        } else {
+            $productDetailType.removeClass("price_active");
+        }
+    }
+    productViewFix();
+
+    $window.scroll(function(){
+        productViewFix();
+    });
+    $window.resize(function(){
+        productViewFix();
+    });
+
+
+
+
+
+
+
+
 }
 function explore() {
+    const $content = $(".content");
+    let $moreBtn = $content.find(".more_btn");
 
+    $moreBtn.on("click",function(){
+        let _this = $(this);
+        _this.parents(".row_list").find(".last_txt p").addClass("more_active");
+        _this.css("display","none");
+    });
 }
 function layout() {
     //form script

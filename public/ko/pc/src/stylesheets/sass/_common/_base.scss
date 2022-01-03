@@ -72,6 +72,9 @@ select, input, button, textarea {
 html, body {
    font-family:$base-font; font-size:$base-font-size; font-weight:$regular; color:$base-font-color; word-break:break-word; line-height:1; letter-spacing:$letter-spacing;
    -webkit-font-smoothing:antialiased;
+   @include pc_small(){
+      font-family:$base-font_mobile;
+   }
 }
 strong, h1, h2, h3, h4, h5, h6 {font-weight:$bold;}
 label, button { cursor:pointer;}

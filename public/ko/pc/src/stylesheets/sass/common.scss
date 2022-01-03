@@ -289,6 +289,8 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 			&:hover {
 				& ~ label {border-color:$gray6;}
 			}
+
+			&.disabled_chk ~ label {background-color:$gray1;}
 		}
 		label {
 			width:100%; height:58px; text-align:center; position:relative; background-color:$white; line-height:24px;
@@ -309,6 +311,20 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 			width:100%; float:none; margin:8px 0 0;
 			label {height:auto; text-align:left; justify-content:left; padding:15px 20px;}
 		}
+	}
+}
+
+.form_date_type01 {
+	position:relative;
+	label {display:block; text-indent:-9999px; height:0;}
+	input[type=text] {
+		width:100%; font-size:16px; line-height:56px; padding:0 60px 0 25px; border:1px solid $gray2; border-radius:10px; color:$gray7; background-color:$gray1; box-sizing:border-box;
+		&:focus {border-color:$blue5; outline:none;}
+	}
+	.btn_calendar {
+		position:absolute; top:50%; right:25px; background-image:url(../../images/common/calendar_icon.png);
+		@include translate(0, -50%);
+		@include textBackground(24px, 24px);
 	}
 }
 
@@ -409,9 +425,10 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 	.filter_cont {
 		width:100%; height:calc(100% - 74px); padding:0 30px; position:absolute; top:74px; left:0; overflow-y:auto; box-sizing:border-box;
 		&.filter_cont_explore {height:calc(100% - 209px); top:209px;}
+		&.filter_cont_snb {height:calc(100% - 10px); top:10px;}
 		.filter_type {
-			border-top:1px solid $gray2;
-			&:first-child {border:none;}
+			border-bottom:1px solid $gray2;
+			//&:first-child {border:none;}
 			> strong {font-size:14px; font-weight:$medium; color:$gray7; display:block;}
 		}
 		.filter_type01 {
@@ -444,7 +461,7 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 			> strong {
 				font-size:14px; padding:4px 0; margin:5px 0 15px; color:$gray7; font-weight:$medium; display:block;
 			}
-			.product {border-top:4px solid $gray2;}
+			.product {border-top:4px solid $gray2; /*border-bottom:1px solid $gray2*/}
 			.products {
 				.product_cont {display:none;}
 				.product_cont:first-child {display:block;}
@@ -480,7 +497,7 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 			}
 		}
 		.filter_type03 {
-			padding:30px 0;
+			padding:30px 0; border:none;
 			strong {margin:0 0 20px;}
 			div {
 				position:relative;
@@ -491,6 +508,60 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 					@include textBackground(16px, 16px);
 					@include translate(0, -50%);
 				}
+			}
+		}
+		.filter_type04 {
+			padding:20px 0 0;
+			> ul {
+				overflow:hidden; margin:0 0 5px;
+				li {
+					float:left; width:50%;
+					a {
+						font-size:14px; padding:20px 0 24px; text-align:center; font-weight:$medium; display:block; color:$gray7; opacity:.4; position:relative;
+						&:after {width:100%; height:4px; background-color:$gray7; position:absolute; bottom:0; left:0; content:"";}
+					}
+					&.active a {
+						color:$blue5; opacity:1;
+						&:after {background-color:$blue5;}
+					}
+				}
+			}
+			> strong {
+				font-size:14px; padding:4px 0; margin:5px 0 15px; color:$gray7; font-weight:$medium; display:block;
+			}
+			.product {border-top:4px solid $gray2; /*border-bottom:1px solid $gray2*/}
+			.products {
+				.product_cont {display:none;}
+				.product_cont:first-child {display:block;}
+			}
+			.snb_s {
+				border-top:1px solid $gray2;
+				> a {
+					font-size:14px; padding:20px 20px 20px 13px; color:$gray7; font-weight:$medium; position:relative;
+					&:after {
+						width:17px; height:17px; margin:-8px 0 0; position:absolute; top:50%; right:0; content:""; background-image:url(../../images/common/snb_arr.png);
+						@include backgroundSoltC();
+						@include transition();
+					}
+					&.on:after {
+						@include rotate(180);
+					}
+				}
+				> ul {
+					padding:10px 20px 30px;
+					li {
+						margin:10px 0 0; position:relative; padding:0 0 0 10px;
+						&:before {width:2px; height:2px; background-color:$gray6; border-radius:100%; position:absolute; top:7px; left:0; content:"";}
+						&:first-child {margin:0;}
+						a {
+							font-size:14px; color:$gray6; display:block;
+							span {}
+							em {}
+							&:hover, &:focus, &.on {color:$blue5;}
+						}
+					}
+				}
+				&:first-of-type {border:none;}
 			}
 		}
 	}

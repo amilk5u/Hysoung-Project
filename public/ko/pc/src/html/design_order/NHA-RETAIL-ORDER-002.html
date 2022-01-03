@@ -8,6 +8,8 @@
 					<div id="contents">
 						<div class="content">
 							<div class="product_detail_type">
+
+								<!--view detail-->
 								<div class="view_detail">
 									<div class="detail_img">
 										<div class="swiper-container product_slide_contain">
@@ -22,10 +24,10 @@
 													<img src="./../../images/design_order/product_item_01.png" alt="">
 												</div>
 											</div>
-											<div class="swiper-button-next"></div>
-											<div class="swiper-button-prev"></div>
+											<div class="swiper-button-next next_btn"></div>
+											<div class="swiper-button-prev prev_btn"></div>
 										</div>
-										<div class="swiper-pagination"></div>
+										<div class="indicator"></div>
 									</div>
 									<div class="info_form_wrap">
 										<div class="txt_elm">
@@ -58,12 +60,38 @@
 										</div>
 										<div>
 											<div class="product_button_wrap">
-												<button type="button">View Deatails</button>
-												<button type="button">Download Brochure</button>
+												<a href="#">
+													<span>View Details</span>
+												</a>
+												<a href="#" download="#">
+													<span>Download Brochure</span>
+												</a>
 											</div>
 										</div>
 									</div>
 								</div>
+
+								<!--탑 메뉴 바-->
+								<div class="product_top_menu">
+									<div class="menu_wrap">
+										<div class="view_item">
+											<div class="img_item">
+												<img src="./../../images/design_order/product_item_01.png" alt="">
+											</div>
+											<span>Financial ATMs</span>
+											<strong>MX8800</strong>
+										</div>
+										<div class="product_button_wrap">
+											<a href="#" class="view_details_btn">
+												<span>View Details</span>
+											</a>
+											<a href="#" download="#" class="download_brochure_btn">
+												<span>Download Brochure</span>
+											</a>
+										</div>
+									</div>
+								</div>
+
 								<!--제품 구매 스텝 바-->
 								<div class="product_step_bar">
 									<ul>
@@ -74,7 +102,7 @@
 										</li>
 										<li>
 											<!--<span class="step_default"><em>01.</em>Software </span>-->
-											<span class="step_active"><em>01.</em>Software </span>
+											<span class="step_active"><em>02.</em>Software </span>
 											<!--<span class="step_complete"><em>03.</em>Software </span>-->
 										</li>
 										<li>
@@ -87,291 +115,236 @@
 
 								<div class="substance_wrap">
 
+									<!--내용-->
+									<div class="substance_cont">
+										<div class="hardware_wrap">
+											<div class="form_check_radio_type01">
+												<div class="tit_wrap">
+													<strong>Country</strong>
+												</div>
+												<ul class="list_item01">
+													<li>
+														<input type="radio" name="input_type_radio_list01" id="input_type_radio_list01" checked>
+														<label for="input_type_radio_list01"><span>US</span></label>
+													</li>
+													<li>
+														<input type="radio" name="input_type_radio_list01" id="input_type_radio_list01-1">
+														<label for="input_type_radio_list01-1"><span>Canada</span></label>
+													</li>
+												</ul>
+											</div>
+											<div class="form_check_radio_type01 type1">
+												<div class="tit_wrap">
+													<strong>Cash Dispersor Unit</strong>
+												</div>
+												<ul class="list_item01">
+													<li>
+														<input type="radio" name="input_type_radio_list02" id="input_type_radio_list02" checked>
+														<label for="input_type_radio_list02"><span>1 Cassette (1K Notes)</span></label>
+													</li>
+													<li>
+														<input type="radio" name="input_type_radio_list02" id="input_type_radio_list02-1">
+														<label for="input_type_radio_list02-1"><span>2 Cassette (4K Notes)</span></label>
+													</li>
+													<li>
+														<input type="radio" name="input_type_radio_list02" id="input_type_radio_list02-2">
+														<label for="input_type_radio_list02-2"><span>2 Cassette (2x1K Notes)</span></label>
+													</li>
+													<li>
+														<input type="radio" name="input_type_radio_list02" id="input_type_radio_list02-3">
+														<label for="input_type_radio_list02-3"><span>Drawer Type</span></label>
+													</li>
+													<li>
+														<input type="radio" name="input_type_radio_list02" id="input_type_radio_list02-4">
+														<label for="input_type_radio_list02-4"><span>Shell (No CDU)</span></label>
+													</li>
+												</ul>
+											</div>
+											<div class="form_check_radio_type01 type1">
+												<div class="tit_wrap">
+													<strong>Lock</strong>
+												</div>
+												<ul class="list_item01">
+													<li>
+														<input type="radio" name="input_type_radio_list03" id="input_type_radio_list03" checked>
+														<label for="input_type_radio_list03"><span>Electronic Lock</span></label>
+													</li>
+													<li>
+														<input type="radio" name="input_type_radio_list03" id="input_type_radio_list03-1">
+														<label for="input_type_radio_list03-1"><span>Cencon Lock</span></label>
+													</li>
+													<li>
+														<input type="radio" name="input_type_radio_list03" id="input_type_radio_list03-2">
+														<label for="input_type_radio_list03-2"><span>S&G Lock</span></label>
+													</li>
+												</ul>
+											</div>
+											<div class="form_check_radio_type01 type1">
+												<div class="tit_wrap">
+													<strong>Topper</strong>
+												</div>
+												<ul class="list_item01">
+													<li>
+														<input type="radio" name="input_type_radio_list04" id="input_type_radio_list04" checked>
+														<label for="input_type_radio_list04"><span>Topper - No</span></label>
+													</li>
+													<li>
+														<input type="radio" name="input_type_radio_list04" id="input_type_radio_list04-1">
+														<label for="input_type_radio_list04-1"><span>Topper - Standard</span></label>
+													</li>
+												</ul>
+											</div>
+											<div class="form_check_radio_type01 type1">
+												<div class="tit_wrap">
+													<strong>Dial Up Modem</strong>
+												</div>
+												<ul class="list_item01">
+													<li>
+														<input type="radio" name="input_type_radio_list05" id="input_type_radio_list05" checked>
+														<label for="input_type_radio_list05"><span>Topper - Standard</span></label>
+													</li>
+													<li>
+														<input type="radio" name="input_type_radio_list05" id="input_type_radio_list05-1">
+														<label for="input_type_radio_list05-1"><span>Dial Up Modem - No</span></label>
+													</li>
+												</ul>
+											</div>
+										</div>
+										<div></div>
+										<div></div>
+										<div></div>
+									</div>
+
+									<!--가격 바-->
+									<div id="ProductPriceBar">
+										<div class="bar_wrap">
+											<div class="calculate_bar">
+												<ul class="price_view">
+													<li>
+														<div>
+															<span class="price_p">$</span>
+															<span class="price_p">0</span>
+															<p class="option_txt">
+																Hardware
+																<span></span>
+															</p>
+														</div>
+													</li>
+													<li>
+														<div>
+															<span class="price_p">$</span>
+															<span class="price_p">0</span>
+															<p class="option_txt">
+																Hardware
+																<span></span>
+															</p>
+														</div>
+													</li>
+													<li>
+														<div>
+															<span class="price_p">$</span>
+															<span class="price_p">0</span>
+															<p class="option_txt">
+																Hardware
+																<button type="button"></button>
+															</p>
+														</div>
+													</li>
+												</ul>
+												<ul class="total_price">
+													<li>
+														<div>
+															<span class="price_p">$</span>
+															<span class="price_p">0</span>
+															<p class="option_txt">
+																Total Price
+																<span></span>
+															</p>
+														</div>
+													</li>
+												</ul>
+											</div>
+											<ul class="info_btn">
+												<li class="download_btn">
+													<button type="button"></button>
+												</li>
+												<li class="wish_btn">
+													<button type="button"></button>
+												</li>
+												<li class="cart_btn">
+													<button type="button">Add to Cart</button>
+												</li>
+												<li class="next_step_btn">
+													<button type="button">Next Step</button>
+												</li>
+											</ul>
+										</div>
+									</div>
+
+									<!--오른쪽 옵션 바 -->
+									<aside id="optionBar">
+										<div class="option_title">
+											<div class="default_box">
+												<h3>Hardware Options</h3>
+												<button type="button" class="btn_clearFilters">Refresh Options</button>
+											</div>
+										</div>
+										<div class="option_wrap">
+											<div class="option_cont scroll_bar_custom">
+												<div class="option_type">
+													<strong>Final Choice Options</strong>
+													<ul>
+														<li>Canada Canada Canada Canada Canada Canada Canada</li>
+														<li>1 Cassette (1K Notes)</li>
+														<li>Electronic Lock</li>
+														<li>EMV - Yes</li>
+														<li>Biz Hour (Standard)</li>
+														<li>Function Key</li>
+														<li>Front</li>
+														<li>Topper - No</li>
+														<li>Dial Up Modem - No</li>
+														<li>RKT - No</li>
+													</ul>
+													<p class="code_row">
+														Material Code
+														<span class="product_num">7224000262</span>
+													</p>
+												</div>
+												<div class="option_type">
+													<ul>
+														<li>Extra BRM Cassette : Yes</li>
+													</ul>
+													<p class="code_row">
+														Material Code
+														<span class="product_num">7224000262</span>
+													</p>
+												</div>
+												<div class="option_type">
+													<ul>
+														<li>
+															BRM Cash OUT and CCIM<br>
+															Cash IN/Check IN
+														</li>
+													</ul>
+													<p class="code_row">
+														Material Code
+														<span class="product_num">7224000262</span>
+													</p>
+												</div>
+												<div class="stock_message">
+													<!--재고 있을 때 문구 출력-->
+													<span class="in_stock_txt">
+													in_stock_txt
+												</span>
+													<!--재고 없을 때 문구 출력-->
+													<span class="not_stock_txt">
+													Please contact to NHA Sale’sRepresentive for updatedelivery time.
+												</span>
+												</div>
+											</div>
+										</div>
+									</aside>
 								</div>
-
-								<!--오른쪽 오른쪽 옵션 바 -->
-								<!--<aside id="optionBar">
-									<div class="option_title">
-										<div class="default_box">
-											<h3>Filters</h3>
-											<button type="button" class="btn_clearFilters">Clear Filters</button>
-										</div>
-									</div>
-									<div class="option_cont scroll_bar_custom">
-										<div class="option_type filter_type01">
-											<strong>Filter Title</strong>
-											<ul>
-												<li>
-													<div class="form_check_radio_default">
-														<input type="checkbox" id="input_type_check01" checked>
-														<label for="input_type_check01">Filter Category 1</label>
-													</div>
-												</li>
-												<li>
-													<div class="form_check_radio_default">
-														<input type="checkbox" id="input_type_check01-1">
-														<label for="input_type_check01-1">Filter Category 1</label>
-													</div>
-												</li>
-											</ul>
-										</div>
-										<div class="filter_type filter_type02">
-											<ul>
-												<li class="active">
-													<a href="#">Product</a>
-												</li>
-												<li>
-													<a href="#">Categories</a>
-												</li>
-											</ul>
-											<div class="products">
-												&lt;!&ndash; Product &ndash;&gt;
-												<div class="product_cont">
-													<div class="snb_s">
-														<a href="#">Product 1</a>
-														<ul>
-															<li>
-																<a href="#" class="on"><span>Accessory</span><em>(1)</em></a>
-															</li> &lt;!&ndash; filter Selected &ndash;&gt;
-															<li>
-																<a href="#"><span>CE Assembly</span><em>(1)</em></a>
-															</li>
-															<li>
-																<a href="#"><span>Cash Dispensor Unlt</span><em>(1)</em></a>
-															</li>
-															<li>
-																<a href="#"><span>Cassette</span><em>(1)</em></a>
-															</li>
-														</ul>
-													</div>
-													<div class="snb_s">
-														<a href="#">Product 2</a>
-														<ul>
-															<li>
-																<a href="#"><span>Accessory</span><em>(1)</em></a>
-															</li>
-															<li>
-																<a href="#"><span>CE Assembly</span><em>(1)</em></a>
-															</li>
-															<li>
-																<a href="#"><span>Cash Dispensor Unlt</span><em>(1)</em></a>
-															</li>
-															<li>
-																<a href="#"><span>Cassette</span><em>(1)</em></a>
-															</li>
-														</ul>
-													</div>
-													<div class="snb_s">
-														<a href="#">Product 3</a>
-														<ul>
-															<li>
-																<a href="#"><span>Accessory</span><em>(1)</em></a>
-															</li>
-															<li>
-																<a href="#"><span>CE Assembly</span><em>(1)</em></a>
-															</li>
-															<li>
-																<a href="#"><span>Cash Dispensor Unlt</span><em>(1)</em></a>
-															</li>
-															<li>
-																<a href="#"><span>Cassette</span><em>(1)</em></a>
-															</li>
-														</ul>
-													</div>
-													<div class="snb_s">
-														<a href="#">Product 4</a>
-														<ul>
-															<li>
-																<a href="#"><span>Accessory</span><em>(1)</em></a>
-															</li>
-															<li>
-																<a href="#"><span>CE Assembly</span><em>(1)</em></a>
-															</li>
-															<li>
-																<a href="#"><span>Cash Dispensor Unlt</span><em>(1)</em></a>
-															</li>
-															<li>
-																<a href="#"><span>Cassette</span><em>(1)</em></a>
-															</li>
-														</ul>
-													</div>
-													<div class="snb_s">
-														<a href="#">Product 5</a>
-														<ul>
-															<li>
-																<a href="#"><span>Accessory</span><em>(1)</em></a>
-															</li>
-															<li>
-																<a href="#"><span>CE Assembly</span><em>(1)</em></a>
-															</li>
-															<li>
-																<a href="#"><span>Cash Dispensor Unlt</span><em>(1)</em></a>
-															</li>
-															<li>
-																<a href="#"><span>Cassette</span><em>(1)</em></a>
-															</li>
-														</ul>
-													</div>
-												</div>
-
-												&lt;!&ndash; Categories &ndash;&gt;
-												<div class="product_cont">
-													<div class="snb_s">
-														<a href="#">Category 1</a>
-														<ul>
-															<li>
-																<a href="#" class="on"><span>Accessory</span><em>(1)</em></a>
-															</li>
-															<li>
-																<a href="#"><span>CE Assembly</span><em>(1)</em></a>
-															</li>
-															<li>
-																<a href="#"><span>Cash Dispensor Unlt</span><em>(1)</em></a>
-															</li>
-															<li>
-																<a href="#"><span>Cassette</span><em>(1)</em></a>
-															</li>
-														</ul>
-													</div>
-													<div class="snb_s">
-														<a href="#">Category 2</a>
-														<ul>
-															<li>
-																<a href="#"><span>Accessory</span><em>(1)</em></a>
-															</li>
-															<li>
-																<a href="#"><span>CE Assembly</span><em>(1)</em></a>
-															</li>
-															<li>
-																<a href="#"><span>Cash Dispensor Unlt</span><em>(1)</em></a>
-															</li>
-															<li>
-																<a href="#"><span>Cassette</span><em>(1)</em></a>
-															</li>
-														</ul>
-													</div>
-													<div class="snb_s">
-														<a href="#">Category 3</a>
-														<ul>
-															<li>
-																<a href="#"><span>Accessory</span><em>(1)</em></a>
-															</li>
-															<li>
-																<a href="#"><span>CE Assembly</span><em>(1)</em></a>
-															</li>
-															<li>
-																<a href="#"><span>Cash Dispensor Unlt</span><em>(1)</em></a>
-															</li>
-															<li>
-																<a href="#"><span>Cassette</span><em>(1)</em></a>
-															</li>
-														</ul>
-													</div>
-													<div class="snb_s">
-														<a href="#">Category 4</a>
-														<ul>
-															<li>
-																<a href="#"><span>Accessory</span><em>(1)</em></a>
-															</li>
-															<li>
-																<a href="#"><span>CE Assembly</span><em>(1)</em></a>
-															</li>
-															<li>
-																<a href="#"><span>Cash Dispensor Unlt</span><em>(1)</em></a>
-															</li>
-															<li>
-																<a href="#"><span>Cassette</span><em>(1)</em></a>
-															</li>
-														</ul>
-													</div>
-													<div class="snb_s">
-														<a href="#">Category 5</a>
-														<ul>
-															<li>
-																<a href="#"><span>Accessory</span><em>(1)</em></a>
-															</li>
-															<li>
-																<a href="#"><span>CE Assembly</span><em>(1)</em></a>
-															</li>
-															<li>
-																<a href="#"><span>Cash Dispensor Unlt</span><em>(1)</em></a>
-															</li>
-															<li>
-																<a href="#"><span>Cassette</span><em>(1)</em></a>
-															</li>
-														</ul>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="filter_type filter_type02">
-											<strong>Product</strong>
-											<div class="product">
-												<div class="snb_s">
-													<a href="#">Product 1</a>
-													<ul>
-														<li>
-															<a href="#" class="on"><span>Accessory</span><em>(1)</em></a>
-														</li> &lt;!&ndash; filter Selected &ndash;&gt;
-														<li>
-															<a href="#"><span>CE Assembly</span><em>(1)</em></a>
-														</li>
-														<li>
-															<a href="#"><span>Cash Dispensor Unlt</span><em>(1)</em></a>
-														</li>
-														<li>
-															<a href="#"><span>Cassette</span><em>(1)</em></a>
-														</li>
-													</ul>
-												</div>
-												<div class="snb_s">
-													<a href="#">Product 2</a>
-													<ul>
-														<li>
-															<a href="#"><span>Accessory</span><em>(1)</em></a>
-														</li>
-														<li>
-															<a href="#"><span>CE Assembly</span><em>(1)</em></a>
-														</li>
-														<li>
-															<a href="#"><span>Cash Dispensor Unlt</span><em>(1)</em></a>
-														</li>
-														<li>
-															<a href="#"><span>Cassette</span><em>(1)</em></a>
-														</li>
-													</ul>
-												</div>
-												<div class="snb_s">
-													<a href="#">Product 3</a>
-													<ul>
-														<li>
-															<a href="#"><span>Accessory</span><em>(1)</em></a>
-														</li>
-														<li>
-															<a href="#"><span>CE Assembly</span><em>(1)</em></a>
-														</li>
-														<li>
-															<a href="#"><span>Cash Dispensor Unlt</span><em>(1)</em></a>
-														</li>
-														<li>
-															<a href="#"><span>Cassette</span><em>(1)</em></a>
-														</li>
-													</ul>
-												</div>
-											</div>
-										</div>
-										<div class="filter_type filter_type03">
-											<strong>Title</strong>
-											<div>
-												<input type="text" placeholder="Title">
-												<input type="submit" value="search">
-											</div>
-										</div>
-									</div>
-									<button type="button" class="btn_filter">filter Menu</button>
-								</aside>-->
-								<div id="ProductPriceBar" class="price_bar"></div>
-
 							</div>
 						</div>
 					</div>
