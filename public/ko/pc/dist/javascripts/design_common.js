@@ -71,8 +71,6 @@ function design_order() {
         },
     });
 
-
-
     // 제품 상세 페이지
     const $productDetailType = $(".product_detail_type"),
           $viewDetail = $productDetailType.find(".view_detail"),
@@ -106,7 +104,29 @@ function design_order() {
             $productDetailType.removeClass("price_active");
         }
     }
-    productViewFix();
+
+    // 제품 수량 컨트롤
+    function productQuantity() {
+        let _quantityN = 0;
+        const $increaseControlBtn = $(".increase_control_btn"),
+            $controlDownBtn = $increaseControlBtn.find(".down_btn"),
+            $controlUpBtn = $increaseControlBtn.find(".up_btn"),
+            $quantityInput = $increaseControlBtn.find(".quantity_input");
+
+        $controlDownBtn.on("click", function () {
+            _quantityN = _quantityN - 1;
+            if ( _quantityN < 0 ) {
+                _quantityN = 0;
+            }
+            $quantityInput.val(_quantityN);
+        });
+        $controlUpBtn.on("click", function () {
+            _quantityN = _quantityN + 1;
+            $quantityInput.val(_quantityN);
+        });
+    }
+
+
 
     $window.scroll(function(){
         productViewFix();
@@ -114,14 +134,8 @@ function design_order() {
     $window.resize(function(){
         productViewFix();
     });
-
-
-
-
-
-
-
-
+    productViewFix();
+    productQuantity();
 }
 function explore() {
     const $content = $(".content");
