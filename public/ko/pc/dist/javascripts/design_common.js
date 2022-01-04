@@ -71,23 +71,20 @@ function design_order() {
         },
     });
 
-    // 제품 상세 페이지
-    const $productDetailType = $(".product_detail_type"),
-          $viewDetail = $productDetailType.find(".view_detail"),
-          $productTopMenu = $productDetailType.find(".product_top_menu"),
-          $substanceCont = $productDetailType.find(".substance_cont"),
-          $optionBar = $productDetailType.find("#optionBar");
-
-    let _substanceContH =  $substanceCont.outerHeight();
-    /*let dddd =  $("header").outerHeight() + $productTopMenu.outerHeight() +
-        $(".product_step_bar").outerHeight() + $("#ProductPriceBar").outerHeight() + $(".option_title").outerHeight();*/
-
-    $optionBar.css("height",_substanceContH);
-    // $(".option_cont ").css("height",winH - dddd);
-
     function productViewFix () {
-        let _viewTopMenuFix = $viewDetail.outerHeight() - $productTopMenu.outerHeight();
-        let _priceFooterFix = ($html.outerHeight() - $("footer").outerHeight()) - winH;
+        // 제품 상세 페이지
+        const $productDetailType = $(".product_detail_type"),
+            $viewDetail = $productDetailType.find(".view_detail"),
+            $productTopMenu = $productDetailType.find(".product_top_menu"),
+            $substanceCont = $productDetailType.find(".substance_cont"),
+            $optionBar = $productDetailType.find("#optionBar");
+
+        let _substanceContH =  $substanceCont.outerHeight(),
+            _viewTopMenuFix = $viewDetail.outerHeight() - $productTopMenu.outerHeight(),
+            _priceFooterFix = ($html.outerHeight() - $("footer").outerHeight()) - winH;
+
+        // 옵션 바 높이 값 조절
+        $optionBar.css("height", _substanceContH);
 
         // view fixed
         if ( winSc > _viewTopMenuFix ) {
@@ -127,7 +124,6 @@ function design_order() {
     }
 
 
-
     $window.scroll(function(){
         productViewFix();
     });
@@ -138,8 +134,8 @@ function design_order() {
     productQuantity();
 }
 function explore() {
-    const $content = $(".content");
-    let $moreBtn = $content.find(".more_btn");
+    const $content = $(".content"),
+          $moreBtn = $content.find(".more_btn");
 
     $moreBtn.on("click",function(){
         let _this = $(this);

@@ -24,8 +24,8 @@
 									<img src="./../../images/design_order/product_item_01.png" alt="">
 								</div>
 							</div>
-							<div class="swiper-button-next next_btn"></div>
-							<div class="swiper-button-prev prev_btn"></div>
+							<div class="swiper-button-next next_btn">다음 슬라이드</div>
+							<div class="swiper-button-prev prev_btn">이전 슬라이드</div>
 						</div>
 						<div class="indicator"></div>
 					</div>
@@ -106,7 +106,7 @@
 								<div class="tit_wrap">
 									<strong>Option</strong>
 								</div>
-								<ul class="list_item01">
+								<ul class="list_item01 list_item01_2">
 									<li>
 										<input type="radio" name="input_type_radio_list01" id="input_type_radio_list01" checked>
 										<label for="input_type_radio_list01"><span>Option_1</span></label>
@@ -116,11 +116,20 @@
 										<label for="input_type_radio_list01-1"><span>Option_2</span></label>
 									</li>
 								</ul>
+								<div class="tit_wrap">
+									<strong>Qty</strong>
+								</div>
+								<div class="increase_control_btn">
+									<div class="control_btn down_btn">
+										<button type="button"></button>
+									</div>
+									<input type="text" disabled="disabled" class="quantity_input" value="0">
+									<div class="control_btn up_btn">
+										<button type="button"></button>
+									</div>
+								</div>
 							</div>
 						</div>
-						<div></div>
-						<div></div>
-						<div></div>
 					</div>
 
 					<!--가격 바-->
@@ -173,22 +182,22 @@
 								</ul>
 							</div>
 							<ul class="info_btn">
-								<li class="download_btn">
+								<!-- 데이터 정상 입력시 btn_disabled 클래스 제거 -->
+								<li class="download_btn btn_disabled">
 									<button type="button"></button>
 								</li>
-								<li class="wish_btn">
+								<li class="wish_btn btn_disabled">
 									<button type="button"></button>
 								</li>
-								<li class="cart_btn">
+								<li class="cart_btn btn_disabled">
 									<button type="button">Add to Cart</button>
 								</li>
-								<li class="next_step_btn">
+								<li class="next_step_btn btn_disabled">
 									<button type="button">Next Step</button>
 								</li>
 							</ul>
 						</div>
 					</div>
-
 				</div>
 			</div>
 		</div>

@@ -24,8 +24,8 @@
 									<img src="./../../images/design_order/product_item_01.png" alt="">
 								</div>
 							</div>
-							<div class="swiper-button-next next_btn"></div>
-							<div class="swiper-button-prev prev_btn"></div>
+							<div class="swiper-button-next next_btn">다음 슬라이드</div>
+							<div class="swiper-button-prev prev_btn">이전 슬라이드</div>
 						</div>
 						<div class="indicator"></div>
 					</div>
@@ -75,69 +75,63 @@
 					</div>
 				</div>
 
-				<!--탑 메뉴 바-->
-				<div class="product_top_menu">
-					<div class="menu_wrap">
-						<div class="view_item">
-							<div class="img_item">
-								<img src="./../../images/design_order/product_item_01.png" alt="">
+				<div class="fixed_menu">
+					<!--탑 메뉴 바-->
+					<div class="product_top_menu">
+						<div class="menu_wrap">
+							<div class="view_item">
+								<div class="img_item">
+									<img src="./../../images/design_order/product_item_01.png" alt="">
+								</div>
+								<span>Financial ATMs</span>
+								<strong>MX8800</strong>
 							</div>
-							<span>Financial ATMs</span>
-							<strong>MX8800</strong>
+							<div class="product_button_wrap">
+								<a href="" class="view_details_btn">
+									<span>View Details</span>
+								</a>
+								<a href="" class="download_brochure_btn">
+									<span>Download Brochure</span>
+								</a>
+							</div>
 						</div>
-						<div class="product_button_wrap">
-							<a href="" class="view_details_btn">
-								<span>View Details</span>
-							</a>
-							<a href="" class="download_brochure_btn">
-								<span>Download Brochure</span>
-							</a>
-						</div>
+					</div>
+
+					<!--제품 구매 스텝 바-->
+					<div class="product_step_bar">
+						<ul>
+							<!-- 탭 활성화 -->
+							<li>
+								<span class="step_active"><em>01.</em>Hardware</span>
+							</li>
+							<li>
+								<span><em>02.</em>Software </span>
+							</li>
+							<li>
+								<span><em>03.</em>Options </span>
+							</li>
+							<li>
+								<span><em>04.</em>Others </span>
+							</li>
+							<li>
+								<span><em>05.</em>Summary </span>
+							</li>
+						</ul>
 					</div>
 				</div>
 
-				<!--제품 구매 스텝 바-->
-				<div class="product_step_bar">
-					<ul>
-						<li>
-							<!-- default, active, complete 구분해서 none,block -->
-							<!--<span class="step_default"><em>01.</em>Hardware  </span>-->
-							<!--<span class="step_active"><em>01.</em>Hardware  </span>-->
-							<span class="step_complete"><em></em>Hardware  </span>
-						</li>
-						<li>
-							<!--<span class="step_default"><em>02.</em>Software </span>-->
-							<span class="step_active"><em>02.</em>Software </span>
-							<!--<span class="step_complete"><em></em>Software </span>-->
-						</li>
-						<li>
-							<!--<span class="step_default"><em>03.</em>Options </span>-->
-							<!--<span class="step_active"><em>03.</em>Options </span>-->
-							<span class="step_complete"><em></em>Options </span>
-						</li>
-						<li>
-							<span class="step_default"><em>04.</em>Others </span>
-							<!--<span class="step_active"><em>04.</em>Others </span>-->
-							<!--<span class="step_complete"><em></em>Others </span>-->
-						</li>
-						<li>
-							<span class="step_default"><em>05.</em>Summary </span>
-							<!--<span class="step_active"><em>05.</em>Summary </span>-->
-							<!--<span class="step_complete"><em></em>Summary </span>-->
-						</li>
-					</ul>
-				</div>
+
 
 				<div class="substance_wrap">
 
 					<!--내용-->
 					<div class="substance_cont">
 						<div class="hardware_wrap">
-							<div class="form_check_radio_type01 type1">
+							<div class="form_check_radio_type01">
 								<div class="tit_wrap">
 									<strong>Lock Type</strong>
 								</div>
-								<ul class="list_item01">
+								<ul class="list_item01 list_item01_3 ">
 									<li>
 										<input type="radio" name="input_type_radio_list01" id="input_type_radio_list01" checked>
 										<label for="input_type_radio_list01"><span>Regular Cencon Lock</span></label>
@@ -147,12 +141,10 @@
 										<label for="input_type_radio_list01-1"><span>Shunted Lock</span></label>
 									</li>
 								</ul>
-							</div>
-							<div class="form_check_radio_type01 type1">
 								<div class="tit_wrap">
 									<strong>Card Reader</strong>
 								</div>
-								<ul class="list_item01">
+								<ul class="list_item01 list_item01_3 ">
 									<li>
 										<input type="radio" name="input_type_radio_list02" id="input_type_radio_list02" checked>
 										<label for="input_type_radio_list02"><span>Dip Card Reader</span></label>
@@ -164,10 +156,11 @@
 								</ul>
 							</div>
 							<div class="form_check_radio_type01">
+								<strong>Add-On</strong>
 								<div class="tit_wrap">
-									<strong>Palm Vein</strong>
+									<strong>Lock Type</strong>
 								</div>
-								<ul class="list_item01">
+								<ul class="list_item01 list_item01_2 ">
 									<li>
 										<input type="radio" name="input_type_radio_list03" id="input_type_radio_list03" checked>
 										<label for="input_type_radio_list03"><span>Yes</span></label>
@@ -177,12 +170,10 @@
 										<label for="input_type_radio_list03-1"><span>No</span></label>
 									</li>
 								</ul>
-							</div>
-							<div class="form_check_radio_type01">
 								<div class="tit_wrap">
-									<strong>Handset</strong>
+									<strong>Card Reader</strong>
 								</div>
-								<ul class="list_item01">
+								<ul class="list_item01 list_item01_2 ">
 									<li>
 										<input type="radio" name="input_type_radio_list04" id="input_type_radio_list04" checked>
 										<label for="input_type_radio_list04"><span>Yes</span></label>
@@ -192,8 +183,6 @@
 										<label for="input_type_radio_list04-1"><span>No</span></label>
 									</li>
 								</ul>
-							</div>
-							<div class="form_check_radio_type01">
 								<div class="tit_wrap">
 									<strong>Qty</strong>
 								</div>
@@ -208,9 +197,6 @@
 								</div>
 							</div>
 						</div>
-						<div></div>
-						<div></div>
-						<div></div>
 					</div>
 
 					<!--가격 바-->
@@ -263,13 +249,14 @@
 								</ul>
 							</div>
 							<ul class="info_btn">
-								<li class="download_btn">
+								<!-- 데이터 정상 입력시 btn_disabled 클래스 제거 -->
+								<li class="download_btn btn_disabled">
 									<button type="button"></button>
 								</li>
-								<li class="wish_btn">
+								<li class="wish_btn btn_disabled">
 									<button type="button"></button>
 								</li>
-								<li class="cart_btn">
+								<li class="cart_btn btn_disabled">
 									<button type="button">Add to Cart</button>
 								</li>
 								<li class="next_step_btn">
