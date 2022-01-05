@@ -262,6 +262,45 @@ function explore() {
         _this.parents(".row_list").find(".last_txt p").addClass("more_active");
         _this.css("display","none");
     });
+
+
+
+
+    function modelToggle () {
+        const $itemListType02 = $(".item_list_type02"),
+              $modelTitle = $itemListType02.find(".last_txt span");
+
+        $modelTitle.on("click",function(){
+            let $models = $(this).parents(".last_txt"),
+                _this = $(this).parents(".last_txt").find("p");
+
+            if ($models.hasClass("on")) {
+                _this.stop().slideUp();
+                $models.removeClass("on")
+            } else {
+                _this.stop().slideDown();
+                $models.addClass("on")
+            }
+        });
+    }
+    modelToggle();
+
+
+
+
+  /*  $window.resize(function() {
+        if ( winW < 750 ) {
+            modelToggle()
+        } 
+    });
+*/
+
+
+
+
+
+
+
 }
 function layout() {
     //form script
