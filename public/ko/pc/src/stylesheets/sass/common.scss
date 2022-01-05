@@ -838,7 +838,6 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 				select {
 					font-size:13px; line-height:36px; padding:0 40px 0 20px; border-radius:20px; vertical-align:middle; font-weight:$medium; border:1px solid $gray3; background-image:url(../../images/common/select_arr.png);
 					@include backgroundSolt(85%, 60%);
-
 				}
 				.search_type01 {
 					display:inline-block; vertical-align:middle; position:relative;
@@ -866,12 +865,10 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 			}
 		}
 	}
-	.content {
-		padding:30px 0 60px;
-	}
+	.content {padding:30px 0 60px;}
 
 	@include mob() {
-		max-width:inherit; margin:em(384) auto 0; padding:0; border:1px solid red;
+		max-width:inherit; margin:em(384) auto 0; padding:0;
 		.cont_title {
 			top:em(256); padding:0;
 			.title_wrap {
