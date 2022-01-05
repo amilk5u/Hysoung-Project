@@ -454,12 +454,6 @@ function main() {
     var retailSlide = new Swiper(".main_container .retail_slide", {
         slidesPerView: 1,
         breakpoints: {
-            768: {
-                slidesPerView: 2
-            },
-            1024: {
-                slidesPerView: 3
-            },
             1200: {
                 slidesPerView: 4
             }
@@ -469,17 +463,33 @@ function main() {
     var financialSlide = new Swiper(".main_container .financial_slide", {
         slidesPerView: 1,
         breakpoints: {
-            768: {
-                slidesPerView: 2
-            },
-            1024: {
-                slidesPerView: 3
-            },
             1200: {
                 slidesPerView: 4
             }
         }
     });
+
+    var $preferredList = $(".Preferred_list"),
+        SearchedSlide = undefined;
+    $(window).resize(function(){
+        var width = window.innerWidth;
+        if (width<=1024) {
+            SearchedSlide = new Swiper(".main_container .Preferred_list", {
+                slidesPerView: 1
+            });
+
+        } else if (width> 1024) {
+            // SearchedSlide.destroy();
+            // SearchedSlide = undefined;
+            $preferredList.find($(".swiper-wrapper")).removeAttr("style");
+            $preferredList.find($(".swiper-slide")).removeAttr("style");
+            /*if($preferredList.hasClass("swiper-container-initialized")){
+                $preferredList.removeClass("swiper-container-initialized");
+                $preferredList.find(".item_list_new").removeAttr("style");
+                $preferredList.find(".item").removeAttr("style");
+            }*/
+        }
+    }).resize();
 
     $tabList.click(function(){
         $tabList.removeClass("on");
@@ -499,37 +509,41 @@ function main() {
     });
 
     var thumbSlide01 = new Swiper(".main_container .thumb_slide01", {
-        slidesPerView: 6,
-        // spaceBetween: 25,
-        // slidesPerView: "auto",
+        slidesPerView: "auto",
         navigation: {
             nextEl: ".thumb_slide_next01",
             prevEl: ".thumb_slide_prev01",
+        },
+        breakpoints: {
+            1200: {
+                slidesPerView: 6
+            }
         },
         observer: true,
         observeParents: true
     });
     var partsSlide01 = new Swiper(".main_container .parts_slide01", {
         slidesPerView: "auto",
-        // spaceBetween: 10,
         observer: true,
         observeParents: true
     });
 
     var thumbSlide02 = new Swiper(".main_container .thumb_slide02", {
-        slidesPerView: 6,
-        // spaceBetween: 25,
-        // slidesPerView: "auto",
+        slidesPerView: "auto",
         navigation: {
             nextEl: ".thumb_slide_next02",
             prevEl: ".thumb_slide_prev02",
+        },
+        breakpoints: {
+            1200: {
+                slidesPerView: 6
+            }
         },
         observer: true,
         observeParents: true
     });
     var partsSlide02 = new Swiper(".main_container .parts_slide02", {
         slidesPerView: "auto",
-        // spaceBetween: 10,
         observer: true,
         observeParents: true
     });

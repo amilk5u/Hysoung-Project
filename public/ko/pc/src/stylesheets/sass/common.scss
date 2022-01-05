@@ -100,10 +100,6 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 		@include backgroundSoltC()
 	}
 	.dimmed {width:100%; height:100%; background:rgba(0, 0, 0, 0.5); position:absolute; top:0; left:0; z-index:1;}
-
-	@include pc-guide(){
-		.popup_wrap {padding:0 50px;}
-	}
 }
 
 /* scroll bar custom */
@@ -494,16 +490,19 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 			li {
 				display:inline-block; padding:0 35px; margin:0 22px; position:relative;
 				&:after {
-					width:7px; height:8px; position:absolute; top:50%; right:-22px; background-image:url(../../images/common/step_arr.png); content:"";
-					@include backgroundSoltC();
+					width:0; height:0;content:"";display:block;border-left:7px solid #4f4f4f;border-top:4px solid transparent;
+					border-right:none;border-bottom:4px solid transparent;position:absolute; top:50%; right:-22px;
+					@include boxSizing;
 					@include translate(0, -50%);
 				}
 				&:last-child {
 					margin:0;
 					&:after {display:none;}
 				}
+				span { display:none; }
 				strong {font-size:18px; line-height:24px; color:#787879; font-weight:$regular; display:inline-block;}
 				&.ok {
+					&:after {border-left:7px solid #c5c5c6;}
 					strong {
 						color:$gray2; position:relative; padding:0 0 0 30px;
 						&:before {
@@ -513,9 +512,7 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 					}
 				}
 				&.ing {
-					&:after {
-						background-image:url(../../images/common/step_arr_on.png);
-					}
+					&:after {border-left:7px solid $blue5;}
 					strong {
 						color:$white; font-weight:$bold; position:relative; padding:0 3px;
 						&:after {width:100%; height:3px; position:absolute; bottom:-5px; left:0; background-color:$blue5; content:""}
@@ -527,6 +524,68 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 	@include mob(){
 		top:em(124);
 		h2 {font-size:em(60); padding:em(36) 0;}
+		.stepBystep {
+			ol {
+				height:em(188); display:flex; padding:em(30) 0;
+				@include boxSizing;
+				li {
+					width:25%; padding:0 em(10); margin:0;
+					&:nth-of-type(3) {
+						min-width:em(170);
+						strong { max-width:em(160);}
+					}
+					&:nth-of-type(4) {
+						strong { max-width:em(160);}
+					}
+					&:after {border-left:em(12) solid #4f4f4f;border-top:em(7) solid transparent;border-bottom:em(7) solid transparent;right:em(-8); top:40%;}
+					span {
+						width:em(72); height:em(72); display:block; font-size:em(28); color:#666; font-weight:$bold;
+						padding:em(18) 0; margin:0 auto; border:em(3) solid #666;
+						@include boxSizing;
+						@include borderRadius(em(72));
+					}
+					> div {
+						min-height:em(60);
+						display:flex;
+						padding:em(5) 0 0;
+						margin:0 auto;
+						align-items:center;
+					}
+					strong {
+						margin:0 auto; display:inline-block; font-weight:$medium; font-size:em(24); line-height:em(24);
+						&:before {
+							position:absolute; border:none; top:em(27); left:50%;
+							@include transform(translate(-50%,0));
+						}
+					}
+					&.ok {
+						&:after {border-left:em(12) solid #c5c5c6;}
+						span {
+							text-indent:-9999px; position:relative; border-color:#c5c5c6;
+							&:before {
+								width:em(28); height:em(21); display:block; content:"";
+								background:url(./../../images/common/stepBystep_active_icon.png) 50% 50% no-repeat;
+								background-size:cover; position:absolute; top:50%; left:50%;
+								@include transform(translate(-50%,-50%));
+							}
+						}
+						strong {
+							padding:0; color:$gray2; position:initial;
+							&:before {display:none;}
+						}
+					}
+					&.ing {
+						&:after {border-left:em(12) solid $blue5;}
+						&:before {background-color:$blue5;border-color:$blue5;}
+						span {background-color:$blue5;border-color:$blue5;color:$white;}
+						strong {
+							padding:0;
+							&:after {width:100%; height:em(4); bottom:em(-12);}
+						}
+					}
+				}
+			}
+		}
 	}
 }
 
@@ -732,6 +791,10 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 			@include rotate(180);
 		}
 	}
+
+	@include mob() {
+		display:none;
+	}
 }
 
 .filter_contents {
@@ -806,17 +869,101 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 	.content {
 		padding:30px 0 60px;
 	}
+
+	@include mob() {
+		max-width:inherit; margin:em(384) auto 0; padding:0; border:1px solid red;
+		.cont_title {
+			top:em(256); padding:0;
+			.title_wrap {
+				height:em(130); max-width:1200px; padding:em(35) em(30) em(20);
+				@include boxSizing;
+				.title_box {
+					padding:0;
+					.title_type01 {font-size:em(32); font-weight:$bold;}
+					.title_type02 {font-size:em(32); font-weight:$bold;}
+					.title_type03 {font-size:em(32); font-weight:$bold;}
+					.title_type04 {
+						strong {font-size:em(36); font-weight:$bold;}
+						span {
+							font-size:em(32); margin:0 0 0 em(10); padding:0 0 0 em(20);
+							&:before {
+								width:em(4); height:em(4); top:50%;
+								@include translate(0, -50%);
+							}
+						}
+					}
+				}
+				.control_wrap {
+					> * {margin:0 0 0 20px;}
+					.btn_compare {
+						height:em(75); border:em(2) solid $gray3; border-radius:em(100); padding:0 em(30);
+						span {
+							font-size:em(28); line-height:em(30);
+							padding:0 22px 0 0; font-weight:$bold;
+							&:after {
+								position:absolute; top:50%; right:0; content:""; background-image:url(../../images/common/compare_icon.png);
+								@include translate(0, -50%);
+								@include backgroundSoltC();
+								@include textBackground(16px, 16px);
+							}
+						}
+					}
+					.select_wrap {
+						position:relative;
+						&:after {
+							width:em(16);height:em(10);content:"";display:block; position:absolute;
+							background:url(./../../images/common/select_arr_m.png) 50% 50% no-repeat;
+							background-size:cover; top:50%;right:em(40);
+							@include transform(translate(0,-50%));
+						}
+					}
+					select {
+						height:em(75); font-size:em(28); line-height:em(30); padding:em(10) em(75) em(13) em(30);
+						border-radius:em(100); font-weight:$bold;border:em(2) solid $gray3;background-image:none;
+						@include backgroundSolt(85%, 60%);
+					}
+					.search_type01 {
+						display:inline-block; vertical-align:middle; position:relative;
+						input[type=text] {
+							width:286px; font-size:13px; line-height:36px; padding:0 40px 0 20px; border-radius:20px; box-sizing:border-box; border:1px solid $gray3;
+							&::-webkit-input-placeholder {color:$gray3;}
+							&:-ms-input-placeholder {color:$gray3;}
+						}
+						input[type=submit] {
+							position:absolute; top:50%; right:11px; background-image:url(../../images/common/search_icon_s.png);
+							@include textBackground(16px, 16px);
+							@include backgroundSoltC();
+							@include translate(0, -50%);
+						}
+					}
+					.search_type02 {
+						display:inline-block; vertical-align:middle; position:relative;
+						input[type=text] {
+							width:286px; font-size:13px; line-height:36px; padding:0 20px; border-radius:20px; box-sizing:border-box; border:1px solid $gray3;
+							&::-webkit-input-placeholder {color:$gray3;}
+							&:-ms-input-placeholder {color:$gray3;}
+						}
+						input[type=submit] {font-size:13px; line-height:36px; margin:0 0 0 8px; border-radius:20px; padding:0 20px; border:1px solid $gray3; font-weight:$medium; color:$gray7; cursor:pointer;}
+					}
+				}
+			}
+		}
+		.content {
+			padding:em(40) 0 em(80);
+		}
+	}
+
 }
 
 .default_contents {
 	max-width:1200px; margin:180px auto 0; padding:60px 0;
 	@include mob(){
-		margin:em(190) auto 0; padding:em(120) 0;
+		margin:em(254) auto 0; padding:em(80) 0;
 	}
 }
 .stepBystep_contents {
-	max-width:1200px; margin:180px auto 0; padding:160px 0 60px;
+	max-width:1200px; margin:280px auto 0; padding:60px 0;
 	@include mob(){
-		margin:em(190) auto 0; padding:em(320) 0 em(120);
+		margin:em(442) auto 0; padding:em(80) 0;
 	}
 }
