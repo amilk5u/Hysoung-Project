@@ -90,7 +90,6 @@
                         </li>
                     </ul>
                 </nav>
-
                 <div id="lnb">
                     <!-- 로그인 전 start -->
                     <button type="button" class="btn_search">Search</button>
@@ -99,59 +98,171 @@
 
                     <!-- 로그인 후 start -->
                     <!--<button type="button" class="btn_search">Search</button>-->
+
                     <!-- 장바구니 없음 (기본) start -->
-                    <!--<button type="button" class="btn_cart">Cart</button>-->
+                    <!--<a href="#" class="btn_cart">Cart</a>-->
                     <!-- 장바구니 없음 (기본) end -->
                     <!-- 상품이 1개 이상 start -->
-                    <!--<button type="button" class="btn_cart cart_in">Cart</button>-->
+                    <!--<a href="#" class="btn_cart cart_in">Cart</button>-->
                     <!-- 상품이 1개 이상 end -->
+
                     <!--<button type="button" class="btn_myMenu">My menu</button>-->
                     <!-- 로그인 후 end -->
-
-                    <div class="my_menu_list">
-                        <!-- 로그인_Retail myMenu start -->
-                        <ul>
-                            <li class="menu_icon01"><a href="#">My Page</a></li>
-                            <li class="menu_icon02"><a href="#">My Profile</a></li>
-                            <li class="menu_icon03"><a href="#">My Favorites</a></li>
-                            <li class="menu_icon04"><a href="#">My Order</a></li>
-                            <li class="menu_icon05"><a href="#">Warranty</a></li>
-                            <li class="menu_icon06"><a href="#">My RMA</a></li>
-                            <li class="menu_icon07"><a href="#">Item list</a></li>
-                            <li class="menu_icon08"><a href="#">My Price quote</a></li>
-                            <li class="menu_icon09"><a href="#">Setting</a></li>
-                        </ul>
-                        <!-- 로그인_Retail myMenu end -->
-                        <!-- 로그인_Financial myMenu start -->
-                        <ul>
-                            <li class="menu_icon02"><a href="#">My Profile</a></li>
-                            <li class="menu_icon03"><a href="#">My Favorites</a></li>
-                            <li class="menu_icon04"><a href="#">My Order</a></li>
-                            <li class="menu_icon05 snb_s"><a href="#">Warranty</a>
-                                <ul>
-                                    <li><a href="#">End Customer User</a></li>
-                                    <li><a href="#">Enter Installations</a></li>
-                                    <li><a href="#">Display Warranty</a></li>
-                                </ul>
-                            </li>
-                            <li class="menu_icon10 snb_s"><a href="#">Dashboard and Report</a>
-                                <ul>
-                                    <li><a href="#">Partner's Order</a></li>
-                                    <li><a href="#">Order / End Customer Installation</a></li>
-                                </ul>
-                            </li>
-                            <li class="menu_icon06"><a href="#">My RMA</a></li>
-                            <li class="menu_icon07"><a href="#">Item list</a></li>
-                            <li class="menu_icon08"><a href="#">My Price quote</a></li>
-                            <li class="menu_icon09"><a href="#">Setting</a></li>
-                        </ul>
-                        <!-- 로그인_Financial myMenu end -->
-                    </div>
                 </div>
             </div>
+            <button type="button" class="btn_nav">Mobile Menu</button>
         </header>
         <div class="header_bg"></div>
         <!--//header-->
+
+        <div class="my_menu_list">
+            <!-- 로그인_Retail myMenu start -->
+            <ul>
+                <li class="menu_icon01"><a href="#">My Page</a></li>
+                <li class="menu_icon02"><a href="#">My Profile</a></li>
+                <li class="menu_icon03"><a href="#">My Favorites</a></li>
+                <li class="menu_icon04"><a href="#">My Order</a></li>
+                <li class="menu_icon05"><a href="#">Warranty</a></li>
+                <li class="menu_icon06"><a href="#">My RMA</a></li>
+                <li class="menu_icon07"><a href="#">Item list</a></li>
+                <li class="menu_icon08"><a href="#">My Price quote</a></li>
+                <li class="menu_icon09"><a href="#">Setting</a></li>
+                <li class="menu_icon10"><a href="#">Logout</a></li>
+            </ul>
+            <!-- 로그인_Retail myMenu end -->
+            <!-- 로그인_Financial myMenu start -->
+            <!--<ul>
+                <li class="menu_icon02"><a href="#">My Profile</a></li>
+                <li class="menu_icon03"><a href="#">My Favorites</a></li>
+                <li class="menu_icon04"><a href="#">My Order</a></li>
+                <li class="menu_icon05 snb_s"><a href="#">Warranty</a>
+                    <ul>
+                        <li><a href="#">End Customer User</a></li>
+                        <li><a href="#">Enter Installations</a></li>
+                        <li><a href="#">Display Warranty</a></li>
+                    </ul>
+                </li>
+                <li class="menu_icon10 snb_s"><a href="#">Dashboard and Report</a>
+                    <ul>
+                        <li><a href="#">Partner's Order</a></li>
+                        <li><a href="#">Order / End Customer Installation</a></li>
+                    </ul>
+                </li>
+                <li class="menu_icon06"><a href="#">My RMA</a></li>
+                <li class="menu_icon07"><a href="#">Item list</a></li>
+                <li class="menu_icon08"><a href="#">My Price quote</a></li>
+                <li class="menu_icon09"><a href="#">Setting</a></li>
+                <li class="menu_icon10"><a href="#">Logout</a></li>
+            </ul>-->
+            <!-- 로그인_Financial myMenu end -->
+        </div>
+
+        <nav class="mobile_menu">
+            <div class="mobile_wrap">
+                <div class="search_wrap">
+                    <div class="search_form">
+                        <form method="post" action="">
+                            <fieldset>
+                                <legend>Search Form</legend>
+                                <!-- 기본 -->
+                                <div>
+                                    <input type="text" placeholder="Search" class="search_input">
+                                    <input type="submit" value="search">
+                                    <span></span>
+                                    <button type="button" class="btn_close_search">close search popup</button>
+                                </div>
+                                <!-- 검색어 입력했을때 -->
+                                <!--<div>
+                                    <input type="text" placeholder="Search" class="search_input">
+                                    <button type="button" class="btn_delete">Delete the entered text</button>
+                                    <input type="submit" value="search">
+                                    <span></span>
+                                    <button type="button" class="btn_close_search">close search popup</button>
+                                </div>-->
+                            </fieldset>
+                        </form>
+                    </div>
+                    <div class="search_info">
+                        <!-- 검색 이력이 없을경우 (추천검색어) start -->
+                        <!--<div class="search_recommend">
+                            <div>
+                                <strong>Suggested Searches</strong>
+                                <ul>
+                                    <li><p><a href="#" class="btn_keyword">MX8800</a></p></li>
+                                    <li><p><a href="#" class="btn_keyword">MX8800</a></p></li>
+                                    <li><p><a href="#" class="btn_keyword">MX8800</a></p></li>
+                                    <li><p><a href="#" class="btn_keyword">MX8800</a></p></li>
+                                </ul>
+                            </div>
+                        </div>-->
+                        <!-- 검색 이력이 없을경우 (추천검색어) end -->
+
+                        <!-- 검색 이력이 있을경우 (최근검색어) start -->
+                        <!--<div class="search_history">
+                            <div>
+                                <strong>Recent Searches</strong>
+                                <ul>
+                                    <li><p><a href="#" class="btn_keyword">MX8800</a><button type="button" class="btn_delete">delete keyword</button></p></li>
+                                    <li><p><a href="#" class="btn_keyword">MX8800</a><button type="button" class="btn_delete">delete keyword</button></p></li>
+                                    <li><p><a href="#" class="btn_keyword">MX8800</a><button type="button" class="btn_delete">delete keyword</button></p></li>
+                                    <li><p><a href="#" class="btn_keyword">MX8800</a><button type="button" class="btn_delete">delete keyword</button></p></li>
+                                    <li><p><a href="#" class="btn_keyword">MX8800</a><button type="button" class="btn_delete">delete keyword</button></p></li>
+                                    <li><p><a href="#" class="btn_keyword">MX8800</a><button type="button" class="btn_delete">delete keyword</button></p></li>
+                                </ul>
+                                <button type="button" class="btn_history"><span>Delete History</span></button>
+                            </div>
+                        </div>-->
+                        <!-- 검색 이력이 있을경우 (최근검색어) end -->
+                    </div>
+                </div>
+                <ul class="menu">
+                    <li class="snb_s">
+                        <a href="#">Explore</a>
+                        <ul>
+                            <li><a href="#">ATMs</a></li>
+                            <li><a href="#">Parts</a></li>
+                            <li><a href="#">Software</a></li>
+                            <li><a href="#">Professional Services</a></li>
+                            <li><a href="#">Managed Services</a></li>
+                        </ul>
+                    </li>
+                    <li class="snb_s">
+                        <a href="#">Design & Order</a>
+                        <ul>
+                            <li><a href="#">ATMs</a></li>
+                            <li><a href="#">Parts</a></li>
+                            <li><a href="#">Software</a></li>
+                            <li><a href="#">Professional Services</a></li>
+                            <li><a href="#">Managed Services</a></li>
+                        </ul>
+                    </li>
+                    <li class="snb_s">
+                        <a href="#">Resources</a>
+                        <ul>
+                            <li><a href="#">Product Documentation</a></li>
+                            <li><a href="#">Software Download</a></li>
+                            <li><a href="#">Troubleshooting</a></li>
+                            <li><a href="#">FAQ</a></li>
+                        </ul>
+                    </li>
+                    <li class="snb_s">
+                        <a href="#">Support</a>
+                        <ul>
+                            <li><a href="#">RMA</a></li>
+                            <li><a href="#">Locate Technicians</a></li>
+                            <li><a href="#">Technical Announcements</a></li>
+                        </ul>
+                    </li>
+                    <li class="snb_s">
+                        <a href="#">About NHA</a>
+                        <ul>
+                            <li><a href="#">News</a></li>
+                            <li><a href="#">Events</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
 
         <div id="search" tabindex="0">
             <div class="search_wrap">
@@ -159,11 +270,17 @@
                     <form method="post" action="">
                     	<fieldset>
                     		<legend>Search Form</legend>
+                            <!-- 기본 -->
                     		<div>
+                                <input type="text" placeholder="Search">
+                                <input type="submit" value="search">
+                            </div>
+                            <!-- 검색어 입력했을때 -->
+                            <!--<div>
                                 <input type="text" placeholder="Search">
                                 <button type="button" class="btn_delete">Delete the entered text</button>
                                 <input type="submit" value="search">
-                            </div>
+                            </div>-->
                     	</fieldset>
                     </form>
                 </div>
@@ -184,7 +301,7 @@
                     <!-- 검색 이력이 없을경우 (추천검색어) end -->
 
                     <!-- 검색 이력이 있을경우 (최근검색어) start -->
-                    <div class="search_history">
+                    <!--<div class="search_history">
                         <div>
                             <strong>Recent Searches</strong>
                             <ul>
@@ -199,9 +316,8 @@
                         <p class="history_btn_wrap">
                             <button type="button" class="btn_history">Delete History</button>
                         </p>
-                    </div>
+                    </div>-->
                     <!-- 검색 이력이 있을경우 (최근검색어) end -->
-
                     <button type="button" class="btn_close_search">close search popup</button>
                 </div>
             </div>

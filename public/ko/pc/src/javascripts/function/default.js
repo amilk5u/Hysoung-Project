@@ -12,10 +12,11 @@ var controller = null;
 //navigation controls
 var $gnb = $("#gnb"),
     $lnb = $("#lnb"),
-    $navBtn = $lnb.find(".btn_nav"),
+    $navBtn = $(".btn_nav"),
     $searchBtn = $(".btn_search"),
     $search = $("#search"),
     $searchCloseBtn = $(".btn_close_search");
+
     // $closeBtn = $(".btn_close")
     // $menu = $("#menu");
 

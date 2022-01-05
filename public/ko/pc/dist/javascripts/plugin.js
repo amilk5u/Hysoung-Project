@@ -22,7 +22,6 @@
             function setMouseEvent() {
                 $this.bind('mouseenter', function () {
                     clearTimeout(timerId);
-                    TweenMax.to($(".header_bg"), .3, {display:"block", opacity:1});
                 });
                 $this.bind('mouseleave', function () {
                     timerId = setTimeout(setAnimation, opt.delayTime);
@@ -34,7 +33,7 @@
                         currentSub = null;
                     }
                     setAnimation();
-                    // $(".header_bg").stop().fadeIn(500);
+                    TweenMax.to($(".header_bg"), .3, {display:"block", opacity:1});
                 });
                 $menuList.bind('mouseleave', function () {
                     if (currentMenu != fixMenu) {

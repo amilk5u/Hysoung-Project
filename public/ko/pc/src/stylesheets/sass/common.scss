@@ -61,13 +61,18 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 #skipNavi a{display:block; position:absolute; left:0; top:0; z-index:9999; width:0; height:0; font-size:0; overflow:hidden;}
 #skipNavi a:active, #skipNavi a:focus{width:100%; height:auto; background:#000; color:#fff; font-size:1em; text-align:center; padding:5px 0;}
 
-#container {margin:80px 0 0;}
+#container {
+	margin:80px 0 0;
+	@include mob(){
+		margin:em(124) 0 0;
+	}
+}
 
 .slide_wrap {overflow:hidden;}
 .layout_wrap {
 	max-width:1200px; margin:0 auto; box-sizing:border-box;
 	@include pc-guide(){
-		padding:0 50px; border:1px solid red;
+		border:1px solid red;
 	}
 }
 
@@ -153,6 +158,17 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 		input:focus {border-color:$red;}
 		& ~ span {color:$red; display:block;}
 	}
+	@include mob(){
+		label {font-size:em(32); left:em(28); margin:em(2) 0 0;}
+		input {
+			font-size:em(32); padding:em(37) em(28); border-radius:em(10);
+			&.validField {padding:em(54) em(28) em(20);}
+			&.validField ~ label {
+				top:em(28); font-size:em(24); margin:0;
+			}
+		}
+		span {font-size:em(24); padding:em(10) 0 0;}
+	}
 }
 
 .form_select_type01 {
@@ -191,7 +207,6 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 		}
 	}
 	span {font-size:12px; padding:7px 24px 0; display:none;}
-
 	.validField {
 		input {
 			border-color:transparent;
@@ -209,6 +224,34 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 		~ span {color:$red; display:block;}
 		&.validField {
 			input {border-color:transparent}
+		}
+	}
+	@include mob(){
+		div {
+			padding:em(60) em(28);
+			&:after {
+				width:em(24); height:em(15); top:50%; right:em(30);
+			}
+			label {
+				font-size:em(32); left:em(28); margin:em(2) 0 0;
+				&.select {
+					top:em(28); font-size:em(24);
+				}
+			}
+			input {
+				padding:em(54) em(75) em(20) em(28); font-size:em(32); border-radius:em(10);
+			}
+			ul {
+				padding:em(130) em(28) em(28); border-radius:em(10);
+				li {
+					margin:em(35) 0 0;
+					button {font-size:em(32); line-height:em(42);}
+				}
+			}
+		}
+		span {font-size:em(24); padding:em(10) 0 0;}
+		.vaildFiled {
+			label {margin:0;}
 		}
 	}
 }
@@ -242,6 +285,27 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 			&:after {
 				width:10px; height:10px; border-radius:100%; content:""; display:block; position:absolute; top:50%; left:6px; opacity:0; background-color:$white;
 				@include translate(0, -50%);
+			}
+		}
+	}
+
+	@include mob(){
+		input[type="checkbox"] {
+			& + label {
+				padding:0 0 0 em(57); font-size:em(28); line-height:em(44);
+				&:before {width:em(44); height:em(44); border-radius:em(6);}
+				&:after {
+					width:em(44); height:em(44);
+				}
+			}
+		}
+		input[type="radio"] {
+			& + label {
+				padding:0 0 0 em(57); font-size:em(28); line-height:em(44);
+				&:before {width:em(44); height:em(44);}
+				&:after {
+					width:em(24); height:em(24); left:em(10);
+				}
 			}
 		}
 	}
@@ -301,7 +365,7 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 		/* 4개 일떄 */
 		&.list_item01_4 {
 			li {
-				width:calc(25% - 10px);
+				width:calc(25% - 8px);
 				&:nth-of-type(1),&:nth-of-type(2),&:nth-of-type(3),&:nth-of-type(4) {margin-top:0;}
 				&:nth-of-type(4n+1) {clear:both;}
 			}
@@ -333,6 +397,48 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 			@include transition(border-color, .2s);
 		}
 	}
+	@include mob(){
+		position:relative;
+		.tit_wrap {
+			strong {font-size:em(36); margin:0;}
+			.question_wrap {
+				margin:0 0 0 em(16); position:static;
+				button {
+					width:em(33); height:em(33); background-size:em(12) em(18);
+				}
+				.question_detail {
+					width:calc(100vw - 10vw); padding:em(40) em(30); bottom:auto; top:em(64); left:0; margin:0; font-size:em(30); z-index:1;
+					&:after {display:none;}
+				}
+			}
+		}
+		ul {
+			padding:em(22) 0 0; font-size:em(32); width:calc(100% + 0.7rem); left:em(-14);
+			li {margin:em(14) 0 0 em(14);}
+
+			/* 2개 일떄 */
+			&.list_item01_2 {
+				li {width:calc(50% - 0.7rem);}
+			}
+
+			/* 3개 일떄 */
+			&.list_item01_3 {
+				li {width:calc(33.333% - 0.7rem);}
+			}
+
+			/* 4개 일떄 */
+			&.list_item01_4 {
+				li {width:calc(25% - 0.7rem);}
+			}
+			input[type=radio],
+			input[type=checkbox] {
+				top:10px; left:10px;
+			}
+			label {
+				height:em(116); line-height:em(40); border-radius:em(10);
+			}
+		}
+	}
 }
 
 .form_check_radio_type02 {
@@ -341,8 +447,17 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 		@extend %clearfix; width:100%; left:0;
 		li {
 			width:100%; float:none; margin:8px 0 0;
-			&:first-of-type { margin:0; }
+			&:first-child {margin:0;}
 			label {height:auto; text-align:left; justify-content:left; padding:15px 20px;}
+		}
+	}
+	@include mob(){
+		.notification_txt {margin:em(25) 0 0; padding:em(25) em(30); font-size:em(32); line-height:em(40);}
+		ul {
+			li {
+				margin:em(12) 0 0;
+				label {padding:em(25) em(30);}
+			}
 		}
 	}
 }
@@ -358,6 +473,14 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 		position:absolute; top:50%; right:25px; background-image:url(../../images/common/calendar_icon.png);
 		@include translate(0, -50%);
 		@include textBackground(24px, 24px);
+	}
+	@include mob(){
+		input[type=text] {
+			font-size:em(32); line-height:em(120); padding:0 em(125) 0 em(28); border-width:em(2); border-radius:em(10);
+		}
+		.btn_calendar {
+			width:em(64); height:em(64); background-size:cover; right:em(28);
+		}
 	}
 }
 
@@ -400,6 +523,10 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 				}
 			}
 		}
+	}
+	@include mob(){
+		top:em(124);
+		h2 {font-size:em(60); padding:em(36) 0;}
 	}
 }
 
@@ -608,9 +735,9 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 }
 
 .filter_contents {
-	max-width:1200px; margin:273px auto 0;
+	max-width:1300px; margin:273px auto 0; box-sizing:border-box; padding:0 50px;
 	.cont_title {
-		width:100%; position:fixed; top:180px; left:0; z-index:1; background-color:$white;
+		width:100%; position:fixed; top:180px; left:0; z-index:1; background-color:$white; padding:0 50px; box-sizing:border-box;
 		.title_wrap {
 			max-width:1200px; justify-content:space-between; align-items:center; display:flex; margin:0 auto; padding:40px 0 14px; border-bottom:1px solid #e5e5e5;
 			.title_box {
@@ -683,7 +810,13 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 
 .default_contents {
 	max-width:1200px; margin:180px auto 0; padding:60px 0;
+	@include mob(){
+		margin:em(190) auto 0; padding:em(120) 0;
+	}
 }
 .stepBystep_contents {
 	max-width:1200px; margin:180px auto 0; padding:160px 0 60px;
+	@include mob(){
+		margin:em(190) auto 0; padding:em(320) 0 em(120);
+	}
 }

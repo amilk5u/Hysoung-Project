@@ -37,7 +37,7 @@ function layout() {
             if (_this.val().trim() === ""){
                 _this.parent("div").toggleClass("validField");
                 if(_this.parent("div").hasClass("validField")){
-                    _this.parent().parent().css({"z-index":0})
+                    _this.parent().parent().css({"z-index":1})
                 }else {
                     $formSelectType01.attr("style","");
                 }
@@ -45,7 +45,7 @@ function layout() {
                 _this.siblings("label").addClass("select");
                 _this.parent("div").toggleClass("validField");
                 if(_this.parent("div").hasClass("validField")){
-                    _this.parent().parent().css({"z-index":0})
+                    _this.parent().parent().css({"z-index":1})
                 }else {
                     $formSelectType01.attr("style","");
                 }
@@ -81,6 +81,18 @@ function layout() {
         $search.fadeOut();
         $searchBtn.focus();
     });
+
+    // Mobile Nav
+    $navBtn.click(function(){
+       $(this).toggleClass("active");
+       $(".mobile_menu").toggleClass("active");
+    });
+
+    // myMenu
+    $(".btn_myMenu").click(function(){
+        $(this).toggleClass("active");
+        $(".my_menu_list").toggleClass("active");
+    });
     
     // dropMenu
     $(".snb_s > a").on('click',function(e){
@@ -99,6 +111,28 @@ function layout() {
         }
         e.preventDefault();
     });
+
+    $(window).resize(function(){
+        var width = window.innerWidth;
+        $(".footer_link>li>a").off('click');
+        if (width<1024) {
+            $(".footer_link>li>a").on('click', function(e){
+                $(".footer_link>li>a").removeClass("on");
+                e.preventDefault();
+                $(".footer_link>li>ul").slideUp();
+                $(this).removeClass("on");
+                var submenu = $(this).next("ul");
+                if( submenu.is(":visible") ){
+                }else{
+                    $(this).addClass("on");
+                    submenu.slideDown();
+                }
+                return false;
+            });
+        } else if (width>= 1024) {
+            $(".footer_link>li>a").off('click');
+        }
+    }).resize();
 
     // Filters
     var $filters = $("#filters"),
