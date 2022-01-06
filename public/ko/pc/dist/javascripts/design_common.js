@@ -254,6 +254,7 @@ function explore() {
         }
     });
 
+    // 제품 설명 더 보기 (desktop)
     const $content = $(".content"),
         $moreBtn = $content.find(".more_btn");
 
@@ -261,39 +262,33 @@ function explore() {
         let _this = $(this);
         _this.parents(".row_list").find(".last_txt p").addClass("more_active");
         _this.css("display","none");
+        console.log("akajaka")
     });
 
 
-
-
+    // 제품 설명 토글 버튼 (mobile)
     function modelToggle () {
         const $itemListType02 = $(".item_list_type02"),
               $modelTitle = $itemListType02.find(".last_txt span");
 
         $modelTitle.on("click",function(){
-            let $models = $(this).parents(".last_txt"),
-                _this = $(this).parents(".last_txt").find("p");
+            let _this = $(this),
+                $models = _this.parents(".last_txt"),
+                $openTxt = _this.parents(".last_txt").find("p");
+
+            let openHeight = $openTxt.outerHeight() + $models.outerHeight();
 
             if ($models.hasClass("on")) {
-                _this.stop().slideUp();
+                TweenMax.to($models, .3, {height: 2 + "rem"});
                 $models.removeClass("on")
             } else {
-                _this.stop().slideDown();
                 $models.addClass("on")
+                TweenMax.to($models, .3, {height: openHeight});
             }
         });
     }
     modelToggle();
 
-
-
-
-  /*  $window.resize(function() {
-        if ( winW < 750 ) {
-            modelToggle()
-        } 
-    });
-*/
 
 
 

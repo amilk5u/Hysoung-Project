@@ -71,9 +71,6 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 .slide_wrap {overflow:hidden;}
 .layout_wrap {
 	max-width:1200px; margin:0 auto; box-sizing:border-box;
-	@include pc-guide(){
-		border:1px solid red;
-	}
 }
 
 @include pc-small(){
@@ -399,9 +396,7 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 			strong {font-size:em(36); margin:0;}
 			.question_wrap {
 				margin:0 0 0 em(16); position:static;
-				button {
-					width:em(33); height:em(33); background-size:em(12) em(18);
-				}
+				button {width:em(33); height:em(33); background-size:em(12) em(18);}
 				.question_detail {
 					width:calc(100vw - 10vw); padding:em(40) em(30); bottom:auto; top:em(64); left:0; margin:0; font-size:em(30); z-index:1;
 					&:after {display:none;}
@@ -838,6 +833,7 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 				select {
 					font-size:13px; line-height:36px; padding:0 40px 0 20px; border-radius:20px; vertical-align:middle; font-weight:$medium; border:1px solid $gray3; background-image:url(../../images/common/select_arr.png);
 					@include backgroundSolt(85%, 60%);
+
 				}
 				.search_type01 {
 					display:inline-block; vertical-align:middle; position:relative;
