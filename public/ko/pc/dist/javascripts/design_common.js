@@ -262,21 +262,37 @@ function explore() {
         let _this = $(this);
         _this.parents(".row_list").find(".last_txt p").addClass("more_active");
         _this.css("display","none");
-        console.log("akajaka")
     });
 
 
     // 제품 설명 토글 버튼 (mobile)
     function modelToggle () {
         const $itemListType02 = $(".item_list_type02"),
-              $modelTitle = $itemListType02.find(".last_txt span");
+              $modelTitle1 = $itemListType02.find(".last_txt span");
 
-        $modelTitle.on("click",function(){
+        $modelTitle1.on("click",function(){
             let _this = $(this),
                 $models = _this.parents(".last_txt"),
                 $openTxt = _this.parents(".last_txt").find("p");
+            let openHeight = $openTxt.outerHeight(true) + $models.outerHeight();
 
-            let openHeight = $openTxt.outerHeight() + $models.outerHeight();
+            if ($models.hasClass("on")) {
+                TweenMax.to($models, .3, {height: 2 + "rem"});
+                $models.removeClass("on")
+            } else {
+                $models.addClass("on")
+                TweenMax.to($models, .3, {height: openHeight});
+            }
+        });
+
+        const $itemListType05 = $(".item_list_type05"),
+            $modelTitle2 = $itemListType05.find(".last_txt span");
+
+        $modelTitle2.on("click",function(){
+            let _this = $(this),
+                $models = _this.parents(".last_txt"),
+                $openTxt = _this.parents(".last_txt").find("p");
+            let openHeight = $openTxt.outerHeight(true) + $models.outerHeight();
 
             if ($models.hasClass("on")) {
                 TweenMax.to($models, .3, {height: 2 + "rem"});
@@ -288,12 +304,6 @@ function explore() {
         });
     }
     modelToggle();
-
-
-
-
-
-
 
 
 }
@@ -717,6 +727,22 @@ function my_menu() {
 }
 function resources() {
 
+    function faqFocusActiveMotion () {
+        const $faqListWrap = $(".faq_list_wrap"),
+              $Folding = $faqListWrap.find(".snb_s");
+
+        $Folding.on("click",function(){
+            let _this = $(this);
+            let thisFaqListWrap = _this.parents(".faq_list_wrap");
+            $faqListWrap.removeClass("active");
+            if ( $Folding.find("a").hasClass("on") ) {
+                thisFaqListWrap.addClass("active");
+            } else {
+                thisFaqListWrap.removeClass("active");
+            }
+        });
+    }
+    faqFocusActiveMotion();
 }
 function search() {
 
