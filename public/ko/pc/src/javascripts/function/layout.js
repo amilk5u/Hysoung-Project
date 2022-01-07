@@ -171,4 +171,84 @@ function layout() {
         $(".btn_popup[data-popup="+_seletePopup+"]").focus();
         $popupBox.fadeOut();
     });
+
+
+    // header 공통 부분 높이값 유동적으로 변경
+    function controlWrapAction() {
+        const $contTitle = $(".cont_title");
+        const $searchBtnM = $(".search_btn_m");
+        const $searchCloseBtn = $(".search_close_btn");
+        const $content = $(".content");
+
+        $searchCloseBtn.on("click",function(){
+            $searchBtnM.css("display","inline-block");
+            $contTitle.removeClass("search_on");
+
+            let contTitleH = $contTitle.height();
+            let headerH = $("header").height() + $(".sub_title_wrap").height();
+            $content.css("marginTop",headerH + contTitleH);
+        });
+
+        $searchBtnM.on("click",function(){
+            let _this = $(this);
+
+            _this.css("display","none");
+            _this.addClass("search_on");
+            $contTitle.addClass("search_on");
+
+            let contTitleH = $contTitle.height();
+            let headerH = $("header").height() + $(".sub_title_wrap").height();
+            $content.css("marginTop",headerH + contTitleH);
+        });
+
+        // fixed 되는 높이값 조절 (유동적으로 조절)
+        function fixedH () {
+            let contTitleH = $contTitle.height();
+            let headerH = $("header").height() + $(".sub_title_wrap").height();
+            $content.css("marginTop",headerH + contTitleH);
+        }
+        $window.on("resize",fixedH);
+    }
+    controlWrapAction();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

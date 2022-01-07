@@ -267,28 +267,10 @@ function explore() {
 
     // 제품 설명 토글 버튼 (mobile)
     function modelToggle () {
-        const $itemListType02 = $(".item_list_type02"),
-              $modelTitle1 = $itemListType02.find(".last_txt span");
+        const $foldingM = $(".folding_m"),
+              $modelTitle = $foldingM.find(".last_txt span");
 
-        $modelTitle1.on("click",function(){
-            let _this = $(this),
-                $models = _this.parents(".last_txt"),
-                $openTxt = _this.parents(".last_txt").find("p");
-            let openHeight = $openTxt.outerHeight(true) + $models.outerHeight();
-
-            if ($models.hasClass("on")) {
-                TweenMax.to($models, .3, {height: 2 + "rem"});
-                $models.removeClass("on")
-            } else {
-                $models.addClass("on")
-                TweenMax.to($models, .3, {height: openHeight});
-            }
-        });
-
-        const $itemListType05 = $(".item_list_type05"),
-            $modelTitle2 = $itemListType05.find(".last_txt span");
-
-        $modelTitle2.on("click",function(){
+        $modelTitle.on("click",function(){
             let _this = $(this),
                 $models = _this.parents(".last_txt"),
                 $openTxt = _this.parents(".last_txt").find("p");
@@ -480,6 +462,86 @@ function layout() {
         $(".btn_popup[data-popup="+_seletePopup+"]").focus();
         $popupBox.fadeOut();
     });
+
+
+    // header 공통 부분 높이값 유동적으로 변경
+    function controlWrapAction() {
+        const $contTitle = $(".cont_title");
+        const $searchBtnM = $(".search_btn_m");
+        const $searchCloseBtn = $(".search_close_btn");
+        const $content = $(".content");
+
+        $searchCloseBtn.on("click",function(){
+            $searchBtnM.css("display","inline-block");
+            $contTitle.removeClass("search_on");
+
+            let contTitleH = $contTitle.height();
+            let headerH = $("header").height() + $(".sub_title_wrap").height();
+            $content.css("marginTop",headerH + contTitleH);
+        });
+
+        $searchBtnM.on("click",function(){
+            let _this = $(this);
+
+            _this.css("display","none");
+            _this.addClass("search_on");
+            $contTitle.addClass("search_on");
+
+            let contTitleH = $contTitle.height();
+            let headerH = $("header").height() + $(".sub_title_wrap").height();
+            $content.css("marginTop",headerH + contTitleH);
+        });
+
+        // fixed 되는 높이값 조절 (유동적으로 조절)
+        function fixedH () {
+            let contTitleH = $contTitle.height();
+            let headerH = $("header").height() + $(".sub_title_wrap").height();
+            $content.css("marginTop",headerH + contTitleH);
+        }
+        $window.on("resize",fixedH);
+    }
+    controlWrapAction();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
 function main() {
     var visualSlide = new Swiper(".main_container .visual_slide", {
