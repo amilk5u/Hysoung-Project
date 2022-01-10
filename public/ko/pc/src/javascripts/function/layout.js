@@ -62,6 +62,18 @@ function layout() {
         $formSelectType01.attr("style","");
     });
 
+    $(".form_textarea_type01 textarea").on({
+        focus : function(){
+            $(this).addClass('validField');
+        },
+        blur : function(){
+            if($(this).val() == ""){
+                $(this).removeClass('validField');
+            }
+        }
+    });
+
+
     // GNB
     $gnb.find(".menu").dbNaviTwoDepthSwap({
         motionSpeed:500,
@@ -179,41 +191,37 @@ function layout() {
         const $searchBtnM = $(".search_btn_m");
         const $searchCloseBtn = $(".search_close_btn");
         const $content = $(".content");
-
-        $searchCloseBtn.on("click",function(){
-            $searchBtnM.css("display","inline-block");
-            $contTitle.removeClass("search_on");
-
-            let contTitleH = $contTitle.height();
-            let headerH = $("header").height() + $(".sub_title_wrap").height();
-            $content.css("marginTop",headerH + contTitleH);
-        });
+        const $btnFilter = $(".btn_filter");
+        const $btnApply = $(".btn_apply");
+        const $selectedFilter = $(".selected_filter");
 
         $searchBtnM.on("click",function(){
             let _this = $(this);
-
-            _this.css("display","none");
             _this.addClass("search_on");
             $contTitle.addClass("search_on");
-
-            let contTitleH = $contTitle.height();
-            let headerH = $("header").height() + $(".sub_title_wrap").height();
-            $content.css("marginTop",headerH + contTitleH);
+            $btnFilter.addClass("height_change_on")
+            fixedH();
         });
 
-        // fixed 되는 높이값 조절 (유동적으로 조절)
+        $searchCloseBtn.on("click",function(){
+            $contTitle.removeClass("search_on");
+            $btnFilter.removeClass("height_change_on")
+            fixedH();
+        });
+
         function fixedH () {
             let contTitleH = $contTitle.height();
             let headerH = $("header").height() + $(".sub_title_wrap").height();
             $content.css("marginTop",headerH + contTitleH);
         }
         $window.on("resize",fixedH);
+
+        $btnApply.on("click",function(){
+            $selectedFilter.addClass("selected_filter_on");
+            fixedH();
+        });
     }
     controlWrapAction();
-
-
-
-
 
 
 

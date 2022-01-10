@@ -8,7 +8,7 @@
 	<section class="sub_title_wrap">
 		<h2>SUB TITLE NAME</h2>
 	</section>
-	<!--<aside id="filters">
+	<aside id="filters">
 		 <div class="filter_title">
 			  <div class="default_box">
 					<h3>Filters</h3>
@@ -46,12 +46,12 @@
 						 <li><a href="#">Categories</a></li>
 					</ul>
 					<div class="products">
-						 &lt;!&ndash; Product &ndash;&gt;
+						 <!-- Product -->
 						 <div class="product_cont">
 							  <div class="snb_s">
 									<a href="#">Product 1</a>
 									<ul>
-										 <li><a href="#" class="on"><span>Accessory</span><em>(1)</em></a></li> &lt;!&ndash; filter Selected &ndash;&gt;
+										 <li><a href="#" class="on"><span>Accessory</span><em>(1)</em></a></li> <!-- filter Selected -->
 										 <li><a href="#"><span>CE Assembly</span><em>(1)</em></a></li>
 										 <li><a href="#"><span>Cash Dispensor Unlt</span><em>(1)</em></a></li>
 										 <li><a href="#"><span>Cassette</span><em>(1)</em></a></li>
@@ -95,7 +95,7 @@
 							  </div>
 						 </div>
 
-						 &lt;!&ndash; Categories &ndash;&gt;
+						 <!-- Categories -->
 						 <div class="product_cont">
 							  <div class="snb_s">
 									<a href="#">Category 1</a>
@@ -151,7 +151,7 @@
 						 <div class="snb_s">
 							  <a href="#">Product 1</a>
 							  <ul>
-									<li><a href="#" class="on"><span>Accessory</span><em>(1)</em></a></li> &lt;!&ndash; filter Selected &ndash;&gt;
+									<li><a href="#" class="on"><span>Accessory</span><em>(1)</em></a></li> <!-- filter Selected -->
 									<li><a href="#"><span>CE Assembly</span><em>(1)</em></a></li>
 									<li><a href="#"><span>Cash Dispensor Unlt</span><em>(1)</em></a></li>
 									<li><a href="#"><span>Cassette</span><em>(1)</em></a></li>
@@ -190,22 +190,24 @@
 			  <button type="button" class="btn_apply">Apply</button>
 		 </div>
 		 <button type="button" class="btn_filter">filter Menu</button>
-	</aside>-->
+	</aside>
 	<div id="contents" class="hd_transformation is_title_wrap">
 		<div class="cont_title">
 
-			<!--search_btn_m 클릭시 아래 검색 폼 생성-->
+			<!-- 모바일 전용 html / search_btn_m 클릭시 아래 검색 폼 생성 됩니다-->
 			<div class="search_input_m">
 				<button type="button" class="search_close_btn"></button>
 				<input type="text" placeholder="Part Number / Parts Description">
+				<button type="button" class="txt_reset_btn"></button>
 			</div>
-			<!--//search_btn_m 클릭시 아래 검색 폼 생성-->
+			<!--//모바일 전용 html / search_btn_m 클릭시 위 검색 폼 생성 됩니다-->
 
 			<div class="title_wrap">
 				<div class="title_box">
 					 <!--<p class="default_title">All Parts</p>-->
-					 <p class="spacing_title"><span>4</span>Managed Services List</p>
-					 <!--<p class="color_num_title disabled_title"><span>24</span>Results</p>-->
+					 <!--<p class="spacing_title"><span>4</span>Managed Services List</p>-->
+					 <!--<p class="spacing_title"><span>4</span>Cash Dispensor Unit / Card Reader</p>-->
+					 <p class="color_num_title disabled_title"><span>24</span>Results</p>
 					<!--<span style="font-size:11px; color:red;">3가지 타입으로 노출 (작업시 타입 추가될수도 있음)</span>-->
 				</div>
 				<div class="control_wrap">
@@ -224,7 +226,7 @@
 					</button>
 					<!--Comparison-->
 
-					<!--Comparison Choice (비교버튼 선택시)-->
+					<!--Comparison Choice (비교버튼 선택 시)-->
 					<!--<button type="button" class="btn_compare btn_compare_in" data-popup="compare_popup">
 						 Comparison <span>(1 of 2)</span>
 					</button>-->
@@ -237,9 +239,10 @@
 					<!--// Text Button -->
 
 					<!--Input Search (검색창)-->
-					<div class="search_form">
+					<!--<div class="search_form">
 						<input type="text" placeholder="Part Number / Parts Description">
-					</div>
+					</div>-->
+
 					<!--모바일에서 클릭시 검색 폼 생성-->
 					<button type="button" class="search_btn_m">검색</button>
 					<!--//Input Search-->
@@ -247,14 +250,26 @@
 			</div>
 
 			<div class="selected_filter">
-				<ul>
-					<li><button class="btn_clearFilters" type="button">Reset All</button></li>
-					<li><button type="button">product 1</button></li>
-					<li><button type="button">product 2</button></li>
-					<li><button type="button">product 3</button></li>
-					<li><button type="button">product 4</button></li>
-					<li><button type="button">product 5</button></li>
-				</ul>
+				<div class="filter_scroll_wrap">
+					<button class="btn_clearFilters" type="button">Reset All</button>
+					<ul>
+						<li>
+							<button type="button">product 1</button>
+						</li>
+						<li>
+							<button type="button">product 2</button>
+						</li>
+						<li>
+							<button type="button">product 3</button>
+						</li>
+						<li>
+							<button type="button">product 4</button>
+						</li>
+						<li>
+							<button type="button">product 5</button>
+						</li>
+					</ul>
+				</div>
 			</div>
 		</div>
 		<div class="content">

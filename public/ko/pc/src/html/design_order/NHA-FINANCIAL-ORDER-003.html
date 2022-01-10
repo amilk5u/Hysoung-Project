@@ -8,6 +8,7 @@
 	<div id="contents">
 		<div class="content">
 			<div class="product_detail_type type02">
+				<div class="dim"></div>
 				<!--view detail-->
 				<div class="view_detail">
 					<div class="detail_img">
@@ -82,8 +83,8 @@
 								<div class="img_item">
 									<img src="./../../images/design_order/product_item_01.png" alt="">
 								</div>
-								<span>Financial ATMs</span>
-								<strong>MX8800</strong>
+								<span>Retail ATMs</span>
+								<strong>HALO II</strong>
 							</div>
 							<div class="product_button_wrap">
 								<a href="" class="view_details_btn">
@@ -206,7 +207,7 @@
 											<span class="price_p">0</span>
 											<p class="option_txt">
 												Hardware
-												<span></span>
+												<button type="button" class="btn_popup" data-popup="individual_price_popup"></button>
 											</p>
 										</div>
 									</li>
@@ -216,7 +217,7 @@
 											<span class="price_p">0</span>
 											<p class="option_txt">
 												Software
-												<span></span>
+												<button type="button" class="btn_popup" data-popup="individual_price_popup"></button>
 											</p>
 										</div>
 									</li>
@@ -226,7 +227,7 @@
 											<span class="price_p">0</span>
 											<p class="option_txt btn_disabled">
 												Options
-												<button type="button"></button>
+												<button type="button" class="btn_popup" data-popup="individual_price_popup"></button>
 											</p>
 										</div>
 									</li>
@@ -238,7 +239,6 @@
 											<span class="price_p">0</span>
 											<p class="option_txt">
 												Total Price
-												<span></span>
 											</p>
 										</div>
 									</li>
@@ -292,6 +292,68 @@
 			</div>
 		</div>
 	</div>
+</div>
+<div class="popup individual_price_popup" tabindex="0">
+	<div class="popup_wrap">
+		<div class="popup_content">
+			<strong class="pop_title">Individual Prices</strong>
+			<div class="option_wrap">
+				<p>Hardware</p>
+				<div class="in_wrap">
+					<div class="scroll_wrap scroll_bar_custom">
+						<div class="column_list_option">
+							<div>
+								<span>Options</span>
+								<ul>
+									<li>BRM Only</li>
+									<li>LV1</li>
+									<li> Regular Cencon Lock</li>
+									<li> Dip Card Reader</li>
+								</ul>
+							</div>
+						</div>
+						<div class="row_list_option">
+							<ul>
+								<li>
+									<span>Material Code</span>
+									<p>7224000262</p>
+								</li>
+								<li>
+									<span>Unit Price</span>
+									<p>
+										<em>$</em>
+										52,730.30
+									</p>
+								</li>
+								<li>
+									<span>Qty</span>
+									<p>1</p>
+								</li>
+								<li class="last_price_txt">
+									<span>Price</span>
+									<p>
+										<em>$</em>
+										52,730.30
+									</p>
+								</li>
+							</ul>
+						</div>
+						<div class="column_list_option">
+							<div>
+								<span>Add-On</span>
+								<ul>
+									<li>Palm Vein - No</li>
+									<li>Handset - Yes</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<button type="button" class="btn_popup_close">close</button>
+		</div>
+	</div>
+	<p class="dimmed"></p>
 </div>
 <!-- //container -->
 @@include("../../include/footer.html")
