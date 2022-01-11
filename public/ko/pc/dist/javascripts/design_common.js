@@ -284,11 +284,10 @@ function explore() {
         _this.css("display","none");
     });
 
-
     // 제품 설명 토글 버튼 (mobile)
     function modelToggle () {
         const $foldingM = $(".folding_m"),
-              $modelTitle = $foldingM.find(".last_txt span");
+            $modelTitle = $foldingM.find(".last_txt span");
 
         $modelTitle.on("click",function(){
             let _this = $(this),
@@ -307,7 +306,24 @@ function explore() {
     }
     modelToggle();
 
-
+    // NHA-COMMON-COMPARE-008
+    var $popupContent = $(".popup_content");
+    var $compListWrap = $popupContent.find(".comp_list_wrap");
+    var $explanationList = $compListWrap.find(".explanation_list");
+    function popTransform(){
+        if (winW <= 1024) {
+            $explanationList.find(">div").removeClass("scroll_wrap scroll_bar_custom");
+            $compListWrap.find(">div").addClass("scroll_bar_custom");
+        }
+        else {
+            $explanationList.find(">div").addClass("scroll_wrap scroll_bar_custom");
+            $compListWrap.find(">div").removeClass("scroll_bar_custom");
+        }
+    }
+    popTransform();
+    $window.resize(function (){
+        popTransform();
+    });
 }
 function layout() {
     //form script
@@ -384,7 +400,6 @@ function layout() {
         }
     });
 
-
     // GNB
     $gnb.find(".menu").dbNaviTwoDepthSwap({
         motionSpeed:500,
@@ -459,8 +474,13 @@ function layout() {
 
     // Filters
     var $filters = $("#filters"),
-        $filterBtn = $(".btn_filter")
+        $filterBtn = $(".btn_filter"),
+        $filterBtnClose = $filters.find($(".btn_close"));
+
     $filterBtn.click(function(){
+        $filters.toggleClass("fold_aside");
+    });
+    $filterBtnClose.click(function(){
         $filters.toggleClass("fold_aside");
     });
 
@@ -481,18 +501,22 @@ function layout() {
         _seletePopup = $(this).data("popup");
         $("."+_seletePopup).css({"display":"flex"});
         $("."+_seletePopup).focus();
+        $("body,html").css({"overflow-y":"hidden"});
     });
     $closePopupBtn.on("click", function(){
         $(".btn_popup[data-popup="+_seletePopup+"]").focus();
         $popupBox.fadeOut();
+        $("body,html").css({"overflow-y":"auto"});
     });
     $closePopupBtn.on("focusout", function(){
         $(".btn_popup[data-popup="+_seletePopup+"]").focus();
         $popupBox.fadeOut();
+        $("body,html").css({"overflow-y":"auto"});
     });
     $popupBg.on("click", function(){
         $(".btn_popup[data-popup="+_seletePopup+"]").focus();
         $popupBox.fadeOut();
+        $("body,html").css({"overflow-y":"auto"});
     });
 
 
@@ -503,73 +527,31 @@ function layout() {
         const $searchCloseBtn = $(".search_close_btn");
         const $content = $(".content");
         const $btnFilter = $(".btn_filter");
-        const $btnApply = $(".btn_apply");
-        const $selectedFilter = $(".selected_filter");
 
-        $searchBtnM.on("click",function(){
-            let _this = $(this);
-            _this.addClass("search_on");
-            $contTitle.addClass("search_on");
-            $btnFilter.addClass("height_change_on")
-            fixedH();
-        });
+        if ($("#contents").hasClass("hd_transformation")) {
+            $searchBtnM.on("click",function(){
+                let _this = $(this);
+                _this.addClass("search_on");
+                $contTitle.addClass("search_on");
+                $btnFilter.addClass("height_change_on")
+                fixedH();
+            });
 
-        $searchCloseBtn.on("click",function(){
-            $contTitle.removeClass("search_on");
-            $btnFilter.removeClass("height_change_on")
-            fixedH();
-        });
+            $searchCloseBtn.on("click",function(){
+                $contTitle.removeClass("search_on");
+                $btnFilter.removeClass("height_change_on")
+                fixedH();
+            });
 
-        function fixedH () {
-            let contTitleH = $contTitle.height();
-            let headerH = $("header").height() + $(".sub_title_wrap").height();
-            $content.css("marginTop",headerH + contTitleH);
+            function fixedH () {
+                let contTitleH = $contTitle.height();
+                let headerH = $("header").height() + $(".sub_title_wrap").height();
+                $content.css("marginTop",headerH + contTitleH);
+            }
+            $window.on("resize",fixedH);
         }
-        $window.on("resize",fixedH);
-
-        $btnApply.on("click",function(){
-            $selectedFilter.addClass("selected_filter_on");
-            fixedH();
-        });
     }
     controlWrapAction();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
 function main() {
     var visualSlide = new Swiper(".main_container .visual_slide", {
@@ -586,7 +568,7 @@ function main() {
     });
 
     var retailSlide = new Swiper(".main_container .retail_slide", {
-        slidesPerView: 1,
+        slidesPerView: "auto",
         breakpoints: {
             1200: {
                 slidesPerView: 4
@@ -595,7 +577,7 @@ function main() {
     });
 
     var financialSlide = new Swiper(".main_container .financial_slide", {
-        slidesPerView: 1,
+        slidesPerView: "auto",
         breakpoints: {
             1200: {
                 slidesPerView: 4
@@ -682,8 +664,14 @@ function main() {
         observeParents: true
     });
 
+    var dashboard_dealer = new Swiper(".financial_container .dealer_dashboard", {
+        pagination: {
+            el: ".swiper-pagination",
+        }
+    });
+
     var orderSlide01 = new Swiper(".financial_container .order_slide01", {
-        slidesPerView: 1,
+        slidesPerView: "auto",
         breakpoints: {
             1024: {
                 slidesPerView: 2
@@ -694,7 +682,7 @@ function main() {
         }
     });
     var orderSlide02 = new Swiper(".financial_container .order_slide02", {
-        slidesPerView: 1,
+        slidesPerView: "auto",
         breakpoints: {
             1024: {
                 slidesPerView: 2
@@ -705,7 +693,7 @@ function main() {
         }
     });
     var orderSlide03 = new Swiper(".financial_container .order_slide03", {
-        slidesPerView: 1,
+        slidesPerView: "auto",
         breakpoints: {
             1024: {
                 slidesPerView: 2
@@ -716,7 +704,7 @@ function main() {
         }
     });
     var orderSlide04 = new Swiper(".financial_container .order_slide04", {
-        slidesPerView: 1,
+        slidesPerView: "auto",
         breakpoints: {
             1024: {
                 slidesPerView: 2
@@ -741,74 +729,46 @@ function main() {
             TweenMax.to(_this.parent().next(".details").find(".options"), .3, {opacity:1});
         }
     });
-
-    /*
-    $detailBtn.click(function(){
-        var _detail = $(this).parent().next(".details");
-        $(this).toggleClass("options");
-        if($(this).hasClass("options")){
-            $(this).text("Show Option");
-            _detail.find(".options").fadeOut();
-        }else{
-            $(this).text("Show image");
-            _detail.find(".options").fadeIn();
-        }
-    });*/
 }
 function member() {
 
 }
 function my_menu() {
     var orderSlide01_mypage = new Swiper(".mypage_container .order_slide01", {
-        slidesPerView: 1,
+        slidesPerView: "auto",
         breakpoints: {
-            1024: {
-                slidesPerView: 2
-            },
             1200: {
                 slidesPerView: 3
             }
         }
     });
     var orderSlide02_mypage = new Swiper(".mypage_container .order_slide02", {
-        slidesPerView: 1,
+        slidesPerView: "auto",
         breakpoints: {
-            1024: {
-                slidesPerView: 2
-            },
             1200: {
                 slidesPerView: 4
             }
         }
     });
     var orderSlide03_mypage = new Swiper(".mypage_container .order_slide03", {
-        slidesPerView: 1,
+        slidesPerView: "auto",
         breakpoints: {
-            1024: {
-                slidesPerView: 2
-            },
             1200: {
                 slidesPerView: 3
             }
         }
     });
     var orderSlide04_mypage = new Swiper(".mypage_container .order_slide04", {
-        slidesPerView: 1,
+        slidesPerView: "auto",
         breakpoints: {
-            1024: {
-                slidesPerView: 2
-            },
             1200: {
                 slidesPerView: 4
             }
         }
     });
     var orderSlide05_mypage = new Swiper(".mypage_container .order_slide05", {
-        slidesPerView: 1,
+        slidesPerView: "auto",
         breakpoints: {
-            1024: {
-                slidesPerView: 2
-            },
             1200: {
                 slidesPerView: 4
             }
@@ -819,7 +779,7 @@ function resources() {
 
     function faqFocusActiveMotion () {
         const $faqListWrap = $(".faq_list_wrap"),
-              $Folding = $faqListWrap.find(".snb_s");
+            $Folding = $faqListWrap.find(".snb_s");
 
         $Folding.on("click",function(){
             let _this = $(this);

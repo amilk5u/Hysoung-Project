@@ -73,7 +73,6 @@ function layout() {
         }
     });
 
-
     // GNB
     $gnb.find(".menu").dbNaviTwoDepthSwap({
         motionSpeed:500,
@@ -148,8 +147,13 @@ function layout() {
 
     // Filters
     var $filters = $("#filters"),
-        $filterBtn = $(".btn_filter")
+        $filterBtn = $(".btn_filter"),
+        $filterBtnClose = $filters.find($(".btn_close"));
+
     $filterBtn.click(function(){
+        $filters.toggleClass("fold_aside");
+    });
+    $filterBtnClose.click(function(){
         $filters.toggleClass("fold_aside");
     });
 
@@ -170,18 +174,22 @@ function layout() {
         _seletePopup = $(this).data("popup");
         $("."+_seletePopup).css({"display":"flex"});
         $("."+_seletePopup).focus();
+        $("body,html").css({"overflow-y":"hidden"});
     });
     $closePopupBtn.on("click", function(){
         $(".btn_popup[data-popup="+_seletePopup+"]").focus();
         $popupBox.fadeOut();
+        $("body,html").css({"overflow-y":"auto"});
     });
     $closePopupBtn.on("focusout", function(){
         $(".btn_popup[data-popup="+_seletePopup+"]").focus();
         $popupBox.fadeOut();
+        $("body,html").css({"overflow-y":"auto"});
     });
     $popupBg.on("click", function(){
         $(".btn_popup[data-popup="+_seletePopup+"]").focus();
         $popupBox.fadeOut();
+        $("body,html").css({"overflow-y":"auto"});
     });
 
 
@@ -192,71 +200,29 @@ function layout() {
         const $searchCloseBtn = $(".search_close_btn");
         const $content = $(".content");
         const $btnFilter = $(".btn_filter");
-        const $btnApply = $(".btn_apply");
-        const $selectedFilter = $(".selected_filter");
 
-        $searchBtnM.on("click",function(){
-            let _this = $(this);
-            _this.addClass("search_on");
-            $contTitle.addClass("search_on");
-            $btnFilter.addClass("height_change_on")
-            fixedH();
-        });
+        if ($("#contents").hasClass("hd_transformation")) {
+            $searchBtnM.on("click",function(){
+                let _this = $(this);
+                _this.addClass("search_on");
+                $contTitle.addClass("search_on");
+                $btnFilter.addClass("height_change_on")
+                fixedH();
+            });
 
-        $searchCloseBtn.on("click",function(){
-            $contTitle.removeClass("search_on");
-            $btnFilter.removeClass("height_change_on")
-            fixedH();
-        });
+            $searchCloseBtn.on("click",function(){
+                $contTitle.removeClass("search_on");
+                $btnFilter.removeClass("height_change_on")
+                fixedH();
+            });
 
-        function fixedH () {
-            let contTitleH = $contTitle.height();
-            let headerH = $("header").height() + $(".sub_title_wrap").height();
-            $content.css("marginTop",headerH + contTitleH);
+            function fixedH () {
+                let contTitleH = $contTitle.height();
+                let headerH = $("header").height() + $(".sub_title_wrap").height();
+                $content.css("marginTop",headerH + contTitleH);
+            }
+            $window.on("resize",fixedH);
         }
-        $window.on("resize",fixedH);
-
-        $btnApply.on("click",function(){
-            $selectedFilter.addClass("selected_filter_on");
-            fixedH();
-        });
     }
     controlWrapAction();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }

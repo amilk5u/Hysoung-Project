@@ -13,7 +13,7 @@ function main() {
     });
 
     var retailSlide = new Swiper(".main_container .retail_slide", {
-        slidesPerView: 1,
+        slidesPerView: "auto",
         breakpoints: {
             1200: {
                 slidesPerView: 4
@@ -22,7 +22,7 @@ function main() {
     });
 
     var financialSlide = new Swiper(".main_container .financial_slide", {
-        slidesPerView: 1,
+        slidesPerView: "auto",
         breakpoints: {
             1200: {
                 slidesPerView: 4
@@ -109,8 +109,14 @@ function main() {
         observeParents: true
     });
 
+    var dashboard_dealer = new Swiper(".financial_container .dealer_dashboard", {
+        pagination: {
+            el: ".swiper-pagination",
+        }
+    });
+
     var orderSlide01 = new Swiper(".financial_container .order_slide01", {
-        slidesPerView: 1,
+        slidesPerView: "auto",
         breakpoints: {
             1024: {
                 slidesPerView: 2
@@ -121,7 +127,7 @@ function main() {
         }
     });
     var orderSlide02 = new Swiper(".financial_container .order_slide02", {
-        slidesPerView: 1,
+        slidesPerView: "auto",
         breakpoints: {
             1024: {
                 slidesPerView: 2
@@ -132,7 +138,7 @@ function main() {
         }
     });
     var orderSlide03 = new Swiper(".financial_container .order_slide03", {
-        slidesPerView: 1,
+        slidesPerView: "auto",
         breakpoints: {
             1024: {
                 slidesPerView: 2
@@ -143,7 +149,7 @@ function main() {
         }
     });
     var orderSlide04 = new Swiper(".financial_container .order_slide04", {
-        slidesPerView: 1,
+        slidesPerView: "auto",
         breakpoints: {
             1024: {
                 slidesPerView: 2
@@ -168,17 +174,4 @@ function main() {
             TweenMax.to(_this.parent().next(".details").find(".options"), .3, {opacity:1});
         }
     });
-
-    /*
-    $detailBtn.click(function(){
-        var _detail = $(this).parent().next(".details");
-        $(this).toggleClass("options");
-        if($(this).hasClass("options")){
-            $(this).text("Show Option");
-            _detail.find(".options").fadeOut();
-        }else{
-            $(this).text("Show image");
-            _detail.find(".options").fadeIn();
-        }
-    });*/
 }

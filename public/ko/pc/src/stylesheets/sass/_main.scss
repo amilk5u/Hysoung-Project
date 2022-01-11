@@ -2,6 +2,7 @@
 
 /* 비회원 및 Retail */
 .main_container {
+  margin:80px 0 0;
   #mainVisual {
     h2 {text-indent:-9999px; opacity:0; height:0;}
     .visual_wrap {
@@ -306,6 +307,7 @@
   }
 
   @include mob(){
+    margin:em(124) 0 0;
     #mainVisual {
       .visual_wrap {
         .swiper-slide {
@@ -517,6 +519,7 @@
 
 /* financial */
 .financial_container {
+  margin:80px 0 0;
   .dashboard {
     padding:50px 0; background-color:$gray7;
     h2 {font-size:40px; margin:0 0 30px; font-weight:$regular; color:$gold2; font-family:$bebasNeue;}
@@ -758,6 +761,7 @@
   }
 
   @include mob(){
+    margin:em(124) 0 0;
     .dashboard {
       padding:em(65) em(30);
       h2 {font-size:em(64); margin:0 0 em(70);}

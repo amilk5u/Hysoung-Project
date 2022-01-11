@@ -103,7 +103,7 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 
 /* scroll bar custom */
 .scroll_bar_custom {
-	padding:0 13px 0 13px; overflow-y:scroll;
+	padding:0 13px 0 0; overflow-y:scroll;
 	/*height:100px;*/ // 높이값 설정
 	@include boxSizing;
 	/* 스크롤바 설정*/
@@ -141,6 +141,7 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 			top:10px; font-size:12px;
 			@include translate(0, 0);
 		}
+		&:disabled {background-color:$gray1;}
 	}
 	span {font-size:12px; padding:7px 24px 0; display:none;}
 	.errorField {
@@ -172,7 +173,7 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 		padding:27px 28px; width:100%; display:block;/*border:1px solid $gray2; border-radius:10px;*/ box-sizing:border-box; position:relative;
 		&:after {
 			width:13px; height:8px; content:""; background-image:url(../../images/common/select_arr_default.png); position:absolute; top:50%; right:20px;
-			@include backgroundSolt(50%, 50%);
+			@include backgroundSoltC();
 			@include translate(0, -50%);
 			@include transition(transform, .3s);
 		}
@@ -225,7 +226,7 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 		div {
 			padding:em(60) em(28);
 			&:after {
-				width:em(24); height:em(15); top:50%; right:em(30);
+				width:em(24); height:em(15); top:50%; right:em(30); background-image:url(../../images/common/select_arr_default_m.png);
 			}
 			label {
 				font-size:em(32); left:em(28); margin:em(2) 0 0;
@@ -272,13 +273,13 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 		position:absolute; top:0; left:0; z-index:-1; opacity:0;
 		&:focus ~ label:before {border-color:$blue5;}
 		&:hover ~ label:before {border-color:$blue5;}
-		&:checked ~ label:before {border:none; background-color:$blue5;}
+		&:checked ~ label:before {border-color:$blue5;}
 		&:checked ~ label:after {opacity:1;}
 		& + label {
 			display:inline-block; padding:0 0 0 32px; font-size:15px; color:$gray7; line-height:22px; position:relative;
 			&:before {width:22px; height:22px; content:""; border:1px solid $gray5; border-radius:100%; box-sizing:border-box; background-color:$white; position:absolute; top:0; left:0;}
 			&:after {
-				width:10px; height:10px; border-radius:100%; content:""; display:block; position:absolute; top:50%; left:6px; opacity:0; background-color:$white;
+				width:16px; height:16px; border-radius:100%; content:""; display:block; position:absolute; top:50%; left:3px; opacity:0; background-color:$blue5;
 				@include translate(0, -50%);
 			}
 		}
@@ -299,7 +300,7 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 				padding:0 0 0 em(57); font-size:em(28); line-height:em(44);
 				&:before {width:em(44); height:em(44);}
 				&:after {
-					width:em(24); height:em(24); left:em(10);
+					width:em(32); height:em(32); left:em(6);
 				}
 			}
 		}
@@ -388,7 +389,7 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 			&:hover {
 				& ~ label {border-color:$gray6;}
 			}
-
+			&:disabled ~ label {background-color:$gray1;}
 			&.disabled_chk ~ label {background-color:$gray1;}
 		}
 		label {
@@ -441,7 +442,7 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 				top:10px; left:10px;
 			}
 			label {
-				height:em(116); line-height:em(40); border-radius:em(10);
+				height:em(120); line-height:em(40); border-radius:em(10);
 			}
 		}
 	}
@@ -482,7 +483,7 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 	}
 	@include mob(){
 		input[type=text] {
-			font-size:em(32); line-height:em(120); padding:0 em(125) 0 em(28); border-width:em(2); border-radius:em(10);
+			font-size:em(32); line-height:em(116); padding:0 em(125) 0 em(28); border-width:em(2); border-radius:em(10);
 		}
 		.btn_calendar {
 			width:em(64); height:em(64); background-size:cover; right:em(28);
@@ -524,10 +525,58 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 			&.validField ~ label {
 				top:em(28); font-size:em(24); margin:0;
 			}
+			.white_bg {height:em(56); border-radius:em(10) em(10) 0 0;}
 		}
 		span {font-size:em(24); padding:em(10) 0 0;}
 	}
 }
+
+/*220111 start*/
+.form_tab_type01 {
+	@extend %clearfix;
+	.tit_wrap {
+		margin:11px 0 0; float:left;
+		strong {
+			font-size:20px;padding:0 23px 0 0;position:relative; font-weight:$medium;
+			button {
+				position:absolute;display:block;width:14px; height:14px;margin:0 0 0 10px;right:0; top:53%;
+				background:url(./../../images/common/more_i_btn.png) 50% 50% no-repeat;background-size:cover;
+				@include transform(translate(0,-50%));
+			}
+		}
+	}
+	.tab_item {
+		width:550px; float:right;
+		@extend %clearfix;
+		li {
+			width:50%;position:relative;float:left;
+			&:first-of-type {
+				label {border-radius:7px 0 0 7px;}
+			}
+			&:last-child {
+				left:-1px;
+				label {border-radius:0 7px 7px 0;}
+			}
+		}
+	}
+	input[type=radio]{
+		position:absolute; top:10px; left:10px;
+		&:checked ~ label {background-color:$blue5; border:none; color:$white;}
+		&:focus,
+		&:hover {
+			& ~ label {background-color:$blue5; border:none; color:$white;}
+		}
+		&:disabled ~ label {background-color:$gray1;}
+		&.disabled_chk ~ label {background-color:$gray1;}
+	}
+	label {
+		width:100%; height:46px; text-align:center; position:relative; background-color:$white; line-height:22px;
+		font-size:14px;border:1px solid $gray2;color:$gray5;
+		@include displayFlexCenter;
+		@include boxSizing;
+	}
+}
+/*220111 end*/
 
 .sub_title_wrap {
 	width:100%; position:fixed; top:80px; left:0; z-index:3; text-align:center; background-color:$gray1;
@@ -982,21 +1031,16 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 	}
 }
 
-.filter_contents {
-	.content {max-width:1200px; margin:0 auto; box-sizing:border-box;}
+#container {
+	&.no_title { .content {margin:80px auto 0;} }
 }
-//#filters {display:none;}
-
+.content {margin:180px auto 0; box-sizing:border-box;}
 .hd_transformation {
-	// 타이틀 있는 컨텐츠
-	&.is_title_wrap {
-		.content {margin:248px auto 0;}
-		.cont_title {top:180px;}
-	}
 	// 타이틀 없는 컨텐츠
+	.content {max-width:1200px; margin:180px auto 0; box-sizing:border-box;}
 	&.no_title_wrap {
-		.content {margin:80px 0 0;}
 		.cont_title {top:80px;}
+		.content {margin:148px auto 0;}
 	}
 	.cont_title {
 		width:100%; height:68px; position:fixed; top:180px; left:0; overflow:hidden; background-color:$white; z-index:1;
@@ -1076,14 +1120,8 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 		}
 	}
 	@include mob (){
-		// 타이틀 있는 컨텐츠
-		&.is_title_wrap {
-			.content {margin:em(256) 0 0;}
-			.cont_title {top:em(256);}
-		}
 		// 타이틀 없는 컨텐츠
 		&.no_title_wrap {
-			.content {margin:em(124) 0 0;}
 			.cont_title {top:em(124);}
 		}
 		.cont_title {
@@ -1170,6 +1208,7 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 					span {color:$blue5;}
 				}
 			}
+			&.title_only {padding:0;}
 		}
 
 		// right
@@ -1213,211 +1252,3 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 	}
 }
 
-/*.filter_contents {
-	padding:100px 0 0; max-width:1200px; margin:0 auto; border:1px solid red;
-	.cont_title {
-		width:100%; position:fixed; top:180px; left:0; z-index:1; background-color:$white; padding:0 50px; box-sizing:border-box;
-		.title_wrap {
-			max-width:1200px; margin:0 auto; border-bottom:1px solid #e5e5e5; display:flex; justify-content:space-between; align-items:center;
-			padding:15px 0 17px;
-			.title_box {
-				.title_type01 {
-					font-size:18px; color:$gray6; font-weight:$medium;
-					em {color:$blue5}
-				}
-				.title_type02 {font-size:18px; color:$gray7; font-weight:$medium;}
-				.title_type03 {
-					font-size:18px; color:$gray6; font-weight:$medium;
-				}
-			}
-			.control_wrap {
-				font-size:0;
-				select {
-					font-size:13px; line-height:36px; padding:0 40px 0 20px; border-radius:20px; vertical-align:middle; font-weight:$medium; border:1px solid $gray3; background-image:url(../../images/common/select_arr.png);
-					@include backgroundSolt(85%, 60%);
-
-				}
-				button {
-					border:1px solid $gray3; border-radius:20px; padding:0 18px; vertical-align:middle;
-					span {font-size:13px; line-height:36px; font-weight:$medium; color:$gray7; display:block;}
-				}
-				.btn_compare {
-					span {
-						padding:0 22px 0 0; position:relative;
-						&:after {
-							position:absolute; top:50%; right:0; content:""; background-image:url(../../images/common/compare_icon.png);
-							@include translate(0, -50%);
-							@include backgroundSoltC();
-							@include textBackground(16px, 16px);
-						}
-					}
-					&.btn_compare_in {
-						span {
-							padding:0;
-							&:after {display:none;}
-						}
-					}
-				}
-				.search_long_wrap {
-					> button {display:none;}
-					.box {
-						> * {margin:0 0 0 20px;}
-						div {
-							position:relative; display:inline-block; vertical-align:middle;
-							input[type=text] {
-								width:286px; font-size:13px; line-height:36px; padding:0 40px 0 20px; border-radius:20px; box-sizing:border-box; border:1px solid $gray3;
-								&::-webkit-input-placeholder {color:$gray3;}
-								&:-ms-input-placeholder {color:$gray3;}
-							}
-							input[type=submit] {
-								position:absolute; top:50%; right:11px; background-image:url(../../images/common/search_icon_s.png);
-								@include textBackground(16px, 16px);
-								@include backgroundSoltC();
-								@include translate(0, -50%);
-							}
-						}
-					}
-				}
-			}
-		}
-		!*.title_wrap {
-			max-width:1200px; justify-content:space-between; align-items:center; display:flex; margin:0 auto; padding:40px 0 14px; border-bottom:1px solid #e5e5e5;
-			.title_box {
-				padding:0 0 0 20px;
-				.title_type01 {
-					font-size:16px; color:$gray6; font-weight:$medium; letter-spacing:-0.2px;
-					em {color:$blue5}
-				}
-				.title_type02 {font-size:16px; color:$gray6; font-weight:$medium; letter-spacing:-0.2px;}
-				.title_type03 {font-size:18px; color:$gray7; font-weight:$medium; letter-spacing:-0.2px;}
-				.title_type04 {
-					* {display:inline-block; vertical-align:middle; letter-spacing:-0.2px;}
-					strong {font-size:18px; color:$gray7; font-weight:$medium;}
-					span {
-						font-size:15px; color:$gray6; margin:0 0 0 5px; position:relative; top:2px; padding:0 0 0 9px;
-						&:before {width:3px; height:3px; border-radius:100%; background-color:$gray6; position:absolute; top:5px; left:0; content:"";}
-					}
-				}
-				.title_type05 {font-size:16px; color:$gray7; font-weight:$medium;}
-			}
-			.control_wrap {
-				font-size:0;
-				> * {margin:0 0 0 20px;}
-				.btn_compare {
-					border:1px solid $gray3; border-radius:20px; padding:0 18px; vertical-align:middle;
-					span {
-						font-size:13px; line-height:36px; padding:0 22px 0 0; position:relative; font-weight:$medium; color:$gray7; display:block;
-						&:after {
-							position:absolute; top:50%; right:0; content:""; background-image:url(../../images/common/compare_icon.png);
-							@include translate(0, -50%);
-							@include backgroundSoltC();
-							@include textBackground(16px, 16px);
-						}
-					}
-				}
-				select {
-					font-size:13px; line-height:36px; padding:0 40px 0 20px; border-radius:20px; vertical-align:middle; font-weight:$medium; border:1px solid $gray3; background-image:url(../../images/common/select_arr.png);
-					@include backgroundSolt(85%, 60%);
-
-				}
-				.search_type01 {
-					display:inline-block; vertical-align:middle; position:relative;
-					input[type=text] {
-						width:286px; font-size:13px; line-height:36px; padding:0 40px 0 20px; border-radius:20px; box-sizing:border-box; border:1px solid $gray3;
-						&::-webkit-input-placeholder {color:$gray3;}
-						&:-ms-input-placeholder {color:$gray3;}
-					}
-					input[type=submit] {
-						position:absolute; top:50%; right:11px; background-image:url(../../images/common/search_icon_s.png);
-						@include textBackground(16px, 16px);
-						@include backgroundSoltC();
-						@include translate(0, -50%);
-					}
-				}
-				.search_type02 {
-					display:inline-block; vertical-align:middle; position:relative;
-					input[type=text] {
-						width:286px; font-size:13px; line-height:36px; padding:0 20px; border-radius:20px; box-sizing:border-box; border:1px solid $gray3;
-						&::-webkit-input-placeholder {color:$gray3;}
-						&:-ms-input-placeholder {color:$gray3;}
-					}
-					input[type=submit] {font-size:13px; line-height:36px; margin:0 0 0 8px; border-radius:20px; padding:0 20px; border:1px solid $gray3; font-weight:$medium; color:$gray7; cursor:pointer;}
-				}
-			}
-		}*!
-	}
-	.content {padding:93px 0 0; height:1000px;} // sub title fixed 여백
-	@include mob(){
-		padding:em(132) 0 0;
-		.cont_title {
-			top:em(256); padding:0;
-			.title_wrap {
-				padding:em(38) em(30) em(38) 0;
-				.title_box {
-					padding:0 0 0 em(95);
-					.title_type01 {font-size:em(32); font-weight:$bold}
-					.title_type02 {font-size:em(32); font-weight:$bold;}
-				}
-				.control_wrap {
-					font-size:0;
-					select {
-						font-size:em(28); line-height:em(68); padding:0 em(70) 0 em(30); border-radius:em(50); font-weight:$bold; background-image:url(../../images/common/select_arr_m.png); background-size:em(16) em(10) !important;
-						@include backgroundSolt(85%, 50%);
-
-					}
-					button {
-						border-radius:em(50); padding:0 em(30);
-						span {font-size:em(28); line-height:em(68); font-weight:$bold;}
-					}
-					.btn_compare {
-						span {
-							padding:0 em(42) 0 0;
-							&:after {width:em(30); height:em(30); background-image:url(../../images/common/compare_icon_m.png);}
-						}
-					}
-					.search_long_wrap {
-						display:inline-block; vertical-align:middle;
-						> button {
-							display:block; width:em(72); line-height:em(68); text-indent:-9999px; margin:0 0 0 em(20); position:relative; background-image:url(../../images/common/btn_search_m.png);
-							@include backgroundSoltC();
-							&.on {background-color:$red;}
-						}
-						.box {
-							width:100%; display:none; text-align:center; position:absolute; top:em(130); left:0; background-color:rgba(255, 255, 255, 0.8); padding:em(40) 0;
-							&:before {width:100%; height:1px; content:""; background-color:#fff; position:absolute; top:-1px; left:0;}
-							> * {margin:0 0 0 em(20);}
-							div {
-								input[type=text] {
-									width:em(380); font-size:em(26); line-height:em(68); padding:0 em(80) 0 em(30); border-radius:em(50);
-								}
-								input[type=submit] {
-									width:em(32); height:em(32); right:em(22); background-image:url(../../images/common/search_icon_s.png);
-									@include backgroundSoltC();
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-		.content {padding:em(148) 0 0;} // sub title fixed 여백
-	}
-}
-.filter_apply .filter_contents {
-	@include mob(){
-		.content {padding:em(256) 0 0;} // sub title fixed 여백 + 필터링 한줄 포함
-	}
-}*/
-/*
-.default_contents {
-	padding:100px 0 0; max-width:1200px; margin:0 auto; border:1px solid green;
-	@include mob(){
-		padding:em(132) 0 0;
-	}
-}
-.stepBystep_contents {
-	padding:180px 0 0; max-width:1200px; margin:0 auto; border:1px solid blue;
-	@include mob(){
-		padding:em(320) 0 0;
-	}
-}*/
