@@ -11,6 +11,12 @@ function layout() {
         }
     });
 
+    $(".form_text_type01 input").each(function(){
+        if($(this).val() != ""){
+            $(this).addClass('validField');
+        }
+    })
+
     var $questionBtn = $(".question_btn");
     $questionBtn.click(function () {
         var _this = $(this);
@@ -83,14 +89,16 @@ function layout() {
     $searchBtn.on("click", function(){
         $search.fadeIn();
         $search.focus();
+        TweenMax.to($("#gnb"), .3, {display:"none", opacity:0});
+        TweenMax.to($(".search_bg"), .3, {display:"block", opacity:1});
+        $(this).hide();
     });
-    $searchCloseBtn.on("click", function(){
+    $searchCloseBtn.on("click focusout", function(){
         $search.fadeOut();
         $searchBtn.focus();
-    });
-    $searchCloseBtn.on("focusout", function(){
-        $search.fadeOut();
-        $searchBtn.focus();
+        $searchBtn.css({"display":"inline-block"});
+        TweenMax.to($("#gnb"), .3, {display:"block", opacity:1});
+        TweenMax.to($(".search_bg"), .3, {display:"none", opacity:0});
     });
 
     // Mobile Nav
@@ -107,18 +115,30 @@ function layout() {
     
     // dropMenu
     $(".snb_s > a").on('click',function(e){
-        $(".snb_s > a").removeClass('on');
+        $(".snb_s > a").removeClass("on");
         $(".snb_s > ul").slideUp();
-        $(this).removeClass('on');
-        var menuList = $(this).next('ul');
-        var link = $(this).attr('href');
+        $(this).removeClass("on");
+        var menuList = $(this).next("ul");
+        var link = $(this).attr("href");
         if(!menuList.is(':visible') ){
             if(link == '#'){
-                $(this).addClass('on');
+                $(this).addClass("on");
                 menuList.slideDown();
             }else{
                 window.location.href = link;
             }
+        }
+        e.preventDefault();
+    });
+
+    // dropMenu
+    $(".folding_menu > button").on("click",function(e){
+        $(".folding_menu > button").removeClass("on");
+        $(".folding_menu > .cont").slideUp();
+        var cont = $(this).next("div");
+        if(!cont.is(":visible") ){
+            $(this).addClass("on");
+            cont.slideDown();
         }
         e.preventDefault();
     });
@@ -191,7 +211,6 @@ function layout() {
         $popupBox.fadeOut();
         $("body,html").css({"overflow-y":"auto"});
     });
-
 
     // header 공통 부분 높이값 유동적으로 변경
     function controlWrapAction() {

@@ -4,7 +4,7 @@
 "checkTypeFinancial": "display:none;"
 })
 				<!-- container -->
-				<div id="container" class="product_contents no_title">
+				<div id="container" class="no_title product_contents">
 					<div id="contents">
 						<div class="content">
 							<div class="product_detail_type">
@@ -121,18 +121,14 @@
 													<strong>Country</strong>
 												</div>
 												<ul class="list_item01 list_item01_2">
-													<!--버튼 체크 상태-->
 													<li>
-														<input type="radio" name="input_type_radio_list01" id="input_type_radio_list01" checked>
+														<input type="radio" name="input_type_radio_list01" id="input_type_radio_list01">
 														<label for="input_type_radio_list01"><span>US</span></label>
 													</li>
-													<!--/버튼 체크 상태-->
-													<!--버튼 비활성화 상태-->
 													<li>
-														<input type="radio" name="input_type_radio_list01" id="input_type_radio_list01-1" class="disabled_chk">
+														<input type="radio" name="input_type_radio_list01" id="input_type_radio_list01-1" checked>
 														<label for="input_type_radio_list01-1"><span>Canada</span></label>
 													</li>
-													<!--//버튼 비활성화 상태-->
 												</ul>
 												<div class="tit_wrap">
 													<strong>Cash Dispersor Unit</strong>
@@ -143,19 +139,19 @@
 														<label for="input_type_radio_list02"><span>Drawer Type1</span></label>
 													</li>
 													<li>
-														<input type="radio" name="input_type_radio_list02" id="input_type_radio_list02-1" class="disabled_chk">
+														<input type="radio" name="input_type_radio_list02" id="input_type_radio_list02-1" disabled>
 														<label for="input_type_radio_list02-1"><span>2 Cassette (4K Notes)</span></label>
 													</li>
 													<li>
-														<input type="radio" name="input_type_radio_list02" id="input_type_radio_list02-2" class="disabled_chk">
+														<input type="radio" name="input_type_radio_list02" id="input_type_radio_list02-2" disabled>
 														<label for="input_type_radio_list02-2"><span>2 Cassette (2x1K Notes)</span></label>
 													</li>
 													<li>
-														<input type="radio" name="input_type_radio_list02" id="input_type_radio_list02-3" class="disabled_chk">
+														<input type="radio" name="input_type_radio_list02" id="input_type_radio_list02-3" disabled>
 														<label for="input_type_radio_list02-3"><span>Drawer Type</span></label>
 													</li>
 													<li>
-														<input type="radio" name="input_type_radio_list02" id="input_type_radio_list02-4" class="disabled_chk">
+														<input type="radio" name="input_type_radio_list02" id="input_type_radio_list02-4" disabled>
 														<label for="input_type_radio_list02-4"><span>Shell (No CDU)</span></label>
 													</li>
 												</ul>
@@ -168,11 +164,11 @@
 														<label for="input_type_radio_list03"><span>Electronic Lock</span></label>
 													</li>
 													<li>
-														<input type="radio" name="input_type_radio_list03" id="input_type_radio_list03-1" class="disabled_chk">
+														<input type="radio" name="input_type_radio_list03" id="input_type_radio_list03-1" disabled>
 														<label for="input_type_radio_list03-1"><span>Cencon Lock</span></label>
 													</li>
 													<li>
-														<input type="radio" name="input_type_radio_list03" id="input_type_radio_list03-2" class="disabled_chk">
+														<input type="radio" name="input_type_radio_list03" id="input_type_radio_list03-2" disabled>
 														<label for="input_type_radio_list03-2"><span>S&G Lock</span></label>
 													</li>
 												</ul>
@@ -185,7 +181,7 @@
 														<label for="input_type_radio_list04"><span>Topper - No</span></label>
 													</li>
 													<li>
-														<input type="radio" name="input_type_radio_list04" id="input_type_radio_list04-1" class="disabled_chk">
+														<input type="radio" name="input_type_radio_list04" id="input_type_radio_list04-1" disabled>
 														<label for="input_type_radio_list04-1"><span>Topper - Standard</span></label>
 													</li>
 												</ul>
@@ -194,11 +190,11 @@
 												</div>
 												<ul class="list_item01 list_item01_3">
 													<li>
-														<input type="radio" name="input_type_radio_list05" id="input_type_radio_list05" checked>
+														<input type="radio" name="input_type_radio_list05" id="input_type_radio_list05" disabled>
 														<label for="input_type_radio_list05"><span>Dial Up Modem - Yes</span></label>
 													</li>
 													<li>
-														<input type="radio" name="input_type_radio_list05" id="input_type_radio_list05-1" class="disabled_chk">
+														<input type="radio" name="input_type_radio_list05" id="input_type_radio_list05-1" checked>
 														<label for="input_type_radio_list05-1"><span>Dial Up Modem - No</span></label>
 													</li>
 												</ul>
@@ -207,11 +203,21 @@
 												</div>
 												<div class="increase_control_btn">
 													<div class="control_btn down_btn">
-														<button type="button"></button>
+														<!-- 비로그인 start -->
+														<button type="button" class="btn_popup" data-popup="login_check_popup"></button>
+														<!-- 비로그인 start -->
+														<!-- 로그인 start -->
+														<!--<button type="button"></button>-->
+														<!-- 로그인 end -->
 													</div>
-													<input type="text" disabled="disabled" class="quantity_input" value="0">
+													<input type="text" class="quantity_input" value="0">
 													<div class="control_btn up_btn">
-														<button type="button"></button>
+														<!-- 비로그인 start -->
+														<button type="button" class="btn_popup" data-popup="login_check_popup"></button>
+														<!-- 비로그인 start -->
+														<!-- 로그인 start -->
+														<!--<button type="button"></button>-->
+														<!-- 로그인 end -->
 													</div>
 												</div>
 											</div>
@@ -227,20 +233,24 @@
 														<div>
 															<span class="price_p">$</span>
 															<span class="price_p">0</span>
+															<!--팝업 활성화 상태-->
 															<p class="option_txt">
 																Hardware
-																<button type="button" class="btn_popup" data-popup="individual_price_popup"></button>
+																<button type="button" class="btn_popup" data-popup="individual_price_popup_h"></button>
 															</p>
+															<!--//팝업 활성화 상태-->
 														</div>
 													</li>
 													<li>
 														<div>
 															<span class="price_p">$</span>
 															<span class="price_p">0</span>
-															<p class="option_txt">
+															<!--btn_disabled 클래스 추가 시 팝업 비활성화 상태-->
+															<p class="option_txt btn_disabled">
 																Software
-																<button type="button" class="btn_popup" data-popup="individual_price_popup"></button>
+																<button type="button" class="btn_popup" data-popup="individual_price_popup_h"></button>
 															</p>
+															<!--//btn_disabled 클래스 추가 시 팝업 비활성화 상태-->
 														</div>
 													</li>
 												</ul>
@@ -249,24 +259,24 @@
 														<div>
 															<span class="price_p">$</span>
 															<span class="price_p">0</span>
-															<p class="option_txt">Total Price</p>
+															<p class="option_txt total_folding">Total Price</p>
 														</div>
 													</li>
 												</ul>
 											</div>
 											<ul class="info_btn">
 												<!-- 데이터 정상 입력시 btn_disabled 클래스 제거 -->
-												<li class="download_btn">
+												<li class="download_btn btn_disabled">
 													<button type="button"></button>
 												</li>
-												<li class="wish_btn">
+												<li class="wish_btn btn_disabled">
 													<button type="button"></button>
 												</li>
-												<li class="cart_btn">
+												<li class="cart_btn btn_disabled">
 													<button type="button">Add to Cart</button>
 												</li>
-												<li class="next_step_btn">
-													<button type="button">Next Step</button>
+												<li class="next_step_btn btn_disabled">
+													<a href="">Next Step</a>
 												</li>
 											</ul>
 										</div>
@@ -285,7 +295,7 @@
 												<div class="option_type">
 													<strong>Final Choice Options</strong>
 													<ul>
-														<li>Canada Canada Canada Canada Canada Canada Canada</li>
+														<li>Canada</li>
 														<li>1 Cassette (1K Notes)</li>
 														<li>Electronic Lock</li>
 														<li>EMV - Yes</li>
@@ -337,67 +347,71 @@
 					</div>
 				</div>
 
-				<div class="popup individual_price_popup" tabindex="0">
-	<div class="popup_wrap">
-		<div class="popup_content">
-			<strong class="pop_title">Individual Prices</strong>
-			<div class="option_wrap">
-				<p>Hardware</p>
-				<div class="in_wrap">
-					<div class="scroll_wrap scroll_bar_custom">
-						<div class="column_list_option">
-							<div>
-								<span>Options</span>
-								<ul>
-									<li>BRM Only</li>
-									<li>LV1</li>
-									<li> Regular Cencon Lock</li>
-									<li> Dip Card Reader</li>
-								</ul>
+				<!--btn_popup 클릭시 팝업 활성화-->
+				<div class="popup individual_price_popup_h" tabindex="0">
+					<div class="popup_wrap">
+						<div class="popup_content">
+							<strong class="pop_title">Individual Prices</strong>
+							<div class="option_wrap">
+								<div class="scroll_wrap scroll_bar_custom">
+									<div class="item_list">
+										<p>Hardware</p>
+										<div class="in_wrap">
+											<div class="column_list_option">
+												<div>
+													<span>Options</span>
+													<ul>
+														<li>BRM Only</li>
+														<li>LV1</li>
+														<li>Regular Cencon Lock</li>
+														<li>Dip Card Reader</li>
+													</ul>
+												</div>
+											</div>
+											<div class="row_list_option">
+												<ul>
+													<li>
+														<span>Material Code</span>
+														<p>7224000262</p>
+													</li>
+													<li>
+														<span>Unit Price</span>
+														<p>
+															<em>$</em>
+															52,730.30
+														</p>
+													</li>
+													<li>
+														<span>Qty</span>
+														<p>1</p>
+													</li>
+													<li class="last_price_txt">
+														<span>Price</span>
+														<p>
+															<em>$</em>
+															52,730.30
+														</p>
+													</li>
+												</ul>
+											</div>
+											<div class="column_list_option">
+												<div>
+													<span>Add-On</span>
+													<ul>
+														<li>Palm Vein - No</li>
+														<li>Handset - Yes</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
 							</div>
-						</div>
-						<div class="row_list_option">
-							<ul>
-								<li>
-									<span>Material Code</span>
-									<p>7224000262</p>
-								</li>
-								<li>
-									<span>Unit Price</span>
-									<p>
-										<em>$</em>
-										52,730.30
-									</p>
-								</li>
-								<li>
-									<span>Qty</span>
-									<p>1</p>
-								</li>
-								<li class="last_price_txt">
-									<span>Price</span>
-									<p>
-										<em>$</em>
-										52,730.30
-									</p>
-								</li>
-							</ul>
-						</div>
-						<div class="column_list_option">
-							<div>
-								<span>Add-On</span>
-								<ul>
-									<li>Palm Vein - No</li>
-									<li>Handset - Yes</li>
-								</ul>
-							</div>
+							<button type="button" class="btn_popup_close">close</button>
 						</div>
 					</div>
+					<p class="dimmed"></p>
 				</div>
-			</div>
-			<button type="button" class="btn_popup_close">close</button>
-		</div>
-	</div>
-	<p class="dimmed"></p>
-</div>
+				<!--//btn_popup 클릭시 팝업 활성화-->
 				<!-- //container -->
 @@include("../../include/footer.html")

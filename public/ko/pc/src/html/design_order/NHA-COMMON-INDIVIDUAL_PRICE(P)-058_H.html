@@ -5,63 +5,65 @@
 })
 <style>
 	/* 예시용 css 입니다. */
-	.individual_price_popup {display:flex;}
+	.price_detail_popup {display:flex;}
 </style>
 
 <!-- container -->
-<div id="container" class="product_contents">
-	<div class="popup individual_price_popup" tabindex="0">
+<div id="container">
+	<div class="popup price_detail_popup" tabindex="0">
 		<div class="popup_wrap">
 			<div class="popup_content">
 				<strong class="pop_title">Individual Prices</strong>
 				<div class="option_wrap">
 					<div class="scroll_wrap scroll_bar_custom">
-						<p>Hardware</p>
-						<div class="in_wrap">
-							<div class="column_list_option">
-								<div>
-									<span>Options</span>
+						<div class="item_list">
+							<p>Hardware</p>
+							<div class="in_wrap">
+								<div class="column_list_option">
+									<div>
+										<span>Options</span>
+										<ul>
+											<li>BRM Only</li>
+											<li>LV1</li>
+											<li>Regular Cencon Lock</li>
+											<li>Dip Card Reader</li>
+										</ul>
+									</div>
+								</div>
+								<div class="row_list_option">
 									<ul>
-										<li>BRM Only</li>
-										<li>LV1</li>
-										<li> Regular Cencon Lock</li>
-										<li> Dip Card Reader</li>
+										<li>
+											<span>Material Code</span>
+											<p>7224000262</p>
+										</li>
+										<li>
+											<span>Unit Price</span>
+											<p>
+												<em>$</em>
+												52,730.30
+											</p>
+										</li>
+										<li>
+											<span>Qty</span>
+											<p>1</p>
+										</li>
+										<li class="last_price_txt">
+											<span>Price</span>
+											<p>
+												<em>$</em>
+												52,730.30
+											</p>
+										</li>
 									</ul>
 								</div>
-							</div>
-							<div class="row_list_option">
-								<ul>
-									<li>
-										<span>Material Code</span>
-										<p>7224000262</p>
-									</li>
-									<li>
-										<span>Unit Price</span>
-										<p>
-											<em>$</em>
-											52,730.30
-										</p>
-									</li>
-									<li>
-										<span>Qty</span>
-										<p>1</p>
-									</li>
-									<li class="last_price_txt">
-										<span>Price</span>
-										<p>
-											<em>$</em>
-											52,730.30
-										</p>
-									</li>
-								</ul>
-							</div>
-							<div class="column_list_option">
-								<div>
-									<span>Add-On</span>
-									<ul>
-										<li>Palm Vein - No</li>
-										<li>Handset - Yes</li>
-									</ul>
+								<div class="column_list_option">
+									<div>
+										<span>Add-On</span>
+										<ul>
+											<li>Palm Vein - No</li>
+											<li>Handset - Yes</li>
+										</ul>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -71,293 +73,6 @@
 			</div>
 		</div>
 		<p class="dimmed"></p>
-	</div>
-	<div id="contents">
-		<div class="content">
-			<div class="product_detail_type type02">
-				<!--view detail-->
-				<div class="view_detail">
-					<div class="detail_img">
-						<div class="swiper-container product_slide_contain">
-							<div class="swiper-wrapper">
-								<div class="swiper-slide slide">
-									<img src="./../../images/design_order/product_item_01.png" alt="">
-								</div>
-								<div class="swiper-slide slide">
-									<img src="./../../images/design_order/product_item_01.png" alt="">
-								</div>
-								<div class="swiper-slide slide">
-									<img src="./../../images/design_order/product_item_01.png" alt="">
-								</div>
-							</div>
-							<div class="swiper-button-next next_btn">다음 슬라이드</div>
-							<div class="swiper-button-prev prev_btn">이전 슬라이드</div>
-						</div>
-						<div class="indicator"></div>
-					</div>
-					<div class="info_form_wrap">
-						<div class="txt_elm">
-							<span class="variety">Financial ATMs</span>
-							<strong>MX8800</strong>
-							<p class="strong_p">The best-in-class assisted<br> self-service banking solution</p>
-							<p class="desc">
-								Base Model MX8800 - UL 291 Level 1 Safe with Cencon Lock - Security
-								Camera - EPP & Privacy Shield - Cash & Check In Module (CCiM) 2.5- 5
-								Cassette Bunch Recycling Module (BRM60) - 4 Recycling + 1
-								Deposit - 4 Hopper Coin Dispenser - Barcode Scanner - NFC Reader - EMV
-								Motorized Card Reader with Anti-Skim and Anti-Shim - 15" Lower
-								Touchscreen Transactional Display (with privacy filter) - 24" Upper Display
-								Only Screen - Rear Operator Panel - Receipt Printer - Web Camera
-								(video and microphone)  - Speaker - ID Scanner - ADA - Q87 PC Core
-								Processor - 8GM Ram - TPM 2.0 - OS Win 10 - Back-up Battery
-							</p>
-						</div>
-						<div class="img_box">
-							<ul>
-								<li>
-									<img src="./../../images/common/info_icon01.png" alt="">
-									<p>10.1” Color LCD<br> Screen</p>
-								</li>
-								<li>
-									<img src="./../../images/common/info_icon02.png" alt="">
-									<p>1,000 Notes Per<br>Cassette</p>
-								</li>
-								<li>
-									<img src="./../../images/common/info_icon03.png" alt="">
-									<p>Supports<br>6 Languages</p>
-								</li>
-							</ul>
-						</div>
-						<div>
-							<div class="product_button_wrap">
-								<a href="#">
-									<span>View Details</span>
-								</a>
-								<a href="#" download="">
-									<span>Download Brochure</span>
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="fixed_menu">
-					<!--탑 메뉴 바-->
-					<div class="product_top_menu">
-						<div class="menu_wrap">
-							<div class="view_item">
-								<div class="img_item">
-									<img src="./../../images/design_order/product_item_01.png" alt="">
-								</div>
-								<span>Financial ATMs</span>
-								<strong>MX8800</strong>
-							</div>
-							<div class="product_button_wrap">
-								<a href="" class="view_details_btn">
-									<span>View Details</span>
-								</a>
-								<a href="" class="download_brochure_btn">
-									<span>Download Brochure</span>
-								</a>
-							</div>
-						</div>
-					</div>
-
-					<!--제품 구매 스텝 바-->
-					<div class="product_step_bar">
-						<ul>
-							<!-- 탭 활성화 -->
-							<li>
-								<span class="step_active"><em>01.</em>Hardware</span>
-							</li>
-							<li>
-								<span><em>02.</em>Software </span>
-							</li>
-							<li>
-								<span><em>03.</em>Options </span>
-							</li>
-							<li>
-								<span><em>04.</em>Others </span>
-							</li>
-							<li>
-								<span><em>05.</em>Summary </span>
-							</li>
-						</ul>
-					</div>
-				</div>
-
-				<div class="substance_wrap">
-					<!--내용-->
-					<div class="substance_cont">
-						<div class="hardware_wrap">
-							<div class="form_check_radio_type01">
-								<div class="tit_wrap">
-									<strong>Lock Type</strong>
-								</div>
-								<ul class="list_item01 list_item01_3 ">
-									<li>
-										<input type="radio" name="input_type_radio_list01" id="input_type_radio_list01" checked>
-										<label for="input_type_radio_list01"><span>Regular Cencon Lock</span></label>
-									</li>
-									<li>
-										<input type="radio" name="input_type_radio_list01" id="input_type_radio_list01-1">
-										<label for="input_type_radio_list01-1"><span>Shunted Lock</span></label>
-									</li>
-								</ul>
-								<div class="tit_wrap">
-									<strong>Card Reader</strong>
-								</div>
-								<ul class="list_item01 list_item01_3 ">
-									<li>
-										<input type="radio" name="input_type_radio_list02" id="input_type_radio_list02" checked>
-										<label for="input_type_radio_list02"><span>Dip Card Reader</span></label>
-									</li>
-									<li>
-										<input type="radio" name="input_type_radio_list02" id="input_type_radio_list02-1">
-										<label for="input_type_radio_list02-1"><span>Motorized Card Reader</span></label>
-									</li>
-								</ul>
-							</div>
-							<div class="form_check_radio_type01">
-								<strong>Add-On</strong>
-								<div class="tit_wrap">
-									<strong>Lock Type</strong>
-								</div>
-								<ul class="list_item01 list_item01_2 ">
-									<li>
-										<input type="radio" name="input_type_radio_list03" id="input_type_radio_list03" checked>
-										<label for="input_type_radio_list03"><span>Yes</span></label>
-									</li>
-									<li>
-										<input type="radio" name="input_type_radio_list03" id="input_type_radio_list03-1">
-										<label for="input_type_radio_list03-1"><span>No</span></label>
-									</li>
-								</ul>
-								<div class="tit_wrap">
-									<strong>Card Reader</strong>
-								</div>
-								<ul class="list_item01 list_item01_2 ">
-									<li>
-										<input type="radio" name="input_type_radio_list04" id="input_type_radio_list04" checked>
-										<label for="input_type_radio_list04"><span>Yes</span></label>
-									</li>
-									<li>
-										<input type="radio" name="input_type_radio_list04" id="input_type_radio_list04-1">
-										<label for="input_type_radio_list04-1"><span>No</span></label>
-									</li>
-								</ul>
-								<div class="tit_wrap">
-									<strong>Qty</strong>
-								</div>
-								<div class="increase_control_btn">
-									<div class="control_btn down_btn">
-										<button type="button"></button>
-									</div>
-									<input type="text" disabled="disabled" class="quantity_input" value="0">
-									<div class="control_btn up_btn">
-										<button type="button"></button>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<!--가격 바-->
-					<div id="ProductPriceBar">
-						<div class="bar_wrap">
-							<div class="calculate_bar">
-								<ul class="price_view">
-									<li>
-										<div>
-											<span class="price_p">$</span>
-											<span class="price_p">0</span>
-											<p class="option_txt">
-												Hardware
-												<span></span>
-											</p>
-										</div>
-									</li>
-									<li>
-										<div>
-											<span class="price_p">$</span>
-											<span class="price_p">0</span>
-											<p class="option_txt">
-												Software
-												<span></span>
-											</p>
-										</div>
-									</li>
-									<li>
-										<div>
-											<span class="price_p">$</span>
-											<span class="price_p">0</span>
-											<p class="option_txt btn_disabled">
-												Options
-												<button type="button"></button>
-											</p>
-										</div>
-									</li>
-								</ul>
-								<ul class="total_price">
-									<li>
-										<div>
-											<span class="price_p">$</span>
-											<span class="price_p">0</span>
-											<p class="option_txt">
-												Total Price
-												<span></span>
-											</p>
-										</div>
-									</li>
-								</ul>
-							</div>
-							<ul class="info_btn">
-								<!-- 데이터 정상 입력시 btn_disabled 클래스 제거 -->
-								<li class="download_btn btn_disabled">
-									<button type="button"></button>
-								</li>
-								<li class="wish_btn btn_disabled">
-									<button type="button"></button>
-								</li>
-								<li class="cart_btn btn_disabled">
-									<button type="button">Add to Cart</button>
-								</li>
-								<li class="next_step_btn">
-									<button type="button">Next Step</button>
-								</li>
-							</ul>
-						</div>
-					</div>
-
-					<!--오른쪽 옵션 바 -->
-					<aside id="optionBar">
-						<div class="option_title">
-							<div class="default_box">
-								<h3>Hardware Options</h3>
-								<button type="button" class="btn_clearFilters">Refresh Options</button>
-							</div>
-						</div>
-						<div class="option_wrap">
-							<div class="option_cont scroll_bar_custom">
-								<div class="option_type">
-									<strong>Final Choice Options</strong>
-									<ul>
-										<li>BRM Only</li>
-										<li>LV1</li>
-									</ul>
-								</div>
-								<div class="stock_message">
-									<!--재고 있을 때 문구 출력-->
-									<span class="in_stock_txt">in_stock_txt</span>
-									<!--재고 없을 때 문구 출력-->
-									<!--<span class="not_stock_txt">Please contact to NHA Sale’sRepresentive for updatedelivery time.</span>-->
-								</div>
-							</div>
-						</div>
-					</aside>
-				</div>
-			</div>
-		</div>
 	</div>
 </div>
 <!-- //container -->

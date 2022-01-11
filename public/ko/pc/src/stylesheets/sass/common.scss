@@ -390,7 +390,8 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 				& ~ label {border-color:$gray6;}
 			}
 			&:disabled ~ label {background-color:$gray1;}
-			&.disabled_chk ~ label {background-color:$gray1;}
+			&:disabled:hover ~ label {border-color:$gray2; cursor:default;}
+			/*&.disabled_chk ~ label {background-color:$gray1;}*/
 		}
 		label {
 			width:100%; height:58px; text-align:center; position:relative; background-color:$white; line-height:24px;
@@ -531,7 +532,6 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 	}
 }
 
-/*220111 start*/
 .form_tab_type01 {
 	@extend %clearfix;
 	.tit_wrap {
@@ -546,7 +546,7 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 		}
 	}
 	.tab_item {
-		width:550px; float:right;
+		width:320px; float:right;
 		@extend %clearfix;
 		li {
 			width:50%;position:relative;float:left;
@@ -561,22 +561,47 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 	}
 	input[type=radio]{
 		position:absolute; top:10px; left:10px;
-		&:checked ~ label {background-color:$blue5; border:none; color:$white;}
+		&:checked ~ label {background-color:$blue5; border-color:$blue5; color:$white;}
 		&:focus,
 		&:hover {
-			& ~ label {background-color:$blue5; border:none; color:$white;}
+			& ~ label {border-color:$blue5;}
 		}
-		&:disabled ~ label {background-color:$gray1;}
-		&.disabled_chk ~ label {background-color:$gray1;}
+		&:disabled ~ label {background-color:$gray1; cursor:default;}
+		&:disabled:hover ~ label {border-color:$gray2;}
+		/*&.disabled_chk ~ label {background-color:$gray1;}
+		&.disabled_chk:checked ~ label {background-color:$blue5; border-color:$blue5; color:$white;}*/
 	}
 	label {
 		width:100%; height:46px; text-align:center; position:relative; background-color:$white; line-height:22px;
 		font-size:14px;border:1px solid $gray2;color:$gray5;
 		@include displayFlexCenter;
 		@include boxSizing;
+		@include transition();
+	}
+	@include mob (){
+		.tit_wrap {
+			margin:0;
+			strong {
+				padding:0 em(40) 0 0;font-size:em(36); margin:0;
+				button {width:em(25); height:em(25);}
+			}
+		}
+		.tab_item {
+			width:100%; margin:em(25) 0 0;
+			li {
+				width:50%;
+				&:first-of-type {
+					label {border-radius:7px 0 0 7px;}
+				}
+				&:last-child {
+					left:-1px;
+					label {border-radius:0 7px 7px 0;}
+				}
+			}
+		}
+		label {height:em(100); line-height:em(40);font-size:em(32);border:em(2) solid $gray2;}
 	}
 }
-/*220111 end*/
 
 .sub_title_wrap {
 	width:100%; position:fixed; top:80px; left:0; z-index:3; text-align:center; background-color:$gray1;
@@ -1032,12 +1057,34 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 }
 
 #container {
-	&.no_title { .content {margin:80px auto 0;} }
+	&.no_title {
+		.content {margin:80px auto 0;}
+		@include mob(){
+			.content {
+				margin:em(124) auto 0;
+			}
+		}
+	}
 }
-.content {margin:180px auto 0; box-sizing:border-box;}
+.step_contents {
+	.content {
+		padding:80px 0 0;
+	}
+	@include mob(){
+		.content {
+			padding:em(188) 0 0;
+		}
+	}
+}
+.content {
+	margin:180px auto 0; box-sizing:border-box;
+	@include mob(){
+		margin:em(256) 0 0;
+	}
+}
 .hd_transformation {
+	.content {max-width:1200px;}
 	// 타이틀 없는 컨텐츠
-	.content {max-width:1200px; margin:180px auto 0; box-sizing:border-box;}
 	&.no_title_wrap {
 		.cont_title {top:80px;}
 		.content {margin:148px auto 0;}
@@ -1251,4 +1298,3 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 		}
 	}
 }
-

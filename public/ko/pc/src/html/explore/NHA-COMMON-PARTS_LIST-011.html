@@ -123,7 +123,7 @@
 					</div>
 					<button type="button" class="btn_filter">filter Menu</button>
 				</aside>
-				<div id="contents" class="hd_transformation is_title_wrap filter_contents">
+				<div id="contents" class="hd_transformation">
 					<div class="cont_title">
 
 						<!-- 모바일 전용 html / search_btn_m 클릭시 아래 검색 폼 생성 됩니다-->
@@ -286,48 +286,48 @@
 				</div>
 			</div>
 			<script>
-	var $filters = $("#filters"),
-		$filterBtnClear = $(".btn_clearFilters, .btn_reset_filter"),
-		$selectedFilter = $(".selected_filter"),
-		$btnApply = $(".btn_apply");
+				var $filters = $("#filters"),
+					$filterBtnClear = $(".btn_clearFilters, .btn_reset_filter"),
+					$selectedFilter = $(".selected_filter"),
+					$btnApply = $(".btn_apply");
 
-	$filterBtnClear.click(function(){
-		if($filters.find("button").hasClass("on")){
-			$filters.find("button").removeClass("on");
-		}
-		if($filters.find(".form_check_radio_default input[type=checkbox]").is(":checked")){
-			$filters.find(".form_check_radio_default input[type=checkbox]").prop('checked', false);
-		}
-		if($(".filter_type02 a").hasClass("on")){
-			$(".filter_type02 a").removeClass("on");
-		}
-		if($(".snb_s > ul").is(':visible') ){
-			$(".snb_s > a").removeClass('on');
-			$(".snb_s > ul").slideUp();
-		}
+				$filterBtnClear.click(function(){
+					if($filters.find("button").hasClass("on")){
+						$filters.find("button").removeClass("on");
+					}
+					if($filters.find(".form_check_radio_default input[type=checkbox]").is(":checked")){
+						$filters.find(".form_check_radio_default input[type=checkbox]").prop('checked', false);
+					}
+					if($(".filter_type02 a").hasClass("on")){
+						$(".filter_type02 a").removeClass("on");
+					}
+					if($(".snb_s > ul").is(':visible') ){
+						$(".snb_s > a").removeClass('on');
+						$(".snb_s > ul").slideUp();
+					}
 
-		if($(".selected_filter").is(':visible')){
-			if($(".selected_filter").hasClass("selected_filter_on")){
-				$selectedFilter.removeClass("selected_filter_on");
-			}
-			const $contTitle = $(".cont_title");
-			const $content = $(".content");
-			let contTitleH = $contTitle.height();
-			let headerH = $("header").height() + $(".sub_title_wrap").height();
-			$content.css("marginTop",headerH + contTitleH);
-		}
-	});
+					if($(".selected_filter").is(':visible')){
+						if($(".selected_filter").hasClass("selected_filter_on")){
+							$selectedFilter.removeClass("selected_filter_on");
+						}
+						const $contTitle = $(".cont_title");
+						const $content = $(".content");
+						let contTitleH = $contTitle.height();
+						let headerH = $("header").height() + $(".sub_title_wrap").height();
+						$content.css("marginTop",headerH + contTitleH);
+					}
+				});
 
-	$btnApply.on("click",function(){
-		$selectedFilter.addClass("selected_filter_on");
-		$filters.toggleClass("fold_aside");
+				$btnApply.on("click",function(){
+					$selectedFilter.addClass("selected_filter_on");
+					$filters.toggleClass("fold_aside");
 
-		const $contTitle = $(".cont_title");
-		const $content = $(".content");
-		let contTitleH = $contTitle.height();
-		let headerH = $("header").height() + $(".sub_title_wrap").height();
-		$content.css("marginTop",headerH + contTitleH);
-	})
-</script>
+					const $contTitle = $(".cont_title");
+					const $content = $(".content");
+					let contTitleH = $contTitle.height();
+					let headerH = $("header").height() + $(".sub_title_wrap").height();
+					$content.css("marginTop",headerH + contTitleH);
+				})
+			</script>
 			<!-- //container -->
 @@include("../../include/footer.html")
