@@ -98,14 +98,14 @@
 										<ul>
 											<!-- 탭 활성화 -->
 											<li>
-												<span class="step_active"><em>01.</em>Hardware</span>
+												<button type="button"><span class="step_active"><em>01.</em>Hardware</span></button>
 											</li>
 											<!-- //탭 활성화 -->
 											<li>
-												<span><em>02.</em>Software </span>
+												<button type="button"><span><em>02.</em>Software </span></button>
 											</li>
 											<li>
-												<span><em>03.</em>Summary </span>
+												<button type="button"><span><em>03.</em>Summry </span></button>
 											</li>
 										</ul>
 									</div>
@@ -115,7 +115,7 @@
 
 									<!--내용-->
 									<div class="substance_cont">
-										<div class="hardware_wrap">
+										<div class="hardware_wrap active">
 											<div class="form_check_radio_type01">
 												<div class="tit_wrap">
 													<strong>Country</strong>
@@ -222,6 +222,8 @@
 												</div>
 											</div>
 										</div>
+										<div class="software_wrap">Software</div>
+										<div class="summary_wrap">Summary</div>
 									</div>
 
 									<!--가격 바-->
@@ -236,7 +238,7 @@
 															<!--팝업 활성화 상태-->
 															<p class="option_txt">
 																Hardware
-																<button type="button" class="btn_popup" data-popup="individual_price_popup_h"></button>
+																<button type="button" class="btn_popup" data-popup="hardware_popup"></button>
 															</p>
 															<!--//팝업 활성화 상태-->
 														</div>
@@ -245,12 +247,12 @@
 														<div>
 															<span class="price_p">$</span>
 															<span class="price_p">0</span>
-															<!--btn_disabled 클래스 추가 시 팝업 비활성화 상태-->
 															<p class="option_txt btn_disabled">
 																Software
-																<button type="button" class="btn_popup" data-popup="individual_price_popup_h"></button>
+																<!--팝업 비활성화 상태-->
+																<button type="button" class="btn_popup" data-popup=""></button>
+																<!--//팝업 비활성화 상태-->
 															</p>
-															<!--//btn_disabled 클래스 추가 시 팝업 비활성화 상태-->
 														</div>
 													</li>
 												</ul>
@@ -346,9 +348,10 @@
 						</div>
 					</div>
 				</div>
+				<!-- //container -->
 
-				<!--btn_popup 클릭시 팝업 활성화-->
-				<div class="popup individual_price_popup_h" tabindex="0">
+				<!--Hardware 팝업 -->
+				<div class="popup price_detail_popup hardware_popup" tabindex="0">
 					<div class="popup_wrap">
 						<div class="popup_content">
 							<strong class="pop_title">Individual Prices</strong>
@@ -412,6 +415,5 @@
 					</div>
 					<p class="dimmed"></p>
 				</div>
-				<!--//btn_popup 클릭시 팝업 활성화-->
-				<!-- //container -->
+				<!--//Hardware 팝업 -->
 @@include("../../include/footer.html")

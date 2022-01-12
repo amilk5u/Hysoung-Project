@@ -170,7 +170,7 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 .form_select_type01 {
 	position:relative;
 	div {
-		padding:27px 28px; width:100%; display:block;/*border:1px solid $gray2; border-radius:10px;*/ box-sizing:border-box; position:relative;
+		padding:29px 28px 28px; width:100%; display:block;/*border:1px solid $gray2; border-radius:10px;*/ box-sizing:border-box; position:relative;
 		&:after {
 			width:13px; height:8px; content:""; background-image:url(../../images/common/select_arr_default.png); position:absolute; top:50%; right:20px;
 			@include backgroundSoltC();
@@ -323,14 +323,16 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 				&.active {background-color:$blue;}
 			}
 			.question_detail {
-				width:400px; padding:20px 15px; position:absolute; bottom:40px; left:50%; margin:0 0 0 -200px; border:1px solid $gray3; font-size:15px; background-color:$white; display:none;
+				width:288px; padding:14px 20px; position:absolute; bottom:40px; left:50%; margin:0 0 0 -144px; font-size:12px; color:$gray6; background-color:$white; display:none; text-align:center; line-height:20px;
 				@include borderRadius(10px);
 				@include boxSizing;
 				@include opacity(0);
+				@include boxShadow(2px 6px 8px rgba(15,13,13,.1));
 				&:after {
-					width:20px; height:20px; display:block; content:""; position:absolute; left:50%; bottom:-11px; border-bottom:1px solid $gray3; border-right:1px solid $gray3; background-color:$white; margin:0 0 0 -10px;
+					width:12px; height:12px; display:block; content:""; position:absolute; left:50%; bottom:-6px; border-bottom:1px solid transparent; border-right:1px solid transparent; background-color:$white; margin:0 0 0 -6px;
 					@include boxSizing;
 					@include rotate(45);
+					@include boxShadow(2px 6px 16px rgba(15,13,13,.1));
 				}
 			}
 		}
@@ -412,7 +414,9 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 					width:em(33); height:em(33); background-size:em(12) em(18);
 				}
 				.question_detail {
-					width:calc(100vw - 10vw); padding:em(40) em(30); bottom:auto; top:em(64); left:0; margin:0; font-size:em(30); z-index:1;
+					width:calc(100vw - 10vw); padding:em(28) em(40); bottom:auto; top:em(64); left:0; margin:0; font-size:em(24); line-height:em(40); z-index:1;
+					@include borderRadius(em(20));
+					@include boxShadow(em(4) em(12) em(32) rgba(15,13,13,.1));
 					&:after {display:none;}
 				}
 			}
@@ -485,6 +489,44 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 	@include mob(){
 		input[type=text] {
 			font-size:em(32); line-height:em(116); padding:0 em(125) 0 em(28); border-width:em(2); border-radius:em(10);
+		}
+		.btn_calendar {
+			width:em(64); height:em(64); background-size:cover; right:em(28);
+		}
+	}
+}
+
+.form_date_type02 {
+	position:relative;
+	label {
+		color:$gray5; font-size:16px; position:absolute; top:50%; left:24px; pointer-events:none;
+		@include transition(all, 0.3s);
+		@include translate(0, -50%);
+		&.required {
+			&:before {content:"* "; color:$red;}
+		}
+	}
+	input[type=text] {
+		width:100%; font-size:16px; padding:17px 60px 17px 25px; border:1px solid $gray2; border-radius:10px; color:$gray7; box-sizing:border-box;
+		&:focus {border-color:$blue5; outline:none;}
+		&.date_in {padding:27px 60px 7px 25px; outline:none; border-color:$gray2;}
+		&.date_in ~ label {
+			position:absolute; top:10px; font-size:12px;
+			@include translate(0, 0);
+		}
+	}
+	.btn_calendar {
+		position:absolute; top:50%; right:25px; background-image:url(../../images/common/calendar_icon.png);
+		@include translate(0, -50%);
+		@include textBackground(24px, 24px);
+	}
+	@include mob(){
+		label {font-size:em(32)}
+		input[type=text] {
+			font-size:em(32); line-height:em(116); padding:0 em(125) 0 em(28); border-width:em(2); border-radius:em(10);
+			&.date_in ~ label {
+				top:em(28); font-size:em(24);
+			}
 		}
 		.btn_calendar {
 			width:em(64); height:em(64); background-size:cover; right:em(28);

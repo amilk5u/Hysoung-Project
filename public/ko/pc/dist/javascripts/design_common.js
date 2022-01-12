@@ -84,8 +84,6 @@ function design_order() {
             _viewTopMenuFix = $viewDetail.outerHeight() - $productTopMenu.outerHeight(),
             _priceFooterFix = ($html.outerHeight() - $("footer").outerHeight()) - winH;
 
-        // if(window.scrollY + window.innerHeight >= document.body.clientHeight - _footerH) {
-
         // 옵션 바 높이 값 조절
         $optionBar.css("height", _substanceContH);
 
