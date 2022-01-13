@@ -103,6 +103,8 @@ function design_order() {
         }
     }
 
+    /*220113 start----------------------------------------------------------------------------------------*/
+
     // 제품 수량 컨트롤
     function productQuantity() {
         let _quantityN = 0;
@@ -130,15 +132,6 @@ function design_order() {
         });
     }
 
-    $window.scroll(function(){
-        productViewFix();
-    });
-    $window.resize(function(){
-        productViewFix();
-    });
-    productViewFix();
-    productQuantity();
-
     // 모바일 전용 가격 folding bar
     $("#ProductPriceBar .total_price .option_txt").on("click",function(){
         let _this = $(this);
@@ -158,6 +151,60 @@ function design_order() {
         $("#ProductPriceBar .total_price .option_txt").removeClass("on");
         $("#ProductPriceBar").removeClass("active");
     });
+
+    /*220113 start----------------------------------------------------------------------------------------*/
+    function orderDetail () {
+        const $orderDetailType = $(".order_detail_type"),
+            $servicesTopList = $orderDetailType.find(".services_top_list"),
+            $borderTitle = $orderDetailType.find(".order_box");
+
+        let _viewTopMenuFix = $servicesTopList.outerHeight() - $borderTitle.outerHeight(),
+            _priceFooterFix = ($html.outerHeight() - $("footer").outerHeight()) - winH;
+
+        // view fixed
+        if ( winSc > _viewTopMenuFix ) {
+            $orderDetailType.addClass("view_active");
+            $orderDetailType.addClass("option_active");
+        } else {
+            $orderDetailType.removeClass("view_active");
+            $orderDetailType.removeClass("option_active");
+        }
+        // price fixed
+        if ( winSc > _priceFooterFix ) {
+            $orderDetailType.addClass("price_active");
+        } else {
+            $orderDetailType.removeClass("price_active");
+        }
+
+        const $moreShadowBtn = $(".more_shadow_wrap button");
+        $moreShadowBtn.on("click",function(){
+            $servicesTopList.addClass("active");
+        });
+
+
+    }
+    orderDetail();
+
+
+    $window.scroll(function(){
+        productViewFix();
+        orderDetail();
+    });
+    $window.resize(function(){
+        productViewFix();
+        orderDetail();
+    });
+    productViewFix();
+    productQuantity();
+
+
+    /*220113 end----------------------------------------------------------------------------------------*/
+
+
+
+
+
+
 }
 function explore() {
     //product_list_type01
