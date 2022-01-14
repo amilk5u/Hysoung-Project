@@ -152,6 +152,8 @@ function design_order() {
         $("#ProductPriceBar").removeClass("active");
     });
 
+
+
     /*220113 start----------------------------------------------------------------------------------------*/
     function orderDetail () {
         const $orderDetailType = $(".order_detail_type"),
@@ -185,6 +187,46 @@ function design_order() {
     }
     orderDetail();
 
+    /*order services 수량 컨트롤*/
+    function orderQuantity() {
+        let _orderQuantityN = 0;
+        const $increaseQty = $(".increase_qty"),
+            $controlDownBtn = $increaseQty.find(".down_btn"),
+            $controlUpBtn = $increaseQty.find(".up_btn"),
+            $quantityInput = $increaseQty.find(".quantity_input");
+
+        $controlDownBtn.on("click", function () {
+            _orderQuantityN = Number($quantityInput.val());
+            if(!$(this).find("button").hasClass("btn_popup")){
+                _orderQuantityN = _orderQuantityN - 1;
+                if ( _orderQuantityN < 0 ) {
+                    _orderQuantityN = 0;
+                }
+                $quantityInput.val(_orderQuantityN);
+            }
+        });
+        $controlUpBtn.on("click", function () {
+            _orderQuantityN = Number($quantityInput.val());
+            if(!$(this).find("button").hasClass("btn_popup")){
+                _orderQuantityN = _orderQuantityN + 1;
+                $quantityInput.val(_orderQuantityN);
+            }
+        });
+    }
+    orderQuantity();
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     $window.scroll(function(){
         productViewFix();
@@ -196,8 +238,6 @@ function design_order() {
     });
     productViewFix();
     productQuantity();
-
-
     /*220113 end----------------------------------------------------------------------------------------*/
 
 
@@ -409,25 +449,23 @@ function layout() {
         $formSelectBtn = $formSelectType01.find("button");
 
     $formSelectInput.on({
-        click : function (){
+        click: function () {
             var _this = $(this);
-            console.log(_this);
-
-            $formSelectType01.css({"z-index":-1});
-            if (_this.val().trim() === ""){
+            $formSelectType01.css({"z-index": -1});
+            if (_this.val().trim() === "") {
                 _this.parent("div").toggleClass("validField");
-                if(_this.parent("div").hasClass("validField")){
-                    _this.parent().parent().css({"z-index":1})
-                }else {
-                    $formSelectType01.attr("style","");
+                if (_this.parent("div").hasClass("validField")) {
+                    _this.parent().parent().css({"z-index": 1})
+                } else {
+                    $formSelectType01.css("z-index", 0);
                 }
             } else {
                 _this.siblings("label").addClass("select");
                 _this.parent("div").toggleClass("validField");
-                if(_this.parent("div").hasClass("validField")){
-                    _this.parent().parent().css({"z-index":1})
-                }else {
-                    $formSelectType01.attr("style","");
+                if (_this.parent("div").hasClass("validField")) {
+                    _this.parent().parent().css({"z-index": 1})
+                } else {
+                    $formSelectType01.css("z-index", 0);
                 }
             }
         }

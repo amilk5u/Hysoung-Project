@@ -35,25 +35,23 @@ function layout() {
         $formSelectBtn = $formSelectType01.find("button");
 
     $formSelectInput.on({
-        click : function (){
+        click: function () {
             var _this = $(this);
-            console.log(_this);
-
-            $formSelectType01.css({"z-index":-1});
-            if (_this.val().trim() === ""){
+            $formSelectType01.css({"z-index": -1});
+            if (_this.val().trim() === "") {
                 _this.parent("div").toggleClass("validField");
-                if(_this.parent("div").hasClass("validField")){
-                    _this.parent().parent().css({"z-index":1})
-                }else {
-                    $formSelectType01.attr("style","");
+                if (_this.parent("div").hasClass("validField")) {
+                    _this.parent().parent().css({"z-index": 1})
+                } else {
+                    $formSelectType01.css("z-index", 0);
                 }
             } else {
                 _this.siblings("label").addClass("select");
                 _this.parent("div").toggleClass("validField");
-                if(_this.parent("div").hasClass("validField")){
-                    _this.parent().parent().css({"z-index":1})
-                }else {
-                    $formSelectType01.attr("style","");
+                if (_this.parent("div").hasClass("validField")) {
+                    _this.parent().parent().css({"z-index": 1})
+                } else {
+                    $formSelectType01.css("z-index", 0);
                 }
             }
         }
