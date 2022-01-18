@@ -68,6 +68,9 @@ select, input, button, textarea {
    &[type="checkbox"] { -webkit-appearance:checkbox; }
    &[type="radio"] { -webkit-appearance:radio;}
    &::-ms-expand {display:none;}
+   @include mob(){
+      font-family:$base-font_mobile;
+   }
 }
 html, body {
    font-family:$base-font; font-size:$base-font-size; font-weight:$regular; color:$base-font-color; word-break:break-word; line-height:1; letter-spacing:$letter-spacing;

@@ -697,7 +697,7 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 		}
 		.stepBystep {
 			ol {
-				height:em(188); display:flex; padding:em(30) 0;
+				height:em(188); display:flex; padding:em(30) 0; justify-content:center;
 				@include boxSizing;
 				li {
 					width:25%; padding:0 em(10); margin:0;
@@ -1132,7 +1132,7 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 		.content {margin:148px auto 0;}
 	}
 	.cont_title {
-		width:100%; height:68px; position:fixed; top:180px; left:0; overflow:hidden; background-color:$white; z-index:1;
+		width:100%; height:114px; position:fixed; top:180px; left:0; overflow:hidden; background-color:$white; z-index:1;
 		&.search_on {
 			.search_input_m {display:none;}
 		}
@@ -1143,8 +1143,8 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 		.filter_scroll_wrap {@extend %clearfix;}
 	}
 	.title_wrap {
-		max-width:1200px; height:68px; margin:0 auto;background-color:$white; overflow:hidden;
-		border-bottom:1px solid #e5e5e5;
+		max-width:1200px; height:114px; margin:0 auto;background-color:$white; overflow:hidden;
+		border-bottom:2px solid $gray6;
 		@include boxSizing;
 		@extend %clearfix;
 	}
@@ -1154,21 +1154,25 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 		p {
 			padding:26px 0; font-weight:$medium;
 			span { margin:0 5px 0 0; }
-			&.default_title {font-size:18px;color:#121314;}
+			&.default_title {
+				font-size:16px;color:$gray6;font-weight:$medium;padding:75px 0 20px;
+				span {color:$blue5;}
+			}
+			/*&.default_title {font-size:18px;color:#121314;}
 			&.spacing_title {font-size:16px;color:#4d4e4f;font-weight:$medium;padding:25px 0 25px 24px;}
 			&.color_num_title {
 				font-size:16px;color:#4d4e4f;padding:25px 0 25px 22px;
 				span {color:$blue5;}
-			}
+			}*/
 		}
 	}
 	// right
 	.control_wrap {
-		float:right; padding:15px 0; font-size:0;
+		float:right; padding:54px 0 19px; font-size:0;
 		> * {margin:0 0 0 20px;}
 		// Select
 		.control_select {
-			height:38px;font-size:13px;font-weight:$medium;color:#121314;padding:0 40px 0 20px;border:1px solid $gray3;
+			font-size:13px; line-height:36px; font-weight:$medium;color:#121314;padding:0 40px 0 20px;border:1px solid $gray3;
 			background:url(./../../images/common/select_arr.png) 90% 50% no-repeat; background-size:20px 20px;
 			@include borderRadius(100px);
 		}
@@ -1290,12 +1294,15 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 			p {
 				padding:em(50) 0; font-weight:$bold; line-height:em(45);
 				span { margin:0 em(5) 0 0; }
-				&.default_title {font-size:em(36); padding:em(46) 0;}
+				&.default_title {
+					font-size:em(32); padding:em(45) 0; font-weight:$bold;
+				}
+				/*&.default_title {font-size:em(36); padding:em(46) 0;}
 				&.spacing_title {font-size:em(30); padding:em(45) 0; font-weight:$bold;}
 				&.color_num_title {
 					font-size:em(32); padding:em(45) 0;
 					span {color:$blue5;}
-				}
+				}*/
 			}
 			&.title_only {padding:0;}
 		}
@@ -1306,7 +1313,7 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 			> * {margin:0 0 0 em(16);}
 			// Select
 			.control_select {
-				height:em(72); font-size:em(28);font-weight:$bold;padding:0 em(70) 0 em(28);border:em(2) solid $gray3;
+				font-size:em(28); line-height:em(72); font-weight:$bold;padding:0 em(70) 0 em(28);border:em(2) solid $gray3;
 				background:url(./../../images/common/models_arr_01.png) 86% 50% no-repeat; background-size:em(16) em(10);
 				@include borderRadius(em(100));
 			}

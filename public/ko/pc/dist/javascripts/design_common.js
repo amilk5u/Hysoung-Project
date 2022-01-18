@@ -103,8 +103,6 @@ function design_order() {
         }
     }
 
-    /*220113 start----------------------------------------------------------------------------------------*/
-
     // 제품 수량 컨트롤
     function productQuantity() {
         let _quantityN = 0;
@@ -152,9 +150,6 @@ function design_order() {
         $("#ProductPriceBar").removeClass("active");
     });
 
-
-
-    /*220113 start----------------------------------------------------------------------------------------*/
     function orderDetail () {
         const $orderDetailType = $(".order_detail_type"),
             $servicesTopList = $orderDetailType.find(".services_top_list"),
@@ -182,8 +177,6 @@ function design_order() {
         $moreShadowBtn.on("click",function(){
             $servicesTopList.addClass("active");
         });
-
-
     }
     orderDetail();
 
@@ -215,19 +208,6 @@ function design_order() {
     }
     orderQuantity();
 
-
-
-
-
-
-
-
-
-
-
-
-
-
     $window.scroll(function(){
         productViewFix();
         orderDetail();
@@ -238,13 +218,30 @@ function design_order() {
     });
     productViewFix();
     productQuantity();
-    /*220113 end----------------------------------------------------------------------------------------*/
 
+    // ORDER_DETAIL, ORDER_TRACKING
+    var $orderForm = $(".order_form");
+    var $optionList = $orderForm.find(".option_list"),
+        $optionBtn = $optionList.find("button");
+    $optionBtn.click(function (){
+        $(this).toggleClass("active");
+        $(this).siblings(".detail_option").slideToggle();
+    });
 
+    var $totalPrice = $orderForm.find(".ordered_info"),
+        $discountBtn = $totalPrice.find("button");
+    $discountBtn.click(function (){
+        $(this).toggleClass("on");
+        $(this).parent().siblings(".discount_history").slideToggle();
+    });
 
-
-
-
+    var $shipmentDetails = $orderForm.find(".shipment_details"),
+        $shipmentBtn = $shipmentDetails.find("button");
+    $shipmentBtn.click(function (){
+        $(this).toggleClass("active");
+        $(this).siblings("table").slideToggle();
+        $(this).parent(".shipment_details").toggleClass("border_bottom");
+    });
 }
 function explore() {
     //product_list_type01
@@ -449,23 +446,27 @@ function layout() {
         $formSelectBtn = $formSelectType01.find("button");
 
     $formSelectInput.on({
-        click: function () {
+        click : function (){
             var _this = $(this);
-            $formSelectType01.css({"z-index": -1});
-            if (_this.val().trim() === "") {
+            console.log(_this);
+
+            $formSelectType01.css({"z-index":-1});
+            if (_this.val().trim() === ""){
                 _this.parent("div").toggleClass("validField");
-                if (_this.parent("div").hasClass("validField")) {
-                    _this.parent().parent().css({"z-index": 1})
-                } else {
-                    $formSelectType01.css("z-index", 0);
+                if(_this.parent("div").hasClass("validField")){
+                    _this.parent().parent().css({"z-index":1})
+                }else {
+                    // $formSelectType01.attr("style","");
+                    $formSelectType01.css({"z-index":0});
                 }
             } else {
                 _this.siblings("label").addClass("select");
                 _this.parent("div").toggleClass("validField");
-                if (_this.parent("div").hasClass("validField")) {
-                    _this.parent().parent().css({"z-index": 1})
-                } else {
-                    $formSelectType01.css("z-index", 0);
+                if(_this.parent("div").hasClass("validField")){
+                    _this.parent().parent().css({"z-index":1})
+                }else {
+                    // $formSelectType01.attr("style","");
+                    $formSelectType01.css({"z-index":0});
                 }
             }
         }
@@ -477,7 +478,8 @@ function layout() {
         $selectInput.val(_selectTxt);
         $selectInput.parent("div").removeClass("validField");
         $selectLabel.addClass("select");
-        $formSelectType01.attr("style","");
+        // $formSelectType01.attr("style","");
+        $formSelectType01.css({"z-index":0});
     });
 
     $(".form_textarea_type01 textarea").on({
@@ -897,6 +899,26 @@ function resources() {
         });
     }
     faqFocusActiveMotion();
+
+    function downloadDetailTab() {
+        const $downloadDetailType = $(".download_detail_type"),
+            $tabBtn = $downloadDetailType.find(".tab_wrap li"),
+            $definitionRowTab = $downloadDetailType.find(".download_box");
+
+        $tabBtn.on("click",function(){
+            let _this = $(this),
+                _index = _this.index();
+            $definitionRowTab.removeClass("on");
+            $tabBtn.find("button").removeClass("active");
+            $definitionRowTab.eq(_index).addClass("on");
+            $tabBtn.eq(_index).find("button").addClass("active");
+        });
+    }
+    function init() {
+        faqFocusActiveMotion();
+        downloadDetailTab();
+    }
+    init();
 }
 function search() {
 

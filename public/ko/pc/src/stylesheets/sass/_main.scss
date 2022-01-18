@@ -7,7 +7,7 @@
     h2 {text-indent:-9999px; opacity:0; height:0;}
     .visual_wrap {
       overflow:hidden; position:relative;
-      .swiper-slide {height:660px; padding:150px 0 0; box-sizing:border-box;}
+      .swiper-slide {height:660px; padding:147px 0 0; box-sizing:border-box;}
       .slogan_wrap {max-width:1200px; margin:0 auto; box-sizing:border-box;}
       .visual_btn {
         position:absolute; top:480px; left:50%; z-index:2;
@@ -32,7 +32,7 @@
         .btn_wrap {
           font-size:0;
           a {
-            font-size:16px; line-height:46px; padding:0 10px; min-width:180px; margin:0 8px 0 0; text-align:center; border-radius:50px; display:inline-block; color:$white; border:1px solid $white; box-sizing:border-box;
+            font-size:16px; line-height:46px; padding:0 10px; min-width:200px; margin:0 8px 0 0; text-align:center; border-radius:50px; display:inline-block; color:$white; border:1px solid $white; box-sizing:border-box;
             @include transition(all, .3s);
             &.btn_bruchure {padding:0 31px;}
             &:hover, &:focus {
@@ -90,14 +90,14 @@
     section {padding:70px 0;}
     .default_section {
       padding:70px 0 90px; overflow-x:hidden;
-      > div:nth-of-type(3) {padding:145px 0 55px;}
+      > div:nth-of-type(3) {padding:135px 0 55px;}
       .slide_wrap {max-width:1200px; margin:0 auto; overflow:visible; box-sizing:border-box;}
       .swiper-slide {max-width:300px; margin:0 12px 0 0;}
       .item {
-        a {display:block; border:1px solid $gray2; border-radius:10px; background-color:$white; box-sizing:border-box;}
+        a {display:block; border:1px solid $gray2; border-radius:15px; background-color:$white; box-sizing:border-box;}
         p {padding:40px 40px 20px; box-sizing:border-box;}
         strong {font-size:30px; font-weight:$medium; display:block; color:$gray7;}
-        span {font-size:14px; line-height:22px; min-height:44px; margin:20px 0 0; color:$gray6; display:block;}
+        span {font-size:14px; line-height:22px; min-height:44px; margin:15px 0 0; color:$gray6; display:block;}
         img {width:100%;}
       }
     }
@@ -116,7 +116,7 @@
     .Preferred_section {
       .layout_wrap {overflow:hidden;}
       .item {
-        a {display:block; border:1px solid $gray2; border-radius:10px; background-color:$white; box-sizing:border-box;}
+        a {display:block; border:1px solid $gray2; border-radius:15px; background-color:$white; box-sizing:border-box;}
         em {
           display:block; font-weight:$bold;
           &.user_type01 {color:$blue6}
@@ -128,9 +128,9 @@
       }
       .item_list_new {
         .item {
-          p {padding:25px 25px 10px;}
+          p {padding:28px 24px 10px;}
           em {font-size:12px;}
-          strong {font-size:19px; padding:10px 0 15px;}
+          strong {font-size:19px; padding:8px 0 12px;}
           span {font-size:12px; line-height:18px; min-height:36px;}
           img {padding:0 25px;}
         }
@@ -139,10 +139,10 @@
         .swiper-wrapper {width:auto; height:auto; display:block;}
         .swiper-slide {height:auto;}
         .item_list_new {
-          padding:0 0 0 40%; position:relative; transform:translate(0, 0) !important;
+          padding:0 0 0 41%; position:relative; transform:translate(0, 0) !important;
           .item {
-            float:left; width:33.333% !important; margin:15px 0 0; overflow:hidden;
-            a {width:98%;}
+            float:left; width:33.333% !important; margin:20px 0 0; overflow:hidden;
+            a {width:98%; max-width:230px;}
             &:nth-of-type(2), &:nth-of-type(5) {clear:both;}
             &:nth-of-type(2) a, &:nth-of-type(5) a {float:left;}
             &:nth-of-type(3) a, &:nth-of-type(6) a {margin:0 auto;}
@@ -150,10 +150,11 @@
             &:nth-of-type(1), &:nth-of-type(2),&:nth-of-type(3),&:nth-of-type(4) {margin:0}
           }
           .item:first-child {
-            position:absolute; top:0; left:0; width:40% !important; max-width:474px;
-            p {padding:50px 50px 25px;}
+            position:absolute; top:0; left:0; width:41% !important; max-width:474px;
+            a {width:100%; max-width:100%;}
+            p {padding:45px 50px 18px;}
             em {font-size:16px;}
-            strong {font-size:40px; padding:10px 0 30px;}
+            strong {font-size:40px; padding:10px 0 25px;}
             span {font-size:16px; line-height:26px; min-height:52px;}
             img {padding:0 25px;}
           }
@@ -161,13 +162,13 @@
       }
     }
     .support_section {
-      background-color:$white;
+      padding:55px 0 85px; background-color:$white;
       ul {display:flex; justify-content:space-between;}
       li {
         width:346px; flex-wrap:nowrap;
         a {padding:40px 0 10px; display:block; text-align:center;}
         strong {
-          padding:112px 0 20px; font-size:24px; color:$gray7; font-weight:$medium; display:block;
+          padding:107px 0 25px; font-size:24px; color:$gray7; font-weight:$medium; display:block;
           @include backgroundSolt(50%, 0);
           @include transition(all, .3s);
         }
@@ -182,8 +183,9 @@
       }
     }
     .explore_section {
+      padding:63px 0 70px;
       .tab_menu {
-        margin:0 0 50px; text-align:center;
+        margin:0 0 40px; text-align:center;
         li {
           margin:0 5px; display:inline-block;
           button {
@@ -199,7 +201,7 @@
           &:first-child {display:block;}
         }
         .thumb_slide_wrap {
-          margin:0 0 42px; text-align:center;
+          margin:0 0 40px; text-align:center;
           .swiper-notification {display:none;}
           .thumb_slide_btn {
             display:inline-block; vertical-align:middle;
@@ -230,11 +232,11 @@
           }
         }
         .ATM_cont {
-          overflow:hidden;
+          &:after {content:""; display:block; clear:both;}
           .photo {
             width:67.4%; max-width:798px; float:left;
             button {
-              width:100%; border-radius:10px; overflow:hidden; position:relative;
+              width:100%; border-radius:15px; overflow:hidden; position:relative;
               &:after {
                 width:116px; height:116px; background-image:url(../../images/main/btn_play.png); position:absolute; top:50%; left:50%; content:"";
                 @include translate(-50%, -50%);
@@ -244,13 +246,14 @@
             }
             ul {margin:6px 0 0; overflow:hidden;}
             li {
-              width:calc(50% - 3px); border-radius:10px; float:left; overflow:hidden;
+              width:calc(50% - 3px); border-radius:15px; float:left; overflow:hidden;
               &:last-child {float:right;}
               img {width:100%;}
             }
           }
           .info {
-            width:32.6%; max-width:394px; min-height:727px; border-radius:10px; padding:70px 55px 50px; box-sizing:border-box; background-color:$white; float:right;
+            width:32.6%; max-width:394px; min-height:727px; border-radius:15px; padding:70px 55px 50px; box-sizing:border-box; background-color:$white; float:right;
+            @include boxShadow(2px 4px 50px rgba(18, 19, 20, 0.15));
             p {
               color:$gray7;
               strong {font-size:40px; font-weight:$medium;}
@@ -266,7 +269,7 @@
           }
         }
         .parts {
-          margin:50px 0 0;
+          margin:45px 0 0;
           > strong {font-size:20px; margin:0 0 30px; color:$gray7; font-weight:$medium; display:block; text-align:center;}
           .parts_slide {
             .swiper-slide {
@@ -274,7 +277,7 @@
               a {padding:15px 20px 20px; border-radius:10px; overflow:hidden; display:block; background-color:$white; border:1px solid $gray2; box-sizing:border-box;}
               strong {font-size:18px; font-weight:$medium; color:$black; display:block; text-overflow:ellipsis; white-space:nowrap; overflow:hidden;}
               div {
-                margin:10px 0 0;
+                margin:15px 0 0;
                 dl {
                   padding:0 0 0 70px; font-size:14px; line-height:18px; margin:5px 0 0; position:relative;
                   &:first-of-type {margin:0;}
@@ -401,6 +404,7 @@
         }
       }
       .support_section {
+        padding:em(90) em(30);
         ul {display:block;}
         li {
           width:100%;
@@ -461,7 +465,7 @@
               li {width:calc(50% - 0.2rem); border-radius:em(15);}
             }
             .info {
-              width:100%; max-width:100%; min-height:auto; margin:em(8) 0 0; border-radius:em(15); padding:em(45) 0; border:em(2) solid $gray2;
+              width:100%; max-width:100%; min-height:auto; margin:em(8) 0 0; border-radius:em(15); padding:em(45) 0; border:em(2) solid $gray2; box-shadow:none;
               p {
                 padding:0 em(40);
                 strong {font-size:em(48); font-weight:$bold;}
@@ -521,10 +525,10 @@
 .financial_container {
   margin:80px 0 0;
   .dashboard {
-    padding:50px 0; background-color:$gray7;
-    h2 {font-size:40px; margin:0 0 30px; font-weight:$regular; color:$gold2; font-family:$bebasNeue;}
+    padding:45px 0 50px; background-color:$gray7;
+    h2 {font-size:40px; margin:0 0 25px; font-weight:$regular; color:$gold2; font-family:$bebasNeue;}
     .title {
-      margin:0 0 30px; line-height:28px;
+      margin:0 0 25px; line-height:28px;
       @extend %clearfix;
       h3 {font-size:28px; font-weight:$medium; color:$white; float:left;}
       span {font-size:14px; color:$gray3; float:right; display:block; position:relative; padding:0 28px 0 0;}
@@ -547,11 +551,11 @@
       }
       .cont01 {
         display:flex; justify-content:space-between;
-        > div {padding:30px; background-color:$white; border-radius:10px; box-sizing:border-box;}
+        > div {padding:25px 30px 30px; background-color:$white; border-radius:15px; box-sizing:border-box;}
         .chart_wrap {flex-basis:274px;}
         .status_wrap {
           width:calc(100% - 568px);
-          > a {margin:0 0 10px;}
+          > a {margin:0 0 8px;}
           ul {width:calc(100% + 4px); display:flex; flex-wrap:wrap; text-align:center;}
           li {
             width:111px; margin:0 4px 0 0;
@@ -569,7 +573,7 @@
         }
       }
       .cont02 {
-        margin:10px 0 0; padding:30px; background-color:$white; border-radius:10px; box-sizing:border-box;
+        margin:10px 0 0; padding:25px 30px 30px; background-color:$white; border-radius:15px; box-sizing:border-box;
         .table_wrap {
           table {width:100%;}
           thead th {font-size:13px; text-align:left; color:$gray5; padding:12px 0;}
@@ -582,6 +586,7 @@
             }
           }
           thead th:first-child, tbody td:first-child {padding:0 0 0 30px;}
+          tbody tr:last-child td {border:none;}
         }
       }
     }
@@ -589,11 +594,11 @@
   }
   #contents {
     .title_wrap {
-      max-width:1200px; margin:0 auto 40px;
+      max-width:1200px; margin:0 auto 35px;
       h3 {font-size:30px; font-weight:$regular; color:$gray7; font-family:$bebasNeue;}
     }
     .shortcut_section {
-      max-width:1200px; margin:0 auto; padding:80px 0;
+      max-width:1200px; margin:0 auto; padding:75px 0 80px;
       ul {
         width:100%; display:flex;
         li {
@@ -629,7 +634,7 @@
           }
         }
         a {
-          width:100%; min-height:169px; padding:30px 25px 30px 30px; box-sizing:border-box; display:block; position:relative;
+          width:100%; min-height:169px; padding:22px 25px 30px 30px; box-sizing:border-box; display:block; position:relative;
           @include transition();
           &:after {
             width:68px; height:68px; position:absolute; bottom:25px; right:25px; content:"";
@@ -657,7 +662,7 @@
       }
     }
     .ordered_section {
-      padding:80px 0; background-color:$gray1; overflow-x:hidden;
+      padding:75px 0 80px;; background-color:$gray1; overflow-x:hidden;
       .cont {
         margin:80px 0 0;
         &:first-child {margin:0}
@@ -666,16 +671,16 @@
       .order_slide_type01 {
         .swiper-slide {max-width:410px; margin:0 20px 0 0;}
         .item {
-          padding:40px; background-color:$white; border-radius:20px; border:1px solid $gray2; box-sizing:border-box;
-          //@include boxShadow(0px 10px 35px rgba(18, 19, 20, 0.1));
+          padding:45px 40px 40px; background-color:$white; border-radius:15px; border:1px solid $gray2; box-sizing:border-box;
+          @include transition();
           .info {
-            position:relative; margin:0 0 25px;
+            position:relative; margin:0 0 26px;
             > a {
               font-size:30px; color:$gray7; font-weight:$medium;
               &:hover {text-decoration:underline;}
             }
             div {
-              padding:25px 0 0;
+              padding:27px 0 0;
               dl {
                 font-size:17px; line-height:22px; margin:4px 0 0; padding:0 0 0 90px; position:relative;
                 &:first-child {margin:0;}
@@ -692,7 +697,7 @@
               }
             }
             .btn_detail {
-              font-size:15px; line-height:36px; width:123px; border-radius:30px; text-align:center; border:1px solid $gray2; color:$gray6; position:absolute; top:0; right:0;
+              font-size:15px; line-height:36px; width:123px; border-radius:30px; text-align:center; border:1px solid $gray2; color:$gray6; position:absolute; top:-4px; right:0;
               @include transition();
               &:hover, &:focus {color:$white; border-color:$blue5; background-color:$blue5}
             }
@@ -701,12 +706,12 @@
             padding:30px; border-top:1px solid $gray2; position:relative;
             img {width:100%;}
             .options {
-              position:absolute; top:30px; left:0; width:100%; height:calc(100% - 60px); background-color:$white; padding-left:0;
+              position:absolute; top:23px; left:0; width:100%; height:calc(100% - 50px); background-color:$white; padding-left:0;
               div {
                 margin:25px 0 0;
                 &:first-child {margin:0;}
                 strong {font-size:15px; font-weight:$medium; color:$gray5;}
-                ul {margin:20px 0 0;}
+                ul {margin:15px 0 0;}
                 li {
                   font-size:15px; line-height:20px; margin:7px 0 0; padding:0 0 0 20px; color:$gray7; position:relative;
                   &:first-child {margin:0;}
@@ -720,12 +725,16 @@
             @include transition();
             &:hover, &:focus {background-color:$blue5; color:$white;}
           }
+          &:hover {
+            @include boxShadow(0 10px 35px rgba(18, 19, 20, 0.1));
+          }
         }
       }
       .order_slide_type02 {
         .swiper-slide {max-width:298px; margin:0 16px 0 0;}
         .item {
-          padding:30px; background-color:$white; border-radius:20px; border:1px solid $gray2; box-sizing:border-box;
+          padding:30px; background-color:$white; border-radius:15px; border:1px solid $gray2; box-sizing:border-box;
+          @include transition();
           .info {
             > a {
               font-size:23px; color:$gray7; font-weight:$medium; text-overflow:ellipsis; white-space:nowrap; overflow:hidden; display:block;
@@ -750,10 +759,13 @@
             }
             img {width:100%}
             .btn_reorder {
-              font-size:16px; line-height:46px; border-radius:10px; margin:25px 0 0; text-align:center; font-weight:$bold; display:block; color:$blue5; background-color:$blue1;
+              font-size:14px; line-height:38px; border-radius:10px; margin:25px 0 0; text-align:center; font-weight:$bold; display:block; color:$blue5; background-color:$blue1;
               @include transition();
               &:hover, &:focus {background-color:$blue5; color:$white; text-decoration:none}
             }
+          }
+          &:hover {
+            @include boxShadow(0 10px 35px rgba(18, 19, 20, 0.1));
           }
         }
       }
