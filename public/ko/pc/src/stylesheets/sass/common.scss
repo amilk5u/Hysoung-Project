@@ -134,7 +134,7 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 		}
 	}
 	input {
-		font-size:16px; padding:17px 25px; width:100%; display:block; border:1px solid $gray2; border-radius:10px; box-sizing:border-box;
+		font-size:16px; padding:17px 25px; width:100%; display:block; border:1px solid $gray2; border-radius:10px; box-sizing:border-box; background-color:$white;
 		&.validField {padding:27px 25px 7px; outline:none; border-color:$gray2;}
 		&.validField:focus {border-color:$blue5;}
 		&.validField ~ label {
@@ -157,8 +157,8 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 	@include mob(){
 		label {font-size:em(32); left:em(28); margin:em(2) 0 0;}
 		input {
-			font-size:em(32); padding:em(37) em(28); border-radius:em(10);
-			&.validField {padding:em(54) em(28) em(20);}
+			font-size:em(32); padding:em(39) em(28); border-radius:em(10);
+			&.validField {padding:em(58) em(28) em(20);}
 			&.validField ~ label {
 				top:em(28); font-size:em(24); margin:0;
 			}
@@ -190,7 +190,7 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 			}
 		}
 		input {
-			width:100%; height:100%; border:1px solid $gray2; border-radius:10px; padding:27px 25px 7px; display:block; font-size:16px; text-align:left; position:absolute; top:0; left:0; z-index:2; cursor:pointer; box-sizing:border-box;
+			width:100%; height:100%; color:$gray7 !important; border:1px solid $gray2; border-radius:10px; padding:27px 25px 7px; display:block; font-size:16px; text-align:left; position:absolute; top:0; left:0; z-index:2; cursor:pointer; box-sizing:border-box;
 			&:focus {border-color:$blue5; outline:none;}
 		}
 		ul {
@@ -231,7 +231,7 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 			label {
 				font-size:em(32); left:em(28); margin:em(2) 0 0;
 				&.select {
-					top:em(28); font-size:em(24);
+					top:em(28); font-size:em(24); margin:0;
 				}
 			}
 			input {
@@ -391,7 +391,7 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 			&:hover {
 				& ~ label {border-color:$gray6;}
 			}
-			&:disabled ~ label {background-color:$gray1;}
+			&:disabled ~ label {background-color:$gray1; color:$gray5;}
 			&:disabled:hover ~ label {border-color:$gray2; cursor:default;}
 			/*&.disabled_chk ~ label {background-color:$gray1;}*/
 		}
@@ -488,7 +488,7 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 	}
 	@include mob(){
 		input[type=text] {
-			font-size:em(32); line-height:em(116); padding:0 em(125) 0 em(28); border-width:em(2); border-radius:em(10);
+			font-size:em(32); line-height:em(116); padding:0 em(100) 0 em(28); border-width:em(2); border-radius:em(10);
 		}
 		.btn_calendar {
 			width:em(64); height:em(64); background-size:cover; right:em(28);
@@ -507,7 +507,7 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 		}
 	}
 	input[type=text] {
-		width:100%; font-size:16px; padding:17px 60px 17px 25px; border:1px solid $gray2; border-radius:10px; color:$gray7; box-sizing:border-box;
+		width:100%; font-size:16px; padding:17px 60px 17px 25px; border:1px solid $gray2; border-radius:10px; color:$gray7; box-sizing:border-box; background-color:$white;
 		&:focus {border-color:$blue5; outline:none;}
 		&.date_in {padding:27px 60px 7px 25px; outline:none; border-color:$gray2;}
 		&.date_in ~ label {
@@ -521,9 +521,10 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 		@include textBackground(24px, 24px);
 	}
 	@include mob(){
-		label {font-size:em(32)}
+		label {font-size:em(32); left:em(28)}
 		input[type=text] {
-			font-size:em(32); line-height:em(116); padding:0 em(125) 0 em(28); border-width:em(2); border-radius:em(10);
+			font-size:em(32); padding:em(39) em(125) em(39) em(28); border-width:em(2); border-radius:em(10);
+			&.date_in {padding:em(58) em(125) em(20) em(28);}
 			&.date_in ~ label {
 				top:em(28); font-size:em(24);
 			}
@@ -544,7 +545,7 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 		}
 	}
 	textarea {
-		font-size:16px; padding:17px 25px; width:100%; display:block; border:1px solid $gray2; border-radius:10px; box-sizing:border-box; resize:none;
+		font-size:16px; padding:17px 25px; width:100%; display:block; border:1px solid $gray2; border-radius:10px; box-sizing:border-box; resize:none; background-color:$white;
 		&.validField {padding:27px 25px 7px; outline:none; border-color:$gray2;}
 		&.validField:focus {border-color:$blue5;}
 		&.validField ~ .white_bg {display:block;}
@@ -608,7 +609,7 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 		&:hover {
 			& ~ label {border-color:$blue5;}
 		}
-		&:disabled ~ label {background-color:$gray1; cursor:default;}
+		&:disabled ~ label {background-color:$gray1; cursor:default; color:$gray5;}
 		&:disabled:hover ~ label {border-color:$gray2;}
 		/*&.disabled_chk ~ label {background-color:$gray1;}
 		&.disabled_chk:checked ~ label {background-color:$blue5; border-color:$blue5; color:$white;}*/
@@ -1172,13 +1173,13 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 		> * {margin:0 0 0 20px;}
 		// Select
 		.control_select {
-			font-size:13px; line-height:36px; font-weight:$medium;color:#121314;padding:0 40px 0 20px;border:1px solid $gray3;
+			font-size:13px; line-height:36px; font-weight:$medium;color:#121314;padding:0 40px 0 20px;border:1px solid $gray3; vertical-align:middle;
 			background:url(./../../images/common/select_arr.png) 90% 50% no-repeat; background-size:20px 20px;
 			@include borderRadius(100px);
 		}
 		// Comparison
 		.btn_compare {
-			height:38px;font-size:13px;font-weight:$medium;color:#121314;padding:0 42px 0 20px;
+			height:38px;font-size:13px;font-weight:$medium;color:#121314;padding:0 42px 0 20px; vertical-align:middle;
 			border:1px solid $gray3; position:relative;
 			@include borderRadius(100px);
 			&:after {
@@ -1194,7 +1195,7 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 		}
 		.search_btn_m {display:none;}
 		.new_customer_btn {
-			height:38px;font-size:13px; font-weight:$medium;color:#121314;padding:0 20px;border:1px solid $gray3;
+			height:38px;font-size:13px; font-weight:$medium;color:#121314;padding:0 20px;border:1px solid $gray3; vertical-align:middle;
 			@include borderRadius(100px);
 		}
 		// 검색 폼
@@ -1314,7 +1315,7 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 			// Select
 			.control_select {
 				font-size:em(28); line-height:em(72); font-weight:$bold;padding:0 em(70) 0 em(28);border:em(2) solid $gray3;
-				background:url(./../../images/common/models_arr_01.png) 86% 50% no-repeat; background-size:em(16) em(10);
+				background:url(./../../images/common/models_arr_01.png) calc(100% - 1.5rem) 50% no-repeat; background-size:em(16) em(10);
 				@include borderRadius(em(100));
 			}
 			// Comparison
@@ -1340,9 +1341,9 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 			// Input Search
 			.search_form {display:none;}
 			.search_btn_m {
-				width:em(64); height:em(64); display:inline-block; text-indent:-9999px; position:relative; top:em(36);
+				width:em(64); height:em(64); display:inline-block; vertical-align:middle; text-indent:-9999px; /*position:relative; top:em(36);*/
 				background:url(./../../images/common/btn_search_m.png) 50% 50% no-repeat; background-size:cover;
-				@include transform(translate(0,-50%));
+				//@include transform(translate(0,-50%));
 			}
 		}
 	}

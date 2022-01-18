@@ -55,7 +55,12 @@ table {width:100%; text-align:left; border-collapse:collapse; border-spacing:0;}
 @import "./mixin";
 @import "lib/animate";
 
-input[type="button"], input[type="submit"], input[type="reset"], input[type="file"]::-webkit-file-upload-button, button { padding:0; font-family:$base-font; /*outline:none;*/}
+input[type="button"], input[type="submit"], input[type="reset"], input[type="file"]::-webkit-file-upload-button, button {
+   padding:0; font-family:$base-font; /*outline:none;*/
+   @include mob(){
+      font-family:$base-font_mobile;
+   }
+}
 a { text-decoration:none; cursor:pointer; color:$base-font-color;
    &:link,
    &:visited,
