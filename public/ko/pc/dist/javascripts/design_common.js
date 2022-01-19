@@ -880,6 +880,28 @@ function my_menu() {
             }
         }
     });
+
+    /*220118 start*/
+    function listTableMoreCont() {
+        const $blockListType = $(".block_list_type"),
+              $contentWrapLi  = $blockListType.find(".item_list li"),
+              $RowListTable = $blockListType.find(".row_list_table"),
+              $moreBtn = $blockListType.find(".more_wrap button");
+
+        $contentWrapLi.each(function () {
+            let _this = $(this);
+            if (_this.find($RowListTable).length > 2) {
+                _this.find(".content_wrap").addClass("cont_full");
+            }
+        });
+        $moreBtn.on("click",function(){
+            let _this = $(this);
+            console.log(_this);
+            _this.parents(".content_wrap").removeClass("cont_full");
+        });
+    }
+    listTableMoreCont();
+    /*220118 end*/
 }
 function resources() {
 
@@ -900,23 +922,22 @@ function resources() {
     }
     faqFocusActiveMotion();
 
-    function downloadDetailTab() {
-        const $downloadDetailType = $(".download_detail_type"),
-            $tabBtn = $downloadDetailType.find(".tab_wrap li"),
-            $definitionRowTab = $downloadDetailType.find(".download_box");
+    function TabOpen() {
+        const $tabBtn = $(".tab_wrap li"),
+            $tabContInfo = $(".tab_cont_info");
 
         $tabBtn.on("click",function(){
             let _this = $(this),
                 _index = _this.index();
-            $definitionRowTab.removeClass("on");
             $tabBtn.find("button").removeClass("active");
-            $definitionRowTab.eq(_index).addClass("on");
             $tabBtn.eq(_index).find("button").addClass("active");
+            $tabContInfo.css("display","none");
+            $tabContInfo.eq(_index).css("display","block");
         });
     }
     function init() {
         faqFocusActiveMotion();
-        downloadDetailTab();
+        TabOpen();
     }
     init();
 }
