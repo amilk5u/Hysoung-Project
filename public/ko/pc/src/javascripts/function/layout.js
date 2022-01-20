@@ -194,25 +194,23 @@ function layout() {
     var _seletePopup;
     // popup
     $popupBtn.on("click", function(){
+        $popupBox.css({"display":"none"});
         _seletePopup = $(this).data("popup");
         $("."+_seletePopup).css({"display":"flex"});
         $("."+_seletePopup).focus();
         $("body,html").css({"overflow-y":"hidden"});
-    });
-    $closePopupBtn.on("click", function(){
-        $(".btn_popup[data-popup="+_seletePopup+"]").focus();
-        $popupBox.fadeOut();
-        $("body,html").css({"overflow-y":"auto"});
-    });
-    $closePopupBtn.on("focusout", function(){
-        $(".btn_popup[data-popup="+_seletePopup+"]").focus();
-        $popupBox.fadeOut();
-        $("body,html").css({"overflow-y":"auto"});
-    });
-    $popupBg.on("click", function(){
-        $(".btn_popup[data-popup="+_seletePopup+"]").focus();
-        $popupBox.fadeOut();
-        $("body,html").css({"overflow-y":"auto"});
+
+        var _this = $(this);
+        $closePopupBtn.on("click", function(){
+            _this.focus();
+            $popupBox.fadeOut();
+            $("body,html").css({"overflow-y":"auto"});
+        });
+        $popupBg.on("click", function(){
+            _this.focus();
+            $popupBox.fadeOut();
+            $("body,html").css({"overflow-y":"auto"});
+        });
     });
 
     // header 공통 부분 높이값 유동적으로 변경

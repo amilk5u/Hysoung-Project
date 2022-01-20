@@ -85,7 +85,7 @@ function design_order() {
             _priceFooterFix = ($html.outerHeight() - $("footer").outerHeight()) - winH;
 
         // 옵션 바 높이 값 조절
-        $optionBar.css("height", _substanceContH);
+        // $optionBar.css("height", _substanceContH);
 
         // view fixed
         if ( winSc > _viewTopMenuFix ) {
@@ -605,25 +605,23 @@ function layout() {
     var _seletePopup;
     // popup
     $popupBtn.on("click", function(){
+        $popupBox.css({"display":"none"});
         _seletePopup = $(this).data("popup");
         $("."+_seletePopup).css({"display":"flex"});
         $("."+_seletePopup).focus();
         $("body,html").css({"overflow-y":"hidden"});
-    });
-    $closePopupBtn.on("click", function(){
-        $(".btn_popup[data-popup="+_seletePopup+"]").focus();
-        $popupBox.fadeOut();
-        $("body,html").css({"overflow-y":"auto"});
-    });
-    $closePopupBtn.on("focusout", function(){
-        $(".btn_popup[data-popup="+_seletePopup+"]").focus();
-        $popupBox.fadeOut();
-        $("body,html").css({"overflow-y":"auto"});
-    });
-    $popupBg.on("click", function(){
-        $(".btn_popup[data-popup="+_seletePopup+"]").focus();
-        $popupBox.fadeOut();
-        $("body,html").css({"overflow-y":"auto"});
+
+        var _this = $(this);
+        $closePopupBtn.on("click", function(){
+            _this.focus();
+            $popupBox.fadeOut();
+            $("body,html").css({"overflow-y":"auto"});
+        });
+        $popupBg.on("click", function(){
+            _this.focus();
+            $popupBox.fadeOut();
+            $("body,html").css({"overflow-y":"auto"});
+        });
     });
 
     // header 공통 부분 높이값 유동적으로 변경
@@ -881,12 +879,11 @@ function my_menu() {
         }
     });
 
-    /*220118 start*/
     function listTableMoreCont() {
         const $blockListType = $(".block_list_type"),
-              $contentWrapLi  = $blockListType.find(".item_list li"),
-              $RowListTable = $blockListType.find(".row_list_table"),
-              $moreBtn = $blockListType.find(".more_wrap button");
+            $contentWrapLi  = $blockListType.find(".item_list li"),
+            $RowListTable = $blockListType.find(".row_list_table"),
+            $moreBtn = $blockListType.find(".more_wrap button");
 
         $contentWrapLi.each(function () {
             let _this = $(this);
@@ -901,7 +898,6 @@ function my_menu() {
         });
     }
     listTableMoreCont();
-    /*220118 end*/
 }
 function resources() {
 
@@ -942,7 +938,23 @@ function resources() {
     init();
 }
 function search() {
+    function TabOpen() {
+        const $searchWrap = $(".search_wrap"),
+            $tabBtn = $searchWrap.find(".tab_wrap li"),
+            $tabContInfo = $searchWrap.find(".item_list li");
 
+        $tabBtn.on("click",function(){
+            let _this = $(this),
+                _index = _this.index();
+            $tabContInfo.css("display","none");
+            if ( _index === 0 ) {
+                $tabContInfo.css("display","block");
+            } else {
+                $tabContInfo.eq(_index - 1).css("display","block");
+            }
+        });
+    }
+    TabOpen();
 }
 function support() {
 

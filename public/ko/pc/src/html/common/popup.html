@@ -3,26 +3,30 @@
 "checkTypeRetail": "display:none;",
 "checkTypeFinancial": "display:none;"
 })
-			<!-- container -->
-			<div id="container" class="common_container common_popup">
-				<button type="button" class="btn_popup" data-popup="공통이름">
-					버튼
-				</button>
-				<div class="popup 공통이름" tabindex="0" style="display:flex;">
-					<div class="popup_wrap">
-						<div class="popup_content">
-							컨텐츠 영역
-							<button type="button" class="btn_popup_close">close</button>
-						</div>
-					</div>
-					<p class="dimmed"></p>
-				</div>
 
-				<style>
-					/* 작업하는 팝업 사이즈 기재 */
-					.popup_content {max-width:1000px; background-color:red;}
-					.btn_popup_close {background-color:black;}
-				</style>
+<style>
+	.공통이름 {display:flex;}
+</style>
+<!-- container -->
+<div id="container">
+	<button type="button" class="btn_popup" data-popup="공통이름">
+		버튼
+	</button>
+	<div class="popup 공통이름" tabindex="0">
+		<div class="popup_wrap">
+			<div class="popup_content">
+				컨텐츠 영역
+				<button type="button" class="btn_popup_close">close</button>
 			</div>
-			<!-- //container -->
+		</div>
+		<p class="dimmed"></p>
+	</div>
+
+	<style>
+		/* 작업하는 팝업 사이즈 기재 */
+		.popup_content {max-width:1000px; background-color:red;}
+		.btn_popup_close {background-color:black;}
+	</style>
+</div>
+<!-- //container -->
 @@include("../../include/footer.html")

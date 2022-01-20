@@ -134,8 +134,8 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 		}
 	}
 	input {
-		font-size:16px; padding:17px 25px; width:100%; display:block; border:1px solid $gray2; border-radius:10px; box-sizing:border-box; background-color:$white;
-		&.validField {padding:27px 25px 7px; outline:none; border-color:$gray2;}
+		font-size:16px; padding:17px 25px 18px; width:100%; display:block; border:1px solid $gray2; border-radius:10px; box-sizing:border-box; background-color:$white;
+		&.validField {padding:27px 25px 8px; outline:none; border-color:$gray2;}
 		&.validField:focus {border-color:$blue5;}
 		&.validField ~ label {
 			top:10px; font-size:12px;
@@ -170,7 +170,7 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 .form_select_type01 {
 	position:relative;
 	div {
-		padding:29px 28px 28px; width:100%; display:block;/*border:1px solid $gray2; border-radius:10px;*/ box-sizing:border-box; position:relative;
+		padding:29px 28px; width:100%; display:block;/*border:1px solid $gray2; border-radius:10px;*/ box-sizing:border-box; position:relative;
 		&:after {
 			width:13px; height:8px; content:""; background-image:url(../../images/common/select_arr_default.png); position:absolute; top:50%; right:20px;
 			@include backgroundSoltC();
@@ -279,8 +279,7 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 			display:inline-block; padding:0 0 0 32px; font-size:15px; color:$gray7; line-height:22px; position:relative;
 			&:before {width:22px; height:22px; content:""; border:1px solid $gray5; border-radius:100%; box-sizing:border-box; background-color:$white; position:absolute; top:0; left:0;}
 			&:after {
-				width:16px; height:16px; border-radius:100%; content:""; display:block; position:absolute; top:50%; left:3px; opacity:0; background-color:$blue5;
-				@include translate(0, -50%);
+				width:16px; height:16px; border-radius:100%; content:""; display:block; position:absolute; top:3px; left:3px; opacity:0; background-color:$blue5;
 			}
 		}
 	}
@@ -300,7 +299,7 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 				padding:0 0 0 em(57); font-size:em(28); line-height:em(44);
 				&:before {width:em(44); height:em(44);}
 				&:after {
-					width:em(32); height:em(32); left:em(6);
+					width:em(32); height:em(32); left:em(6); top:em(6);
 				}
 			}
 		}
@@ -507,9 +506,9 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 		}
 	}
 	input[type=text] {
-		width:100%; font-size:16px; padding:17px 60px 17px 25px; border:1px solid $gray2; border-radius:10px; color:$gray7; box-sizing:border-box; background-color:$white;
+		width:100%; font-size:16px; padding:17px 60px 18px 25px; border:1px solid $gray2; border-radius:10px; color:$gray7; box-sizing:border-box; background-color:$white;
 		&:focus {border-color:$blue5; outline:none;}
-		&.date_in {padding:27px 60px 7px 25px; outline:none; border-color:$gray2;}
+		&.date_in {padding:27px 60px 8px 25px; outline:none; border-color:$gray2;}
 		&.date_in ~ label {
 			position:absolute; top:10px; font-size:12px;
 			@include translate(0, 0);
@@ -947,11 +946,6 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 				&:first-of-type {border:none;}
 			}
 		}
-
-
-
-
-		/*220118 start------------------------------------------------------------------------------------*/
 		.filter_type05 {
 			padding:30px 0;
 			strong {margin:0 0 20px;}
@@ -971,11 +965,6 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 				}
 			}
 		}
-		/*220118 end------------------------------------------------------------------------------------*/
-
-
-
-
 	}
 	.btn_wrap {display:none;}
 	&.fold_aside {
@@ -1107,7 +1096,6 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 					}
 				}
 			}
-			/*220118 start-----------------------------------------------------------------------------*/
 			.filter_type05 {
 				padding:em(60) 0;
 				strong {margin:0 0 em(35);}
@@ -1126,7 +1114,6 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 					}
 				}
 			}
-			/*220118 end-----------------------------------------------------------------------------*/
 		}
 		.btn_wrap {
 			width:100%; padding:em(60) em(60) em(70); display:block; position:absolute; bottom:0; left:0; background-color:$white; overflow:hidden; box-sizing:border-box;
@@ -1397,3 +1384,8 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 		}
 	}
 }
+
+
+
+
+.wrong_markup {display:block; position:fixed; bottom:20px; right:20px; color:$red; z-index:9999}

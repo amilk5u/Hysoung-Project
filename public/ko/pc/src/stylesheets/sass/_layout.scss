@@ -167,16 +167,17 @@
         @include transition();
         &:after {
           width:32px; height:32px; position:absolute; top:50%; left:10px; content:"";
-          background-image:url(../../images/my_menu/my_icon.png);
+          //background-image:url(../../images/my_menu/my_icon.png);
           @include backgroundSoltC();
           @include translate(0, -50%);
         }
+        &:hover {color:$blue5;}
       }
       &.snb_s {
         > a {
           &.on {
             color:$blue5;
-            &:after {background-image:url(../../images/my_menu/my_icon_ov.png)}
+            //&:after {background-image:url(../../images/my_menu/my_icon_ov.png)}
             &:before {
               @include transform(translate(0, -50%) rotate(180deg));
             }
@@ -206,16 +207,28 @@
       }
     }
   }
-  /*.menu_icon01 > a:after {background-image:url(../../images/my_menu/myIcon_01.png)}
+  .menu_icon01 > a:after {background-image:url(../../images/my_menu/myIcon_01.png)}
+  .menu_icon01 > a:hover:after {background-image:url(../../images/my_menu/myIcon_01_ov.png)}
   .menu_icon02 > a:after {background-image:url(../../images/my_menu/myIcon_02.png)}
+  .menu_icon02 > a:hover:after {background-image:url(../../images/my_menu/myIcon_02_ov.png)}
   .menu_icon03 > a:after {background-image:url(../../images/my_menu/myIcon_03.png)}
+  .menu_icon03 > a:hover:after {background-image:url(../../images/my_menu/myIcon_03_ov.png)}
   .menu_icon04 > a:after {background-image:url(../../images/my_menu/myIcon_04.png)}
+  .menu_icon04 > a:hover:after {background-image:url(../../images/my_menu/myIcon_04_ov.png)}
   .menu_icon05 > a:after {background-image:url(../../images/my_menu/myIcon_05.png)}
+  .menu_icon05 > a:hover:after {background-image:url(../../images/my_menu/myIcon_05_ov.png)}
   .menu_icon06 > a:after {background-image:url(../../images/my_menu/myIcon_06.png)}
+  .menu_icon06 > a:hover:after {background-image:url(../../images/my_menu/myIcon_06_ov.png)}
   .menu_icon07 > a:after {background-image:url(../../images/my_menu/myIcon_07.png)}
+  .menu_icon07 > a:hover:after {background-image:url(../../images/my_menu/myIcon_07_ov.png)}
   .menu_icon08 > a:after {background-image:url(../../images/my_menu/myIcon_08.png)}
+  .menu_icon08 > a:hover:after {background-image:url(../../images/my_menu/myIcon_08_ov.png)}
   .menu_icon09 > a:after {background-image:url(../../images/my_menu/myIcon_09.png)}
-  .menu_icon10 > a:after {background-image:url(../../images/my_menu/myIcon_10.png)}*/
+  .menu_icon09 > a:hover:after {background-image:url(../../images/my_menu/myIcon_09_ov.png)}
+  .menu_icon10 > a:after {background-image:url(../../images/my_menu/myIcon_10.png)}
+  .menu_icon10 > a:hover:after {background-image:url(../../images/my_menu/myIcon_10_ov.png)}
+  .menu_icon11 > a:after {background-image:url(../../images/my_menu/myIcon_11.png)}
+  .menu_icon11 > a:hover:after {background-image:url(../../images/my_menu/myIcon_11_ov.png)}
 
   &.active {
     opacity:1; visibility:visible;
