@@ -1,13 +1,11 @@
-@@include("../../include/header.html",{
-"checkTypeDefault": "display:inline-block;",
-"checkTypeRetail": "display:none;",
-"checkTypeFinancial": "display:none;"
-})
+@@include("../../include/header.html")
 		<!-- container -->
 		<div id="container" class="no_title product_contents">
 			<div id="contents">
 				<div class="content">
+					<!--재고 수량 표시 될시 아래 클래스 type_s 추가-->
 					<div class="product_detail_type page_012">
+						<!--//재고 수량 표시 될시 위에 클래스 type_s 추가-->
 						<!--view detail-->
 						<div class="view_detail">
 							<div class="detail_img">
@@ -102,7 +100,7 @@
 										<div class="increase_control_btn">
 											<div class="control_btn down_btn">
 												<!-- 비로그인 start -->
-												<button type="button" class="btn_popup" data-popup="login_check_popup"></button>
+												<button type="button" class="btn_popup" data-popup="login_check_popup">increase</button>
 												<!-- 비로그인 start -->
 												<!-- 로그인 start -->
 												<!--<button type="button"></button>-->
@@ -111,7 +109,7 @@
 											<input type="text" class="quantity_input" value="0">
 											<div class="control_btn up_btn">
 												<!-- 비로그인 start -->
-												<button type="button" class="btn_popup" data-popup="login_check_popup"></button>
+												<button type="button" class="btn_popup" data-popup="login_check_popup">decrease</button>
 												<!-- 비로그인 start -->
 												<!-- 로그인 start -->
 												<!--<button type="button"></button>-->
@@ -160,17 +158,20 @@
 									</div>
 									<ul class="info_btn">
 										<!-- 데이터 정상 입력시 btn_disabled 클래스 제거 -->
-										<li class="download_btn btn_disabled">
-											<button type="button"></button>
-										</li>
-										<li class="wish_btn btn_disabled">
-											<button type="button"></button>
+										<li class="wish_btn btn_disabled space_wrap">
+											<button type="button">Add to Wish List</button>
+											<!-- 비로그인시 -->
+											<!--<button type="button" class="btn_popup" data-popup="login_check_popup">Add to Wish List</button>-->
 										</li>
 										<li class="cart_btn btn_disabled">
 											<button type="button">Add to Cart</button>
+											<!-- 비로그인시 -->
+											<!--<button type="button" class="btn_popup" data-popup="login_check_popup">Add to Cart</button>-->
 										</li>
 										<li class="next_step_btn btn_disabled">
 											<a href="">Next Step</a>
+											<!-- 비로그인시 -->
+											<!--<a href="#" class="btn_popup" data-popup="login_check_popup">Next Step</a>-->
 										</li>
 									</ul>
 								</div>

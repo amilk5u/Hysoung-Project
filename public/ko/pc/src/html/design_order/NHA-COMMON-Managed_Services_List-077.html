@@ -1,8 +1,4 @@
-@@include("../../include/header.html",{
-"checkTypeDefault": "display:inline-block;",
-"checkTypeRetail": "display:none;",
-"checkTypeFinancial": "display:none;"
-})
+@@include("../../include/header.html")
 		<!-- container -->
 		<div id="container">
 			<section class="sub_title_wrap">
@@ -206,7 +202,7 @@
 									</div>
 								</div>
 								<div class="wish_wrap">
-									<button class="cart_btn" type="button">cart</button>
+									<button class="cart_btn btn_popup" type="button" data-popup="cart_add_popup">cart</button>
 								</div>
 							</div>
 						</div>
@@ -227,7 +223,7 @@
 									</div>
 								</div>
 								<div class="wish_wrap">
-									<button class="cart_btn" type="button">cart</button>
+									<button class="cart_btn btn_popup" type="button" data-popup="cart_add_popup">cart</button>
 								</div>
 							</div>
 						</div>
@@ -252,7 +248,7 @@
 									</div>
 								</div>
 								<div class="wish_wrap">
-									<button class="cart_btn" type="button">cart</button>
+									<button class="cart_btn btn_popup" type="button" data-popup="cart_add_popup">cart</button>
 								</div>
 							</div>
 						</div>
@@ -273,7 +269,7 @@
 									</div>
 								</div>
 								<div class="wish_wrap">
-									<button class="cart_btn" type="button">cart</button>
+									<button class="cart_btn btn_popup" type="button" data-popup="cart_add_popup">cart</button>
 								</div>
 							</div>
 						</div>
@@ -294,7 +290,7 @@
 									</div>
 								</div>
 								<div class="wish_wrap">
-									<button class="cart_btn" type="button">cart</button>
+									<button class="cart_btn btn_popup" type="button" data-popup="cart_add_popup">cart</button>
 								</div>
 							</div>
 						</div>
@@ -315,7 +311,7 @@
 									</div>
 								</div>
 								<div class="wish_wrap">
-									<button class="cart_btn" type="button">cart</button>
+									<button class="cart_btn btn_popup" type="button" data-popup="cart_add_popup">cart</button>
 								</div>
 							</div>
 						</div>
@@ -326,6 +322,24 @@
 					</div>
 				</div>
 			</div>
+		</div>
+		<div class="popup cart_add_popup" tabindex="0">
+			<div class="popup_wrap">
+				<div class="popup_content">
+					<div class="title">
+						<strong>Add to Cart</strong>
+					</div>
+					<div class="txt">
+						<p>Added to your Cart List</p>
+						<div class="btn_wrap">
+							<button type="button" class="btn_type01">Continue Shopping</button>
+							<a href="#" class="btn_type02">View Cart</a>
+						</div>
+					</div>
+					<button type="button" class="btn_popup_close">close</button>
+				</div>
+			</div>
+			<p class="dimmed"></p>
 		</div>
 		<script>
 			var $filters = $("#filters"),

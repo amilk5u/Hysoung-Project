@@ -84,9 +84,6 @@ function design_order() {
             _viewTopMenuFix = $viewDetail.outerHeight() - $productTopMenu.outerHeight(),
             _priceFooterFix = ($html.outerHeight() - $("footer").outerHeight()) - winH;
 
-        // 옵션 바 높이 값 조절
-        // $optionBar.css("height", _substanceContH);
-
         // view fixed
         if ( winSc > _viewTopMenuFix ) {
             $productDetailType.addClass("view_active");
@@ -604,7 +601,7 @@ function layout() {
 
     var _seletePopup;
     // popup
-    $popupBtn.on("click", function(){
+    $popupBtn.on("click", function(e){
         $popupBox.css({"display":"none"});
         _seletePopup = $(this).data("popup");
         $("."+_seletePopup).css({"display":"flex"});
@@ -622,6 +619,7 @@ function layout() {
             $popupBox.fadeOut();
             $("body,html").css({"overflow-y":"auto"});
         });
+        e.preventDefault();
     });
 
     // header 공통 부분 높이값 유동적으로 변경

@@ -193,7 +193,7 @@ function layout() {
 
     var _seletePopup;
     // popup
-    $popupBtn.on("click", function(){
+    $popupBtn.on("click", function(e){
         $popupBox.css({"display":"none"});
         _seletePopup = $(this).data("popup");
         $("."+_seletePopup).css({"display":"flex"});
@@ -211,6 +211,7 @@ function layout() {
             $popupBox.fadeOut();
             $("body,html").css({"overflow-y":"auto"});
         });
+        e.preventDefault();
     });
 
     // header 공통 부분 높이값 유동적으로 변경

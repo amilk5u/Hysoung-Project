@@ -1,8 +1,4 @@
-@@include("../../include/header.html",{
-"checkTypeDefault": "display:inline-block;",
-"checkTypeRetail": "display:none;",
-"checkTypeFinancial": "display:none;"
-})
+@@include("../../include/header.html")
 		<!-- container -->
 		<div id="container">
 			<section class="sub_title_wrap">
@@ -135,7 +131,6 @@
 				<div class="content">
 					<!-- 데이터 있을경우 -->
 					<div class="item_list_type01">
-						<!--리테일 (파란 뱃지로 구분)-->
 						<div class="row_list active"> <!-- checkbox 활성화 됐을경우 active 클래스 넣어주세요 -->
 							<div class="product_thumb">
 								<div class="form_check_radio_default">
@@ -143,13 +138,16 @@
 									<label for="product_type_check01"></label>
 								</div>
 								<div class="img_item">
-									<img src="./../../images/explore/Preferred01.png" alt="">
+									<a href="#">
+										<img src="./../../images/explore/Preferred01.png" alt="">
+									</a>
 								</div>
 								<div class="substance">
 									<div class="variety_type">
-										<!--리테일-->
 										<span class="kind variety_1">Retail</span>
-										<!--//리테일-->
+										<!--버튼 추가 시 -->
+										<!--<span class="kind variety_2">Financial</span>
+										<span class="kind variety_3">Common</span>-->
 									</div>
 									<strong><a href="">HALO II</a></strong>
 									<p class="explain">
@@ -179,7 +177,9 @@
 									<label for="product_type_check02"></label>
 								</div>
 								<div class="img_item">
-									<img src="./../../images/explore/Preferred01.png" alt="">
+									<a href="#">
+										<img src="./../../images/explore/Preferred01.png" alt="">
+									</a>
 								</div>
 								<div class="substance">
 									<div class="variety_type">
@@ -210,20 +210,20 @@
 								</div>
 							</div>
 						</div>
-						<div class="row_list">
+						<div class="row_list active"> <!-- checkbox 활성화 됐을경우 active 클래스 넣어주세요 -->
 							<div class="product_thumb">
 								<div class="form_check_radio_default">
-									<input type="checkbox" id="product_type_check03">
-									<label for="product_type_check03"></label>
+									<input type="checkbox" id="product_type_check04" checked>
+									<label for="product_type_check04"></label>
 								</div>
 								<div class="img_item">
-									<img src="./../../images/explore/Preferred01.png" alt="">
+									<a href="#">
+										<img src="./../../images/explore/Preferred01.png" alt="">
+									</a>
 								</div>
 								<div class="substance">
 									<div class="variety_type">
-										<!--리테일-->
 										<span class="kind variety_1">Retail</span>
-										<!--//리테일-->
 									</div>
 									<strong><a href="">MX5300SE</a></strong>
 									<p class="explain">
@@ -250,131 +250,6 @@
 								</div>
 							</div>
 						</div>
-						<!--//리테일 (파란 뱃지로 구분)-->
-
-						<!--파이넨셜 (파란 뱃지로 구분)-->
-						<div class="row_list">
-							<div class="product_thumb">
-								<div class="form_check_radio_default">
-									<input type="checkbox" id="product_type_check04">
-									<label for="product_type_check04"></label>
-								</div>
-								<div class="img_item">
-									<img src="./../../images/explore/Preferred01.png" alt="">
-								</div>
-								<div class="substance">
-									<div class="variety_type">
-										<span class="kind variety_2">Financial</span>
-										<span class="kind variety_3">MX 8000 Series</span>
-									</div>
-									<strong><a href="">MX4000W</a></strong>
-									<p class="explain">
-										Proof Positive That Innovation Comes In Small Packages
-									</p>
-								</div>
-							</div>
-							<div class="skill_list">
-								<div>
-									<img src="./../../images/common/info_icon01.png" alt="">
-									<p>10.1” Color LCD<br>Screen</p>
-								</div>
-								<div>
-									<img src="./../../images/common/info_icon02.png" alt="">
-									<p>1,000 Notes Per<br>Cassette</p>
-								</div>
-								<div>
-									<img src="./../../images/common/info_icon03.png" alt="">
-									<p>Supports 6<br>Languages</p>
-								</div>
-								<div>
-									<img src="./../../images/common/info_icon04.png" alt="">
-									<p>265 lbs<br>54.2”x15.7”x23.4”</p>
-								</div>
-							</div>
-						</div>
-						<div class="row_list">
-							<div class="product_thumb">
-								<div class="form_check_radio_default">
-									<input type="checkbox" id="product_type_check05">
-									<label for="product_type_check05"></label>
-								</div>
-								<div class="img_item">
-									<img src="./../../images/explore/Preferred01.png" alt="">
-								</div>
-								<div class="substance">
-									<div class="variety_type">
-										<!--파이넨셜-->
-										<span class="kind variety_2">Financial</span>
-										<span class="kind variety_3">MX 8000 Series</span>
-										<!--//파이넨셜-->
-									</div>
-									<strong><a href="">MX4000W</a></strong>
-									<p class="explain">
-										Proof Positive That Innovation Comes In Small Packages
-									</p>
-								</div>
-							</div>
-							<div class="skill_list">
-								<div>
-									<img src="./../../images/common/info_icon01.png" alt="">
-									<p>10.1” Color LCD<br>Screen</p>
-								</div>
-								<div>
-									<img src="./../../images/common/info_icon02.png" alt="">
-									<p>1,000 Notes Per<br>Cassette</p>
-								</div>
-								<div>
-									<img src="./../../images/common/info_icon03.png" alt="">
-									<p>Supports 6<br>Languages</p>
-								</div>
-								<div>
-									<img src="./../../images/common/info_icon04.png" alt="">
-									<p>265 lbs<br>54.2”x15.7”x23.4”</p>
-								</div>
-							</div>
-						</div>
-						<div class="row_list">
-							<div class="product_thumb">
-								<div class="form_check_radio_default">
-									<input type="checkbox" id="product_type_check06">
-									<label for="product_type_check06"></label>
-								</div>
-								<div class="img_item">
-									<img src="./../../images/explore/Preferred01.png" alt="">
-								</div>
-								<div class="substance">
-									<div class="variety_type">
-										<!--파이넨셜-->
-										<span class="kind variety_2">Financial</span>
-										<span class="kind variety_3">MX 8000 Series</span>
-										<!--//파이넨셜-->
-									</div>
-									<strong><a href="">MX4000W</a></strong>
-									<p class="explain">
-										Proof Positive That Innovation Comes In Small Packages
-									</p>
-								</div>
-							</div>
-							<div class="skill_list">
-								<div>
-									<img src="./../../images/common/info_icon01.png" alt="">
-									<p>10.1” Color LCD<br>Screen</p>
-								</div>
-								<div>
-									<img src="./../../images/common/info_icon02.png" alt="">
-									<p>1,000 Notes Per<br>Cassette</p>
-								</div>
-								<div>
-									<img src="./../../images/common/info_icon03.png" alt="">
-									<p>Supports 6<br>Languages</p>
-								</div>
-								<div>
-									<img src="./../../images/common/info_icon04.png" alt="">
-									<p>265 lbs<br>54.2”x15.7”x23.4”</p>
-								</div>
-							</div>
-						</div>
-						<!--//파이넨셜 (파란 뱃지로 구분)-->
 					</div>
 
 					<!-- 데이터 없을경우 -->

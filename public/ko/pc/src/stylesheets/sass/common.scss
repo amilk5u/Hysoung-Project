@@ -1231,12 +1231,12 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 		}
 		.search_btn_m {display:none;}
 		.new_customer_btn {
-			height:38px;font-size:13px; font-weight:$medium;color:#121314;padding:0 20px;border:1px solid $gray3; vertical-align:middle;
+			display:inline-block; line-height:38px;font-size:13px; font-weight:$medium;color:#121314;padding:0 20px;border:1px solid $gray3; vertical-align:middle;
 			@include borderRadius(100px);
 		}
 		// 검색 폼
 		.search_form {
-			display:inline-block; position:relative;
+			display:inline-block; position:relative; vertical-align:middle;
 			&:after {
 				width:16px; height:16px;content:"";display:block;position:absolute; right:12px; top:11px;
 				background:url(./../../images/common/search_icon.png) 50% 50% no-repeat; background-size:cover;
@@ -1370,8 +1370,7 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 				padding:0 em(28);
 			}
 			.new_customer_btn {
-				height:em(72);
-				font-size:em(28);font-weight:$bold;padding:0 em(28);border:em(2) solid $gray3;
+				line-height:em(72); font-size:em(28);font-weight:$bold;padding:0 em(28);border:em(2) solid $gray3;
 				@include borderRadius(em(100));
 			}
 			// Input Search
