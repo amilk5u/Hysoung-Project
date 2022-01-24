@@ -581,7 +581,7 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 		strong {
 			font-size:20px;padding:0 23px 0 0;position:relative; font-weight:$medium;
 			button {
-				position:absolute;display:block;width:14px; height:14px;margin:0 0 0 10px;right:0; top:53%;
+				position:absolute;display:block;width:14px; height:14px;margin:0 0 0 10px;right:0; top:53%; z-index:1;
 				background:url(./../../images/common/more_i_btn.png) 50% 50% no-repeat;background-size:cover;
 				@include transform(translate(0,-50%));
 			}
@@ -906,8 +906,37 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 			}
 			select {
 				width:100%; font-size:12px; line-height:50px; padding:0 0 0 10px; color:$gray5; border:1px solid $gray2; border-radius:10px; background-image:url(../../images/common/select_arr_default.png);
-				@include backgroundSolt(90%, 50%);
+				@include backgroundSolt(92%, 50%);
 				&:focus {outline:1px solid $blue5;}
+			}
+
+			.filter_title_s {
+				margin:0 0 20px;
+				> strong {font-size:14px; font-weight:$medium; color:$gray7; display:inline-block; vertical-align:middle; margin:0;}
+				.question_wrap {
+					display:inline-block; vertical-align:middle; margin:0; position:relative; z-index:5;
+					button {
+						width:17px; height:17px; text-indent:-9999px; background-color:#cecece; background-image:url(../../images/common/question_icon.png);
+						@include borderRadius(100%);
+						@include transition(background-color, .2s);
+						@include backgroundSolt;
+						&:hover,
+						&.active {background-color:$blue;}
+					}
+					.question_detail {
+						width:150px; padding:14px 20px; position:absolute; top:-20px; left:35px; margin:-5px 0 0; font-size:12px; color:$gray6; background-color:$white; display:none; text-align:center; line-height:20px;
+						@include borderRadius(10px);
+						@include boxSizing;
+						@include opacity(0);
+						@include boxShadow(0 0 8px rgba(15,13,13,.1));
+						&:after {
+							width:12px; height:12px; display:block; content:""; position:absolute; left:-2px; top:27px; border-bottom:1px solid transparent; border-right:1px solid transparent; background-color:$white; margin:0 0 0 -6px;
+							@include boxSizing;
+							@include rotate(45);
+							@include boxShadow(-2px 2px 4px rgba(15,13,13,.1));
+						}
+					}
+				}
 			}
 		}
 		.filter_type04 {
@@ -1076,6 +1105,24 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 						width:em(64); height:em(64); right:em(18); background-image:url(../../images/common/btn_search_m.png);
 					}
 				}
+				select {
+					font-size:em(32); line-height:em(90); padding:0 0 0 em(26); border-radius:em(10); background-image:url(../../images/common/snb_arr_m.png);
+					@include backgroundSolt(calc(100% - 1rem), 50%);
+				}
+				.filter_title_s {
+					margin:0 0 em(35);
+					> strong {font-size:em(32); font-weight:$bold;}
+					.question_wrap {
+						top:em(4); position:static;
+						button {width:em(33); height:em(33); background-size:em(12) em(18)}
+						.question_detail {
+							width:calc(100vw - 10vw); padding:em(28) em(40); top:em(64); left:0; margin:0; font-size:em(24); line-height:em(40); z-index:1;
+							@include borderRadius(em(20));
+							@include boxShadow(0 0 8px rgba(15,13,13,.1));
+							&:after {display:none;}
+						}
+					}
+				}
 			}
 			.filter_type04 {
 				padding:em(60) 0;
@@ -1107,7 +1154,7 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 						}
 						input[type=text] {
 							font-size:13px;
-							font-size:em(32); line-height:em(90); padding:0 em(100) 0 em(26);
+							font-size:em(32); line-height:em(90); padding:0 em(60) 0 em(26);
 							border-width:em(2);
 							@include borderRadius(em(10));
 						}

@@ -32,7 +32,7 @@
         .btn_wrap {
           font-size:0;
           a {
-            font-size:16px; line-height:46px; padding:0 10px; min-width:200px; margin:0 8px 0 0; text-align:center; border-radius:50px; display:inline-block; color:$white; border:1px solid $white; box-sizing:border-box;
+            font-size:16px; line-height:46px; padding:0 10px; min-width:205px; margin:0 8px 0 0; text-align:center; border-radius:50px; display:inline-block; color:$white; border:1px solid $white; box-sizing:border-box;
             @include transition(all, .3s);
             &.btn_bruchure {padding:0 31px;}
             &:hover, &:focus {
@@ -326,8 +326,12 @@
           strong {font-size:em(80);}
           p {font-size:em(32); line-height:em(42); margin:em(50) em(30)}
           .btn_wrap {
+            padding:0 em(14); font-size:0;
             a {
-              font-size:em(26); line-height:em(86); padding:0 em(36); min-width:em(310); margin:0 em(14) 0 0; border-radius:em(50); border-width:em(2);
+              //font-size:em(26); line-height:em(86); padding:0 em(36); min-width:em(310); margin:0 em(14) 0 0; border-radius:em(50); border-width:em(2);
+              font-size:em(26); line-height:em(86); padding:0; width:calc(50% - 0.7rem); max-width:em(310); min-width:auto; margin:0 em(7); border-radius:em(50); border-width:em(2); letter-spacing:em(-0.5);
+              &:first-child {margin-left:0;}
+              &:last-child {margin-right:0;}
               &.btn_bruchure {padding:0 em(36);}
               &.btn_more {background-color:$blue5; border-color:$blue5;}
             }

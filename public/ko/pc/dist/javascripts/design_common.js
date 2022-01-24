@@ -177,6 +177,8 @@ function design_order() {
     }
     orderDetail();
 
+
+    /*220124 start----------------------------------------------------------------------------------------*/
     /*order services 수량 컨트롤*/
     function orderQuantity() {
         let _orderQuantityN = 0;
@@ -187,23 +189,35 @@ function design_order() {
 
         $controlDownBtn.on("click", function () {
             _orderQuantityN = Number($quantityInput.val());
-            if(!$(this).find("button").hasClass("btn_popup")){
-                _orderQuantityN = _orderQuantityN - 1;
-                if ( _orderQuantityN < 0 ) {
-                    _orderQuantityN = 0;
-                }
-                $quantityInput.val(_orderQuantityN);
+            /* 버튼에 팝업이 없을때 실행 */
+            _orderQuantityN = _orderQuantityN - 1;
+            if (_orderQuantityN < 0) {
+                _orderQuantityN = 0;
+                return false;
+            } else if (_orderQuantityN < 1) {
+                $controlDownBtn.addClass("btn_disabled");
+            } else if (_orderQuantityN > 0 && _orderQuantityN < 10) {
+                _orderQuantityN = "0" + _orderQuantityN;
+                $controlDownBtn.removeClass("btn_disabled");
             }
+            console.log(_orderQuantityN);
+            $quantityInput.val(_orderQuantityN);
         });
         $controlUpBtn.on("click", function () {
             _orderQuantityN = Number($quantityInput.val());
-            if(!$(this).find("button").hasClass("btn_popup")){
-                _orderQuantityN = _orderQuantityN + 1;
-                $quantityInput.val(_orderQuantityN);
+            /* 버튼에 팝업이 없을때 실행 */
+            _orderQuantityN = _orderQuantityN + 1;
+            if(_orderQuantityN > 0 && _orderQuantityN < 10) {
+                _orderQuantityN = "0" + _orderQuantityN;
+                $controlDownBtn.removeClass("btn_disabled");
             }
+            console.log(_orderQuantityN);
+            $quantityInput.val(_orderQuantityN);
+
         });
     }
     orderQuantity();
+    /*220124 end----------------------------------------------------------------------------------------*/
 
     $window.scroll(function(){
         productViewFix();
@@ -218,7 +232,7 @@ function design_order() {
 
     // ORDER_DETAIL, ORDER_TRACKING
     var $orderForm = $(".order_form");
-    var $optionList = $orderForm.find(".option_list"),
+    var $optionList = $(".option_list"),
         $optionBtn = $optionList.find("button");
     $optionBtn.click(function (){
         $(this).toggleClass("active");
