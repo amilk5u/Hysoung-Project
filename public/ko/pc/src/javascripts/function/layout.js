@@ -201,7 +201,7 @@ function layout() {
         $("body,html").css({"overflow-y":"hidden"});
 
         var _this = $(this);
-        $closePopupBtn.on("click", function(){
+        $closePopupBtn.on("click focusout", function(){
             _this.focus();
             $popupBox.fadeOut();
             $("body,html").css({"overflow-y":"auto"});

@@ -106,7 +106,7 @@
       @include backgroundSoltC();
       h3 {text-indent:-99999px; opacity:0; height:0;}
       .layout_wrap div {display:inline-block;}
-      strong {font-size:28px; font-weight:$medium;}
+      a {font-size:28px; font-weight:$medium; color:$white;}
       p {
         font-size:15px; padding:0 175px 0 0; margin:15px 0 0; opacity:0.4; position:relative;
         em {position:absolute; top:0; right:0;}
@@ -383,7 +383,7 @@
       }
       .banner_section {
         padding:em(50) em(30); background-image:url(../../images/main/banner_bg_m.jpg);
-        strong {
+        a {
           font-size:em(56); line-height:em(60); font-weight:$bold;
           span {display:block; font-size:em(36); margin:em(15) 0 0;}
         }

@@ -8,6 +8,7 @@
 						<!--//재고 수량 표시 될시 위에 클래스 type_s 추가-->
 						<!--view detail-->
 						<div class="view_detail">
+							<!-- 이미지 2개이상 일때 start -->
 							<div class="detail_img">
 								<div class="swiper-container product_slide_contain">
 									<div class="swiper-wrapper">
@@ -26,6 +27,13 @@
 								</div>
 								<div class="indicator"></div>
 							</div>
+							<!-- 이미지 2개이상 일때 end -->
+
+							<!-- 이미지 1개 일때 start -->
+							<!--<div class="detail_img">
+								<img src="./../../images/design_order/product_item_01.png" alt="">
+							</div>-->
+							<!-- 이미지 1개 일때 end -->
 							<div class="info_form_wrap">
 								<div class="txt_elm">
 									<span class="variety">Card Reader</span>
@@ -100,19 +108,19 @@
 										<div class="increase_control_btn">
 											<div class="control_btn down_btn">
 												<!-- 비로그인 start -->
-												<button type="button" class="btn_popup" data-popup="login_check_popup">increase</button>
-												<!-- 비로그인 start -->
-												<!-- 로그인 start -->
-												<!--<button type="button"></button>-->
-												<!-- 로그인 end -->
-											</div>
-											<input type="text" class="quantity_input" value="0">
-											<div class="control_btn up_btn">
-												<!-- 비로그인 start -->
 												<button type="button" class="btn_popup" data-popup="login_check_popup">decrease</button>
 												<!-- 비로그인 start -->
 												<!-- 로그인 start -->
-												<!--<button type="button"></button>-->
+												<!--<button type="button">decrease</button>-->
+												<!-- 로그인 end -->
+											</div>
+											<input type="text" class="quantity_input" value="01">
+											<div class="control_btn up_btn">
+												<!-- 비로그인 start -->
+												<button type="button" class="btn_popup" data-popup="login_check_popup">increase</button>
+												<!-- 비로그인 start -->
+												<!-- 로그인 start -->
+												<!--<button type="button">increase</button>-->
 												<!-- 로그인 end -->
 											</div>
 										</div>
@@ -169,9 +177,9 @@
 											<!--<button type="button" class="btn_popup" data-popup="login_check_popup">Add to Cart</button>-->
 										</li>
 										<li class="next_step_btn btn_disabled">
-											<a href="">Next Step</a>
+											<a href="">Check Out</a>
 											<!-- 비로그인시 -->
-											<!--<a href="#" class="btn_popup" data-popup="login_check_popup">Next Step</a>-->
+											<!--<a href="#" class="btn_popup" data-popup="login_check_popup">Check Out</a>-->
 										</li>
 									</ul>
 								</div>
