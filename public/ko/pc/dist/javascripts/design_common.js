@@ -105,23 +105,32 @@ function design_order() {
         let _quantityN = 0;
         const $increaseControlBtn = $(".increase_control_btn"),
             $controlDownBtn = $increaseControlBtn.find(".down_btn"),
-            $controlUpBtn = $increaseControlBtn.find(".up_btn"),
-            $quantityInput = $increaseControlBtn.find(".quantity_input");
+            $controlUpBtn = $increaseControlBtn.find(".up_btn");
 
         $controlDownBtn.on("click", function () {
+            var $quantityInput = $(this).next();
             _quantityN = Number($quantityInput.val());
             if(!$(this).find("button").hasClass("btn_popup")){
+                /* 버튼에 팝업이 없을때 실행 */
                 _quantityN = _quantityN - 1;
-                if ( _quantityN < 0 ) {
+                if (_quantityN < 0) {
                     _quantityN = 0;
+                    return false;
+                } else if (_quantityN > 0 && _quantityN < 10) {
+                    _quantityN = "0" + _quantityN;
                 }
                 $quantityInput.val(_quantityN);
             }
         });
         $controlUpBtn.on("click", function () {
+            var $quantityInput = $(this).prev(".quantity_input");
             _quantityN = Number($quantityInput.val());
             if(!$(this).find("button").hasClass("btn_popup")){
+                /* 버튼에 팝업이 없을때 실행 */
                 _quantityN = _quantityN + 1;
+                if(_quantityN > 0 && _quantityN < 10) {
+                    _quantityN = "0" + _quantityN;
+                }
                 $quantityInput.val(_quantityN);
             }
         });
@@ -177,8 +186,6 @@ function design_order() {
     }
     orderDetail();
 
-
-    /*220124 start----------------------------------------------------------------------------------------*/
     /*order services 수량 컨트롤*/
     function orderQuantity() {
         let _orderQuantityN = 0;
@@ -200,7 +207,6 @@ function design_order() {
                 _orderQuantityN = "0" + _orderQuantityN;
                 $controlDownBtn.removeClass("btn_disabled");
             }
-            console.log(_orderQuantityN);
             $quantityInput.val(_orderQuantityN);
         });
         $controlUpBtn.on("click", function () {
@@ -211,13 +217,10 @@ function design_order() {
                 _orderQuantityN = "0" + _orderQuantityN;
                 $controlDownBtn.removeClass("btn_disabled");
             }
-            console.log(_orderQuantityN);
             $quantityInput.val(_orderQuantityN);
-
         });
     }
     orderQuantity();
-    /*220124 end----------------------------------------------------------------------------------------*/
 
     $window.scroll(function(){
         productViewFix();
@@ -620,18 +623,18 @@ function layout() {
         _seletePopup = $(this).data("popup");
         $("."+_seletePopup).css({"display":"flex"});
         $("."+_seletePopup).focus();
-        $("body,html").css({"overflow-y":"hidden"});
+        // $("body,html").css({"overflow-y":"hidden"});
 
         var _this = $(this);
-        $closePopupBtn.on("click", function(){
+        $closePopupBtn.on("click focusout", function(){
             _this.focus();
             $popupBox.fadeOut();
-            $("body,html").css({"overflow-y":"auto"});
+            // $("body,html").css({"overflow-y":"auto"});
         });
         $popupBg.on("click", function(){
             _this.focus();
             $popupBox.fadeOut();
-            $("body,html").css({"overflow-y":"auto"});
+            // $("body,html").css({"overflow-y":"auto"});
         });
         e.preventDefault();
     });
