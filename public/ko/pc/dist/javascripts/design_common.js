@@ -378,6 +378,7 @@ function explore() {
 
     $moreBtn.on("click",function(){
         let _this = $(this);
+        console.log(_this);
         _this.parents(".row_list").find(".last_txt p").addClass("more_active");
         _this.css("display","none");
     });
