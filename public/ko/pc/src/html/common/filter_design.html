@@ -389,6 +389,8 @@
     $btnApply.on("click",function(){
         $selectedFilter.addClass("selected_filter_on");
         $filters.toggleClass("fold_aside");
+        $(".hd_transformation").toggleClass("aside_on");
+        $("footer").toggleClass("aside_on");
 
         const $contTitle = $(".cont_title");
         const $content = $(".content");

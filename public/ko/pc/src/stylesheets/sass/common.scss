@@ -481,6 +481,7 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 	input[type=text] {
 		width:100%; font-size:16px; line-height:56px; padding:0 60px 0 25px; border:1px solid $gray2; border-radius:10px; color:$gray7; background-color:$gray1; box-sizing:border-box;
 		&:focus {border-color:$blue5; outline:none;}
+		&.bg_none {background-color:$white;}
 	}
 	.btn_calendar {
 		position:absolute; top:50%; right:25px; background-image:url(../../images/common/calendar_icon.png);
@@ -648,15 +649,15 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 }
 
 .sub_title_wrap {
-	width:100%; position:fixed; top:80px; left:0; z-index:3; text-align:center; background-color:$gray1;
+	width:100%; position:fixed; top:70px; left:0; z-index:3; text-align:center; background-color:$gray1;
 	h2 {
-		height:100px; font-size:36px; padding:32px 0; font-weight:$regular; color:$gray7; font-family:$bebasNeue;
+		height:50px; font-size:30px; padding:10px 0; font-weight:$regular; color:$gray7; font-family:$bebasNeue;
 		@include boxSizing;
 	}
 	.stepBystep {
 		background-color:$gray7;
 		ol {
-			font-size:0; text-align:center; padding:28px 0;
+			font-size:0; text-align:center; padding:9px 0;
 			li {
 				display:inline-block; padding:0 35px; margin:0 22px; position:relative;
 				&:after {
@@ -683,6 +684,7 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 				}
 				&.ing {
 					&:after {border-left:7px solid $blue5;}
+					div {position:relative; top:-3px;}
 					strong {
 						color:$white; font-weight:$bold; position:relative; padding:0 3px;
 						&:after {width:100%; height:3px; position:absolute; bottom:-5px; left:0; background-color:$blue5; content:""}
@@ -750,6 +752,7 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 					&.ing {
 						&:after {border-left:em(12) solid $blue5;}
 						&:before {background-color:$blue5;border-color:$blue5;}
+						div {top:0;}
 						span {background-color:$blue5;border-color:$blue5;color:$white;}
 						strong {
 							padding:0;
@@ -770,7 +773,7 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 }
 
 #filters {
-	width:288px; height:calc(100vh - 180px); position:fixed; top:180px; left:0; background-color:$white; z-index:2;
+	width:288px; height:calc(100vh - 120px); position:fixed; top:120px; left:0; background-color:$white; z-index:2;
 	@include boxShadow(0 0 24px rgba(15, 13, 13, .2));
 	@include transition(transform, 0.5s);
 	.filter_title {
@@ -829,8 +832,8 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 			> strong {font-size:14px; font-weight:$medium; color:$gray7; display:block;}
 		}
 		.filter_type01 {
-			padding:30px 0;
-			strong {margin:0 0 20px;}
+			padding:25px 0;
+			strong {margin:0 0 15px;}
 			li {
 				margin:10px 0 0;
 				&:first-child {margin:0;}
@@ -840,7 +843,7 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 			}
 		}
 		.filter_type02 {
-			padding:20px 0 0;
+			padding:15px 0 0;
 			> ul {
 				overflow:hidden; margin:0 0 5px;
 				li {
@@ -894,8 +897,8 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 			}
 		}
 		.filter_type03 {
-			padding:30px 0;
-			strong {margin:0 0 20px;}
+			padding:25px 0;
+			strong {margin:0 0 15px;}
 			div {
 				position:relative;
 				input[type=text] {width:100%; font-size:13px; line-height:36px; padding:0 35px 0 20px; border:1px solid $gray2; border-radius:20px; box-sizing:border-box;}
@@ -913,7 +916,7 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 			}
 
 			.filter_title_s {
-				margin:0 0 20px;
+				margin:0 0 15px;
 				> strong {font-size:14px; font-weight:$medium; color:$gray7; display:inline-block; vertical-align:middle; margin:0;}
 				.question_wrap {
 					display:inline-block; vertical-align:middle; margin:0; position:relative; z-index:5;
@@ -942,7 +945,7 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 			}
 		}
 		.filter_type04 {
-			padding:20px 0;
+			padding:15px 0 25px;
 			> strong {
 				font-size:14px; padding:4px 0; margin:5px 0 15px; color:$gray7; font-weight:$medium; display:block;
 			}
@@ -978,8 +981,8 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 			}
 		}
 		.filter_type05 {
-			padding:30px 0;
-			strong {margin:0 0 20px;}
+			padding:25px 0;
+			strong {margin:0 0 15px;}
 			.date_wrap {
 				display:flex; justify-content:space-between;
 				.form_date_type01 {
@@ -1186,7 +1189,7 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 
 #container {
 	&.no_title {
-		.content {margin:80px auto 0;}
+		.content {margin:60px auto 0;}
 		@include mob(){
 			.content {
 				margin:em(124) auto 0;
@@ -1196,7 +1199,7 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 }
 .step_contents {
 	.content {
-		padding:80px 0 0;
+		padding:42px 0 0;
 	}
 	@include mob(){
 		.content {
@@ -1205,20 +1208,34 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 	}
 }
 .content {
-	margin:180px auto 0; box-sizing:border-box;
+	margin:120px auto 0; box-sizing:border-box;
 	@include mob(){
 		margin:em(256) 0 0;
 	}
 }
 .hd_transformation {
-	.content {max-width:1200px;}
+	padding:0 0 0 288px; min-width:900px;
+	@include transition(all, .5s);
+	&.aside_on {
+		padding:0;
+		.cont_title {
+			padding:0 40px;
+			.title_wrap {width:100%; margin:0; }
+		}
+	}
+	.content {
+		padding:0 40px;
+		@include boxSizing;
+	}
 	// 타이틀 없는 컨텐츠
 	&.no_title_wrap {
-		.cont_title {top:80px;}
+		.cont_title {top:70px;}
 		.content {margin:148px auto 0;}
 	}
 	.cont_title {
-		width:100%; height:114px; position:fixed; top:180px; left:0; overflow:hidden; background-color:$white; z-index:1;
+		width:100%; position:fixed; top:120px; left:0; overflow:hidden; background-color:$white; z-index:1;
+		@include boxSizing;
+		@include transition(all, .5s);
 		&.search_on {
 			.search_input_m {display:none;}
 		}
@@ -1229,8 +1246,10 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 		.filter_scroll_wrap {@extend %clearfix;}
 	}
 	.title_wrap {
-		max-width:1200px; height:114px; margin:0 auto;background-color:$white; overflow:hidden;
-		border-bottom:2px solid $gray6;
+		height:50px; background-color:$white; overflow:hidden;
+		width:calc(100% - 368px);
+		border-bottom:2px solid $gray6; margin:0 0 0 328px;
+		@include transition(all, .5s);
 		@include boxSizing;
 		@extend %clearfix;
 	}
@@ -1241,7 +1260,7 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 			padding:26px 0; font-weight:$medium;
 			span { margin:0 5px 0 0; }
 			&.default_title {
-				font-size:16px;color:$gray6;font-weight:$medium;padding:75px 0 20px;
+				font-size:16px;color:$gray6;font-weight:$medium;padding:22px 0 10px;
 				span {color:$blue5;}
 			}
 			/*&.default_title {font-size:18px;color:#121314;}
@@ -1254,17 +1273,17 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 	}
 	// right
 	.control_wrap {
-		float:right; padding:54px 0 19px; font-size:0;
+		float:right; padding:7px 0; font-size:0;
 		> * {margin:0 0 0 20px;}
 		// Select
 		.control_select {
-			font-size:13px; line-height:36px; font-weight:$medium;color:#121314;padding:0 40px 0 20px;border:1px solid $gray3; vertical-align:middle;
-			background:url(./../../images/common/select_arr.png) 90% 50% no-repeat; background-size:20px 20px;
+			font-size:13px; line-height:32px; font-weight:$medium;color:#121314;padding:0 30px 0 15px; vertical-align:middle; border:1px solid $gray3;
+			background:url(./../../images/common/select_arr.png) 95% 50% no-repeat; background-size:20px 20px;
 			@include borderRadius(100px);
 		}
 		// Comparison
 		.btn_compare {
-			height:38px;font-size:13px;font-weight:$medium;color:#121314;padding:0 42px 0 20px; vertical-align:middle;
+			height:34px;font-size:13px;font-weight:$medium;color:#121314;padding:0 42px 0 20px; vertical-align:middle;
 			border:1px solid $gray3; position:relative;
 			@include borderRadius(100px);
 			&:after {
@@ -1280,18 +1299,21 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 		}
 		.search_btn_m {display:none;}
 		.new_customer_btn {
-			display:inline-block; line-height:38px;font-size:13px; font-weight:$medium;color:#121314;padding:0 20px;border:1px solid $gray3; vertical-align:middle;
+			display:inline-block; line-height:32px; font-size:13px; font-weight:$medium; color:#121314; padding:0 20px; border:1px solid $gray3; vertical-align:middle;
 			@include borderRadius(100px);
+			&.new_customer_btn_type2 {
+				background-color:$gray5; border-color:$gray5; color:$white;
+			}
 		}
 		// 검색 폼
 		.search_form {
 			display:inline-block; position:relative; vertical-align:middle;
 			&:after {
-				width:16px; height:16px;content:"";display:block;position:absolute; right:12px; top:11px;
+				width:16px; height:16px;content:"";display:block;position:absolute; right:12px; top:9px;
 				background:url(./../../images/common/search_icon.png) 50% 50% no-repeat; background-size:cover;
 			}
 			input {
-				width:285px; height:38px;font-size:13px; font-weight:$medium;color:#121314;padding:0 40px 0 20px;border:1px solid $gray3;
+				width:285px; height:34px;font-size:13px; font-weight:$medium;color:#121314;padding:0 40px 0 20px;border:1px solid $gray3;
 				@include borderRadius(100px);
 				@include boxSizing;
 				&::placeholder { color:$gray3; font-weight:$regular; }
@@ -1299,12 +1321,24 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 		}
 	}
 	@include mob (){
+		/*220210 start*/
+		padding:0; min-width:100%;
+		/*220210 end*/
+		@include transition(all, 0s);
+
+		&.aside_on {
+			.cont_title {padding:0;}
+		}
+		.content {
+			padding:0;
+		}
 		// 타이틀 없는 컨텐츠
 		&.no_title_wrap {
 			.cont_title {top:em(124);}
 		}
 		.cont_title {
 			margin:0; height:auto; position:fixed; top:em(256);
+			@include transition(all, 0s);
 			@include boxSizing;
 			// 모바일 서치 active
 			&.search_on {
@@ -1370,8 +1404,9 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 			}
 		}
 		.title_wrap {
-			width:100vw; height:em(110);min-height:em(130);max-width:inherit; padding:0 em(30); margin:0;
-			border:none; overflow:hidden;
+			width:100vw; height:em(110);min-height:em(130);
+			padding:0 em(30); margin:0; border:none; overflow:hidden;
+			@include transition(all, 0s);
 			@include boxSizing;
 		}
 		// left
@@ -1429,11 +1464,18 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 				background:url(./../../images/common/btn_search_m.png) 50% 50% no-repeat; background-size:cover;
 				//@include transform(translate(0,-50%));
 			}
+			// 모바일에서 공간없어서 숨김처리
+			.sel_proceeding {display:none;}
 		}
 	}
 }
 
 .filter_layout_change {
+	.content {border:1px solid red;}
+}
+/*.filter_layout_change {
+	.content {border:1px solid red;}
+
 	@media screen and (max-width: 1500px) {
 		&:after {content:""; display:block; clear:both;}
 		.cont_title {
@@ -1454,6 +1496,6 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 			@include scale(1);
 		}
 	}
-}
+}*/
 
 .wrong_markup {display:block; position:fixed; bottom:20px; right:20px; color:$red; z-index:9999}

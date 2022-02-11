@@ -316,7 +316,7 @@ function explore() {
         });
     });
     // scroll event
-    $($window).on("mousewheel DOMMouseScroll", function (e){
+    $($window).on("mousewheel DOMMouseScroll scroll", function (e){
         if(winSc < productArr[0]-100) {
             $productList.removeClass("on");
             if(e.originalEvent.deltaY < 0){
@@ -378,7 +378,6 @@ function explore() {
 
     $moreBtn.on("click",function(){
         let _this = $(this);
-        console.log(_this);
         _this.parents(".row_list").find(".last_txt p").addClass("more_active");
         _this.css("display","none");
     });
@@ -601,9 +600,14 @@ function layout() {
 
     $filterBtn.click(function(){
         $filters.toggleClass("fold_aside");
+        $(".hd_transformation").toggleClass("aside_on");
+        $("footer").toggleClass("aside_on");
     });
+
     $filterBtnClose.click(function(){
         $filters.toggleClass("fold_aside");
+        $(".hd_transformation").toggleClass("aside_on");
+        $("footer").toggleClass("aside_on");
     });
 
     $(".filter_type02 > ul li").click(function(e){
@@ -624,18 +628,18 @@ function layout() {
         _seletePopup = $(this).data("popup");
         $("."+_seletePopup).css({"display":"flex"});
         $("."+_seletePopup).focus();
-        // $("body,html").css({"overflow-y":"hidden"});
+        $("body,html").css({"overflow-y":"hidden"});
 
         var _this = $(this);
         $closePopupBtn.on("click focusout", function(){
             _this.focus();
             $popupBox.fadeOut();
-            // $("body,html").css({"overflow-y":"auto"});
+            $("body,html").css({"overflow-y":"auto"});
         });
         $popupBg.on("click", function(){
             _this.focus();
             $popupBox.fadeOut();
-            // $("body,html").css({"overflow-y":"auto"});
+            $("body,html").css({"overflow-y":"auto"});
         });
         e.preventDefault();
     });

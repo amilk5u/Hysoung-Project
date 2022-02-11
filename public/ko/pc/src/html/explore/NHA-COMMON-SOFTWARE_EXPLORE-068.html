@@ -1,4 +1,6 @@
-@@include("../../include/header.html")
+@@include("../../include/header.html",{
+"className" : "class='filterWrap'"
+})
 		<!-- container -->
 		<div id="container">
 			<section class="sub_title_wrap">
@@ -306,6 +308,8 @@
 			$btnApply.on("click",function(){
 				$selectedFilter.addClass("selected_filter_on");
 				$filters.toggleClass("fold_aside");
+				$(".hd_transformation").toggleClass("aside_on");
+				$("footer").toggleClass("aside_on");
 
 				const $contTitle = $(".cont_title");
 				const $content = $(".content");
